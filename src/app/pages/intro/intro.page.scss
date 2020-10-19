@@ -1,0 +1,31 @@
+ion-slide {
+    height: 100vh;
+    flex-direction: column;
+}
+
+ion-img {
+    max-width: 50vh;
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+.slide-one {
+    background :url('../../../assets/img/background.jpeg') 0 0/ 100% 100% no-repeat;
+    color :#fff;
+}
+
+.slide-two {
+    background :url('../../../assets/img/loan.jpg') 0 0/ 100% 100% no-repeat;
+    color :#fff;
+
+}
+
+.labelintro{
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.labelintro span {
+    font-size: 14px;
+}
+

@@ -1,0 +1,54 @@
+
+<ion-content>
+  <!--
+  <ion-header no-border>
+    <ion-toolbar color="success">
+      <ion-title>Register To App</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+-->
+<ion-header no-border>
+  <div class = "login-header ion-padding">
+      <img class="logi-img" src="/assets/img/logo1.png" alt="logo">
+  </div>
+</ion-header>
+
+  <ion-content>
+    <ion-list>
+      <div class="">
+      <ion-item>
+         <ion-input type="text" placeholder="User Name" [(ngModel)]="username" ></ion-input>
+      </ion-item>
+     <!--- <ion-item style="color:#999">
+        <ion-label >Gender</ion-label>
+        <ion-select interface="popover" [(ngModel)]="gender">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item style="color:#999">
+        <ion-label position="floating">Date Of Birth</ion-label>
+        <ion-datetime displayFormat="YYYY/MM/DD" min="1994-03-14" max="2012-12-09" [(ngModel)]="date_birth"></ion-datetime>
+      </ion-item>
+    -->
+      <ion-item>
+        <ion-input type="text" placeholder="Telephone Number" [(ngModel)]="telephone_number"></ion-input>
+     </ion-item>
+     <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="password" ></ion-input>
+   </ion-item>
+  <!-- <ion-item>
+    <ion-input type="password" placeholder="Confirm Password" ></ion-input>
+ </ion-item>-->
+  
+     <ion-button expand="full" class="ion-padding" color="success" (click)="tryRegister()" [disabled]="disabledButton">Register</ion-button>
+    </div>
+    </ion-list>
+    
+  </ion-content>
+  
+
+</ion-content>

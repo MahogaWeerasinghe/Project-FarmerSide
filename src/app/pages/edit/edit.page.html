@@ -1,0 +1,87 @@
+
+  <!--<ion-toolbar>
+    <ion-title>edit</ion-title>
+  </ion-toolbar>-->
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button text="Back" defaultHref="home"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-header no-border>
+    <div class = "login-header ion-padding">
+        <img class="logi-img" src="/assets/img/logo1.png" alt="logo">
+    </div>
+  </ion-header>
+
+
+
+<ion-content>
+  
+<ion-list>
+  <ion-item style="color:#999">
+    <ion-label >Choose</ion-label>
+    <ion-select interface="popover" >
+      <ion-select-option value="Mr">Mr</ion-select-option>
+      <ion-select-option value="mrs">Mrs</ion-select-option>
+      <ion-select-option value="miss">Miss</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Name with Initial</ion-label>
+    <ion-input type="text" placeholder="ex : B.J Weerasinghe" ></ion-input>
+ </ion-item>
+
+ <ion-item>
+  <ion-label>Name represented by Initials</ion-label>
+  <ion-input type="text" placeholder="ex : Bandula Jayantha Weerasinghe" ></ion-input>
+</ion-item>
+
+
+
+<ion-item>
+  <ion-label>Private Addressl</ion-label>
+  <ion-input type="text" placeholder="ex : 172/34 Webada Kadawatha" ></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Telephone Number</ion-label>
+  <ion-input type="text" placeholder="ex : 0836281991" ></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Date Of Birth</ion-label>
+  <ion-datetime displayFormat="YYYY/MM/DD" min="1994-03-14" max="2012-12-09" ></ion-datetime>
+</ion-item>
+
+<ion-item>
+  <ion-label>NIC No</ion-label>
+  <ion-input type="text" placeholder="6043022705V" ></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Email Address</ion-label>
+  <ion-input type="text" placeholder="ex :jayantha@gmail.com" ></ion-input>
+</ion-item>
+
+<ion-row>
+<ion-col>
+    
+  <ion-button size="small" color="medium">Submit Details</ion-button>
+</ion-col>
+<ion-col>
+
+  <ion-button size="small" color="medium">Edit Details</ion-button>
+</ion-col>
+</ion-row>
+
+
+
+
+</ion-list>
+
+
+</ion-content>
