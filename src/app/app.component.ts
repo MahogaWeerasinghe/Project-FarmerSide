@@ -34,7 +34,7 @@ export class AppComponent {
           this.navCtrl.navigateRoot('/intro');
       }
       else{
-        this.navCtrl.navigateRoot('/home');
+        this.navCtrl.navigateRoot('/root');
       }
     });
   }

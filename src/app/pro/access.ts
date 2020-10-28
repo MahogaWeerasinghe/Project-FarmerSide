@@ -66,6 +66,22 @@ export class AccessProviders{
           
           
       }
+
+      postDetails(body){
+        let headers=new HttpHeaders({
+            'Content-Type':'applicationJson,charset-UTF-8'
+        });
+        let options={
+             headers:headers
+        }
+        
+        return this.http.post(this.server+'/editDetails',JSON.stringify(body),{
+            headers: new HttpHeaders().set('Content-Type', 'application/json'),
+          }).timeout(59000)
+        . map(res=>res);
+        
+        
+    }
        
         
 }

@@ -44,6 +44,10 @@ const routes: Routes = [
     path: 'loans',
     loadChildren: () => import('./pages/loans/loans.module').then( m => m.LoansPageModule)
   },
+  {
+    path: 'change-pw',
+    loadChildren: () => import('./pages/change-pw/change-pw.module').then( m => m.ChangePwPageModule)
+  },
  /* {
     path: 'loans',
     loadChildren: () => import('./loans/loans.module').then( m => m.LoansPageModule)

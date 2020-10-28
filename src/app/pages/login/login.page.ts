@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
-import { ToastController,LoadingController,AlertController } from '@ionic/angular';
+import { ToastController,LoadingController,AlertController, NavController } from '@ionic/angular';
 import { AccessProviders } from '../../pro/access';
+import {Storage} from '@ionic/storage';
+//import {farmerprofile} from '../farmer-profile/farmer-profile.page';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { AccessProviders } from '../../pro/access';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
- // username:string="";
+  username:string="";
   telephone_number:string="";
   password:string="";
 
@@ -20,6 +22,8 @@ export class LoginPage implements OnInit {
     private loadingCtrl:LoadingController,
     private alertCtrl:AlertController,
     private acessPr:AccessProviders,
+    private storage:Storage,
+    private navCtrl:NavController,
 ) { }
   ngOnInit() {
   }
@@ -55,8 +59,18 @@ export class LoginPage implements OnInit {
               loader.dismiss();
               this.disableButton=false;
               this.presentToast(res.message);
+              this.storage.set('storage_XXX',res.data);
               this.router.navigate(['/farmer-profile']);
-
+              console.log(res.data);
+              
+              this.storage.get('storage_XXX').then((val) => {
+                console.log('Your age is',  val.telephone_number);
+               // val.telephone_number
+                
+              //var getBackMyJSON = $('storage_XXX').data('telephone_number').key;
+              //console.log('Your age is', getBackMyJSON);
+              //this.navCtrl.push(farmerprofile,body);
+              });
             }else{
               loader.dismiss();
               this.disableButton=false;
