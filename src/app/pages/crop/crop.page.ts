@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Storage} from '@ionic/storage';
+import { Router,ActivatedRoute } from '@angular/router';
+import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
+import { ToastController,LoadingController,AlertController,NavController } from '@ionic/angular';
+import {User, AccessProviders } from '../../pro/access';
 
 @Component({
   selector: 'app-crop',
@@ -6,9 +11,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crop.page.scss'],
 })
 export class CropPage implements OnInit {
+  server:string='http://localhost:8000';
+  public items : any;
+  i:any;
+  data:any;
+  dat:string="";
+  //event:any;
+  constructor(
+    private router :Router,
+    private storage:Storage,
+    private navCtrl:NavController,
+    public http:HttpClient,
+    private acessPr:AccessProviders,
+  ) {
+    this.getdata();
+   }
 
-  constructor() { }
+  getdata(){
+    this.http.get(this.server+'/bankdetails').map(res => res).subscribe(res=>{ 
+      this.items=res;
+      console.log(res);
+    });
+  }
 
+ 
+    ViewLoans(event:any){
+
+      console.log(event.target.id);
+      this.dat=event.target.id;
+      console.log(this.dat);
+      this.storage.set('storage_co',this.dat);
+     
+      this.storage.get("storage_co").then((res)=>{
+        console.log(res);
+      });
+
+      this.navCtrl.navigateRoot('/loans');
+    }
   ngOnInit() {
   }
 

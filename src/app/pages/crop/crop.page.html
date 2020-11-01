@@ -7,7 +7,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="home"></ion-back-button>
+      <ion-back-button text="Back" defaultHref="farmer-profile"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -34,5 +34,17 @@
   </ion-tab-bar>
   
   </ion-tabs>-->
+  <ion-card *ngFor='let item of items' >
+    <ion-card-header>
+      <ion-card-subtitle>{{item.bank_name}}</ion-card-subtitle>
+      <ion-card-title>{{item.bank_id}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{item.bank_des}}
+
+      <ion-button expand="full"color="medium" (click)="ViewLoans($event)" id="{{item.bank_id}}">View the Loans</ion-button>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
