@@ -76,6 +76,7 @@ export class LoginPage implements OnInit {
               this.disableButton=false;
               this.presentToast(res.message);
             }
+            
         },(err=>{
           loader.dismiss();
           this.disableButton=false;
@@ -118,6 +119,12 @@ async presentAlert(a) {
   await alert.present();
 }
 
-  }
+    //this.router.navigate(['/farmer-profile']);
+  
+        
+   
+
+
+}
   
 

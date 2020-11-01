@@ -100,6 +100,8 @@ export class EditPage implements OnInit {
                 loader.dismiss();
                 this.disableButton=false;
                 this.presentToast(res.message);
+                //this.storage.set('storage2',res.data);
+                //console.log(res.data);
                 this.router.navigate(['/farmer-profile']);
 
               }else{
@@ -140,7 +142,7 @@ export class EditPage implements OnInit {
         }, {
           text: 'Try Again',
           handler: () => {
-           this.tryRegister();
+           this.tryEdit();
           }
         }
       ]
@@ -148,5 +150,7 @@ export class EditPage implements OnInit {
 
     await alert.present();
   }
+
+
 }
 

@@ -7,151 +7,174 @@
     Ionic
   </ion-title>
 </ion-toolbar>
-
 </ion-header>
 <ion-content>
-
 </ion-content>-->
 
 <ion-app>
-    <ion-menu side="start" content-id="main-content">
-      <ion-header>
-        <ion-toolbar translucent>
-          <ion-title>Farmer Profile</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        
-        <ion-list>
-          <ion-item >
-            
-            <ion-label>General</ion-label>
-          </ion-item>
-          <ion-item routerLink="/edit">
-            <ion-icon name="person-outline" slot="start"></ion-icon>
-            <ion-label>Edit Profile</ion-label>
-            
-          </ion-item>
-          <ion-item routerLink="/change-pw">
-            <ion-icon name="settings-outline" slot="start"></ion-icon>
-            <ion-label>Change Password</ion-label>
-            
-          </ion-item>
-          <ion-item >
-            
-            <ion-label>Loan Info</ion-label>
-          </ion-item>
-          
-          <ion-item routerLink="/crop">
-            <ion-icon name="create-outline" slot="start"></ion-icon>
-            <ion-label>Apply Loan</ion-label>
-          </ion-item>
-          <ion-item routerLink="/tabs">
-            <ion-icon name="documents-outline" slot="start"></ion-icon>
-            <ion-label>Loan History</ion-label>
-     
-          </ion-item>
-        
-          
-          <ion-item >
-            
-            <ion-label>Other</ion-label>
-          </ion-item>
+  <ion-menu side="start" content-id="main-content">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Farmer Profile</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
       
-          <ion-item>
-            <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
-            <ion-label>About Us</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="shield-checkmark-outline" slot="start"></ion-icon>
-            <ion-label>Privacy Policy</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="call-outline" slot="start"></ion-icon>
-            <ion-label>Contact</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="log-out-outline" slot="start"></ion-icon>
-            <ion-label>Sign Out</ion-label>
-            
-          </ion-item>
+      <ion-list>
+        <ion-item >
           
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-
-    <div class="ion-page" id="main-content">
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-          <ion-title>Welcome</ion-title>
-        </ion-toolbar>
-      </ion-header>
-   <!-- <ion-content class="ion-padding">
-        <ion-button expand="block" onclick="openMenu()">Open Menu</ion-button>
-      </ion-content>-->
-    </div>
-  </ion-app>
-
-<!--
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Inbox</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Farmer's Profile</ion-title>
-    <ion-buttons slot="start">
-    <ion-menu-button menu="main-menu"></ion-menu-button>
-  </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-  <ion-grid>
-
- <ion-row>
-      <ion-col>
-        <ion-item src="app/assets/icon/favicon.png"></ion-item>
-        <img src="assets/icon/favicon.png">
-      </ion-col>
-   </ion-row>
-   <ion-content>
-
-    <ion-grid>
- 
-    <ion-row>
-      <ion-col>
-        <ion-button expand="block" (click)="Edit()">Edit Details</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button expand="block"(click)="Show()">Loan History</ion-button>
-
-      </ion-col>
+          <ion-label>General</ion-label>
+        </ion-item>
+        <ion-item routerLink="/edit">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-label>Edit Profile</ion-label>
+          
+        </ion-item>
+        <ion-item routerLink="/change-pw">
+          <ion-icon name="settings-outline" slot="start"></ion-icon>
+          <ion-label>Change Password</ion-label>
+          
+        </ion-item>
+        <ion-item >
+          
+          <ion-label>Loan Info</ion-label>
+        </ion-item>
+        
+        <ion-item routerLink="/crop">
+          <ion-icon name="create-outline" slot="start"></ion-icon>
+          <ion-label>Apply Loan</ion-label>
+        </ion-item>
+        <ion-item routerLink="/tabs">
+          <ion-icon name="documents-outline" slot="start"></ion-icon>
+          <ion-label>Loan History</ion-label>
+   
+        </ion-item>
+      
+        
+        <ion-item >
+          
+          <ion-label>Other</ion-label>
+        </ion-item>
     
-    </ion-row>
+        <ion-item>
+          <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+          <ion-label>About Us</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="shield-checkmark-outline" slot="start"></ion-icon>
+          <ion-label>Privacy Policy</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="call-outline" slot="start"></ion-icon>
+          <ion-label>Contact</ion-label>
+        </ion-item>
+        <ion-item routerLink="/intro">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Sign Out</ion-label>
+          
+        </ion-item>
+        
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 
-    <br>
-    <br>
-    <ion-row>
-      <ion-col>
-        <ion-button expand="block"(click)="ApplyaLoan()">Apply a Loan</ion-button>
-      </ion-col>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-navbar color="primary">
+          <ion-title>Welcome {{username}}</ion-title>
+        </ion-navbar>
+        
+        
+         
+
+      
+      </ion-toolbar>
+    </ion-header>
+    <!--<ion-content class="ion-padding">
+     <ion-card>
+      
+        <ion-item class="ion-align-items-center">
+          <ion-avatar item-start>
+            <img src="assets/img/user.png">
+          </ion-avatar>
+          
+        </ion-item>
+        <h2>{{choose}} {{nameini}}</h2>
+          <p>{{namefull}}</p>
+      
+        <img src="assets/img/paddy.jpg">
+      
+        <ion-card-content>
+          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <button ion-button color="primary" clear small icon-start>
+              <ion-icon name='thumbs-up'></ion-icon>
+              12 Likes
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="primary" clear small icon-start>
+              <ion-icon name='text'></ion-icon>
+              4 Comments
+            </button>
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      
+      </ion-card>
+      
+      
+    </ion-content>-->
+    <!--<ion-content class="ion-padding">
+      <ion-card>
+        <img src="assets/img/paddy.jpg">
+        
+          <ion-avatar class="avatas">
+            <img src="assets/img/user.png">
+          </ion-avatar>
+      
+      
+          <ion-card-content>
+              <ion-card-title class="ion-text-center">
+                Miss Mahoga
+              </ion-card-title>
+              <p class="ion-text-center">
+                  beginner
+              </p>
+          </ion-card-content>
+      
+      </ion-card>
+
+
+
+    </ion-content>-->
+    <ion-content>
+      <ion-card>
+      <div class="container">
+        <ion-img src="assets/img/paddy.jpg" alt="Avatar" class="image"></ion-img>
+        <div class="overlay">
+          <ion-avatar>
+            <img src="assets/img/user.png" alt="Avatar" class="image">
+          </ion-avatar>
+        </div>
+        
+      </div>
+      
+    </ion-card>
+
     
-    </ion-row>
-  </ion-grid>
-  </ion-content>
+    </ion-content>
+  </div>
+</ion-app>
 
-
--->
