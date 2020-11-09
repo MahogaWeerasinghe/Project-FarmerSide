@@ -1,5 +1,5 @@
 
-<ion-content>
+
   <!--
   <ion-header no-border>
     <ion-toolbar color="success">
@@ -10,45 +10,46 @@
     </ion-toolbar>
   </ion-header>
 -->
+<!--
 <ion-header no-border>
   <div class = "login-header ion-padding">
     <img class="logi-img" src="/assets/img/logo1.jpg" alt="logo">
   </div>
+</ion-header>-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" routerLink="/login">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">Log in</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <div class="">
+ <ion-content>
+  <h1>Create your<br />Account</h1>
+      
       <ion-item>
+        <ion-icon slot="start" name="person-outline"></ion-icon>
          <ion-input type="text" placeholder="User Name" [(ngModel)]="username" ></ion-input>
       </ion-item>
-     <!--- <ion-item style="color:#999">
-        <ion-label >Gender</ion-label>
-        <ion-select interface="popover" [(ngModel)]="gender">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
-      </ion-item>
-      <ion-item style="color:#999">
-        <ion-label position="floating">Date Of Birth</ion-label>
-        <ion-datetime displayFormat="YYYY/MM/DD" min="1994-03-14" max="2012-12-09" [(ngModel)]="date_birth"></ion-datetime>
-      </ion-item>
-    -->
+     
+
+   
       <ion-item>
+        <ion-icon slot="start" name="call-outline"></ion-icon>
         <ion-input type="text" placeholder="Telephone Number" [(ngModel)]="telephone_number"></ion-input>
      </ion-item>
      <ion-item>
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
       <ion-input type="password" placeholder="Password" [(ngModel)]="password" ></ion-input>
    </ion-item>
-  <!-- <ion-item>
-    <ion-input type="password" placeholder="Confirm Password" ></ion-input>
- </ion-item>-->
   
-     <ion-button expand="full" class="ion-padding" color="success" (click)="tryRegister()" [disabled]="disableButton">Register</ion-button>
-    </div>
-    </ion-list>
+      <ion-button  expand="block" shape="round" class="ion-padding" color="success" (click)="tryRegister()">Register</ion-button>
     
-  </ion-content>
-  
+      <p>By pressing 'Join Us' you agree to <br />our terms & conditions.</p>
 
 </ion-content>

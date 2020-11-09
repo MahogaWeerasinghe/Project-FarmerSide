@@ -15,7 +15,7 @@ export class PaddyPage implements OnInit {
   ngOnInit() {
   }
 
-  ViewLoans(){
+  /*ViewLoans(){
     this.router.navigate(['/loans']);
-  }
+  }*/
 }

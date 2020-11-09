@@ -12,18 +12,43 @@
 </ion-content>-->
 
 <ion-app>
+  
   <ion-menu side="start" content-id="main-content">
     <ion-header>
-      <ion-toolbar translucent>
+      <ion-toolbar color="secondary">
+      
         <ion-title>Farmer Profile</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      
+     
       <ion-list>
         <ion-item >
-          
-          <ion-label>General</ion-label>
+          <ion-row>
+            <ion-col>
+        <ion-card color="light">
+         <!-- <div class="img-wrapper">
+            <img src="assets/img/user.png" />
+            <ion-button color="light">
+              <ion-icon slot="icon-only" name="camera-outline" color="medium">
+              </ion-icon>
+            </ion-button>
+          </div>-->
+          <!--<ion-card-content class="ion-text-center">
+            <h2> {{choose}} {{nameini}}</h2>
+            <ion-text color="medium">
+              <div style="display: flex;" class="ion-justify-content-center">
+                <ion-icon name="location-outline" color="medium">
+                </ion-icon>
+                <p>{{address}}</p>
+              </div>
+            </ion-text>
+          </ion-card-content>-->
+        </ion-card>
+      </ion-col>
+  </ion-row>
+
+         
         </ion-item>
         <ion-item routerLink="/edit">
           <ion-icon name="person-outline" slot="start"></ion-icon>
@@ -80,102 +105,106 @@
 
   <div class="ion-page" id="main-content">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="primary">
+  
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-navbar color="primary">
+        
           <ion-title>Welcome {{username}}</ion-title>
-        </ion-navbar>
+      
         
         
          
 
-      
-      </ion-toolbar>
+     
+    </ion-toolbar>
     </ion-header>
-    <!--<ion-content class="ion-padding">
-     <ion-card>
-      
-        <ion-item class="ion-align-items-center">
-          <ion-avatar item-start>
-            <img src="assets/img/user.png">
-          </ion-avatar>
-          
-        </ion-item>
-        <h2>{{choose}} {{nameini}}</h2>
-          <p>{{namefull}}</p>
-      
-        <img src="assets/img/paddy.jpg">
-      
-        <ion-card-content>
-          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-        </ion-card-content>
-      
-        <ion-row>
-          <ion-col>
-            <button ion-button color="primary" clear small icon-start>
-              <ion-icon name='thumbs-up'></ion-icon>
-              12 Likes
-            </button>
-          </ion-col>
-          <ion-col>
-            <button ion-button color="primary" clear small icon-start>
-              <ion-icon name='text'></ion-icon>
-              4 Comments
-            </button>
-          </ion-col>
-          <ion-col align-self-center text-center>
-            <ion-note>
-              11h ago
-            </ion-note>
-          </ion-col>
-        </ion-row>
-      
-      </ion-card>
-      
-      
-    </ion-content>-->
-    <ion-content class="ion-padding">
-      <ion-card>
-        <img src="assets/img/paddy.jpg">
-        
-      <!-- <div class="overlay">
-          <ion-avatar >
-            <img src="assets/img/user.png" alt="Avatar" class="image">
-          </ion-avatar>
-          </div>-->
-      
-          <ion-card-content>
-              <ion-card-title class="ion-text-center">
-                {{choose}} {{nameini}}
-              </ion-card-title>
-              <p class="ion-text-center">
-                {{namefull}}
-              </p>
-          </ion-card-content>
-      
-      </ion-card>
-
-
-
-    </ion-content>
-   <!--<ion-content>
-      <ion-card>
-      <div class="container">
-        <ion-img src="assets/img/paddy.jpg" alt="Avatar" class="image"></ion-img>
-        <div class="overlay">
-          <ion-avatar>
-            <img src="assets/img/user.png" alt="Avatar" class="image">
-          </ion-avatar>
-        </div>
-        
-      </div>
-      
-    </ion-card>
 
     
-    </ion-content>-->
+
+
+    <ion-content class="ion-padding">
+
+    <!--  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="chevron-down-circle-outline"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>-->
+      <ion-grid>
+    
+<ion-row>
+  <ion-col>
+    <ion-segment (ionChange)="segmentChanged($event)" value="list1">
+      <ion-segment-button value="list1">
+        <ion-label>
+          Apply Loans
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="list2">
+        <ion-label>
+          My Loans
+        </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+        <ion-card class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'list1'" routerLink="/crop">
+          <img src="assets/img/logo2.jpg" />
+          <ion-card-header>
+            <ion-card-subtitle>For Your Apply Loan Purposes</ion-card-subtitle>
+            <ion-card-title>Paddy , Potato , Maize , Onion </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+           
+          </ion-card-content>
+        </ion-card>
+      
+    
+    
+    <ion-list class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'list2'">
+    <!--  <ion-item>
+        <ion-label>No Loan Obtained</ion-label>
+      </ion-item>-->
+
+      <div class="card-background-page">
+
+     
+      
+        <ion-card routerLink="/tabs">
+          <img src="assets/img/my2.jpg" />
+          <div class="card-title">My Loan History</div>
+          <div class="card-subtitle">Click to view loan history</div>
+        </ion-card>
+        <ion-grid>
+      <ion-row>
+        <ion-col>
+        <ion-card routerLink="/crop">
+          <img src="assets/img/nl2.png" />
+          <div class="card-title">New Loan</div>
+          <div class="card-subtitle">Click to apply a new loan</div>
+        </ion-card>
+      </ion-col>
+    <ion-col>
+        <ion-card>
+          <img src="assets/img/fam2.png" />
+          <div class="card-title">My Profile</div>
+          <div class="card-subtitle">Click to view your Profile</div>
+        </ion-card>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+      </div>
+   </ion-list>
+  </ion-col>
+
+
+</ion-row>
+</ion-grid>
+    </ion-content>
+ 
   </div>
 </ion-app>
 

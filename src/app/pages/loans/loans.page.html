@@ -10,53 +10,31 @@
 
 <ion-content>
 
-  <ion-card>
+  <ion-card *ngFor='let item of items' >
     <img src='../../../assets/img/L1.jpg'/>
     <ion-card-header>
-      <ion-card-subtitle>Agriculture Purposes</ion-card-subtitle>
-      <ion-card-title>Aswenna Loan Scheme</ion-card-title>
+      <ion-card-subtitle>{{item.bank_id}}</ion-card-subtitle>
+      <ion-card-title>{{item.loan_id}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-       
+      {{item.loan_name}}
     </ion-card-content>
 
       <ion-row>
       <ion-col>
     
-        <ion-button size="small" color="medium">View details</ion-button>
+        <ion-button expand="full"color="medium" (click)="ViewLoandetails($event)" id="{{item.loan_id}}">View loan details</ion-button>
       </ion-col>
       <ion-col>
       
-        <ion-button size="small" color="medium">Apply Loan</ion-button>
+        <ion-button size="small" color="medium" (click)="applyloan($event)" id="{{item.loan_id}}">Apply Loan</ion-button>
       </ion-col>
     </ion-row>
 
    
   </ion-card>
 
-  <ion-card>
-    <img src='../../../assets/img/L2.JPG'/>
-    <ion-card-header>
-      <ion-card-subtitle>Agriculture Purposes</ion-card-subtitle>
-      <ion-card-title>NCRCS Loan (New Comprehensive Rural Credit Scheme) </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-       
-    </ion-card-content>
-
-      <ion-row>
-      <ion-col>
-    
-        <ion-button size="small" color="medium">View details</ion-button>
-      </ion-col>
-      <ion-col>
-      
-        <ion-button size="small" color="medium">Apply Loan</ion-button>
-      </ion-col>
-    </ion-row>
-
-   
-  </ion-card>
+ 
 
  
 </ion-content>

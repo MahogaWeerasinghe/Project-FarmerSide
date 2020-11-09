@@ -8,10 +8,10 @@ const routes: Routes = [
     redirectTo: 'intro',
     pathMatch: 'full'
   },
- /* {
+ {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },*/
+  },
   {
     path: 'intro',
     loadChildren: () => import('./pages/intro/intro.module').then( m => m.IntroPageModule)
@@ -48,6 +48,22 @@ const routes: Routes = [
     path: 'change-pw',
     loadChildren: () => import('./pages/change-pw/change-pw.module').then( m => m.ChangePwPageModule)
   },
+  {
+    path: 'application',
+    loadChildren: () => import('./pages/application/application.module').then( m => m.ApplicationPageModule)
+  },
+  {
+    path: 'loandetails',
+    loadChildren: () => import('./pages/loandetails/loandetails.module').then( m => m.LoandetailsPageModule)
+  },
+ /* {
+    path: 'input',
+    loadChildren: () => import('./pages/input/input.module').then( m => m.InputPageModule)
+  },
+  {
+    path: 'application',
+    loadChildren: () => import('./page/application/application.module').then( m => m.ApplicationPageModule)
+  },*/
  /* {
     path: 'loans',
     loadChildren: () => import('./loans/loans.module').then( m => m.LoansPageModule)

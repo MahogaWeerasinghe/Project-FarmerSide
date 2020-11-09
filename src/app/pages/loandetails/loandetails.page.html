@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{loan_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-label position="floating">lo</ion-label>
+
+  <div>
+  <ion-item>
+    <ion-label color="primary"><i>General Information</i> </ion-label>
+  </ion-item>
+ 
+
+  <ion-card>
+    <ion-item>
+      <ion-label>{{genera_info}}</ion-label>
+    </ion-item>
+  </ion-card>
+</div>
+ 
+  <ion-item>
+    <ion-label color="primary"><i>Special Information</i> </ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>{{specific_info}}</ion-label>
+    </ion-item>
+  </ion-card>
+ 
+  
+  <ion-item>
+    <ion-label color="primary"><i>Eligible Borrowers</i> </ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>{{eligible_borrowers}}</ion-label>
+    </ion-item>
+  </ion-card>
+ 
+  <ion-item>
+    <ion-label color="primary"><i>Eligible Crops</i> </ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-item>
+      <ion-label></ion-label>
+    </ion-item>
+  </ion-card>
+
+  <div data-ng-app="" data-ng-init="names={{genera_info}}">
+    <p>Looping with ng-repeat:</p>
+    <ul>
+      <li data-ng-repeat="x in names">
+        {{ x }}
+      </li>
+    </ul>
+  </div>
+   
+  <ion-item>
+    <ion-label color="primary"><i>Maximum Loan Amount</i> </ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-item>
+      <ion-label></ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-item>
+    <ion-label color="primary"><i>Rate of Interest</i> </ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-item>
+      <ion-label></ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-item>
+    <ion-label color="primary"><i>Repayment Period</i> </ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-item>
+      <ion-label></ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-item>
+    <ion-label color="primary"><i>more information</i> </ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-item>
+      <ion-label></ion-label>
+    </ion-item>
+  </ion-card>
+
+
+
+
+
+
+
+ 
+  
+  
+  
+  
+
+</ion-content>

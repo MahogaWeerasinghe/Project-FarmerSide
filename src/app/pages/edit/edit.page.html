@@ -3,7 +3,7 @@
     <ion-title>edit</ion-title>
   </ion-toolbar>-->
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-back-button text="Back" defaultHref="farmer-profile"></ion-back-button>
       </ion-buttons>
@@ -57,7 +57,8 @@
 
 <ion-item>
   <ion-label>Date Of Birth</ion-label>
-  <ion-datetime displayFormat="YYYY/MM/DD" min="1994-03-14" max="2012-12-09" [(ngModel)]='dob'></ion-datetime>
+  <ion-datetime value="1990-02-19" placeholder="Select Date" [(ngModel)]='dob'></ion-datetime>
+  
 </ion-item>
 
 <ion-item>
@@ -84,7 +85,18 @@
 
 
 
+
+
 </ion-list>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
 
 
 </ion-content>

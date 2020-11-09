@@ -11,6 +11,14 @@ import {User, AccessProviders } from '../../pro/access';
   styleUrls: ['./farmer-profile.page.scss'],
 })
 export class FarmerProfilePage implements OnInit {
+  public segment: string = "list1";
+
+
+
+  segmentChanged(ev: any) {
+    this.segment = ev.detail.value;
+  }
+
   username:string="";
   datastore:any;
   server:string='http://localhost:8000';
@@ -75,6 +83,15 @@ export class FarmerProfilePage implements OnInit {
     )
   });
 
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
   }
   ngOnInit() {
   }

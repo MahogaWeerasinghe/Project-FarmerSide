@@ -1,5 +1,7 @@
 {
   "name": "LoanApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

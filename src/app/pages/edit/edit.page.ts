@@ -34,9 +34,21 @@ export class EditPage implements OnInit {
         console.log('Your age is',  val.telephone_number);
         this.telephone_number=val.telephone_number
         
-		});
+    });
+    
+    console.log(this.telephone_number);
 
-		}
+    }
+    
+    
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
 
   ngOnInit() {
   }
@@ -44,7 +56,7 @@ export class EditPage implements OnInit {
  async tryEdit(){
     //this.router.navigate(['/login']);
 
-  
+
     if(this.choose==""){
         this.presentToast("Choose your type");
     }else if(this.nameini==""){

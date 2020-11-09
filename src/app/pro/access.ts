@@ -23,7 +23,7 @@ export class User {
 })
 
 export class AccessProviders{
- server:string='http://localhost:8000';
+ public static server:string='http://localhost:8000';
  currentUser: User;
  isLogged: Boolean = false;
 
@@ -41,7 +41,7 @@ export class AccessProviders{
                  headers:headers
             }
             
-            return this.http.post(this.server+'/api/farmers',JSON.stringify(body),{
+            return this.http.post(AccessProviders.server+'/api/farmers',JSON.stringify(body),{
                 headers: new HttpHeaders().set('Content-Type', 'application/json'),
               }).timeout(59000)
             . map(res=>res);
@@ -58,7 +58,7 @@ export class AccessProviders{
           }
           this.currentUser = new User(body.telephone_number);
           this.isLogged = true;
-          return this.http.post(this.server+'/login',JSON.stringify(body),{
+          return this.http.post(AccessProviders.server+'/login',JSON.stringify(body),{
               headers: new HttpHeaders().set('Content-Type', 'application/json'),
             })
           . map(res=>res
@@ -75,7 +75,7 @@ export class AccessProviders{
              headers:headers
         }
         
-        return this.http.post(this.server+'/editDetails',JSON.stringify(body),{
+        return this.http.post(AccessProviders.server+'/editDetails',JSON.stringify(body),{
             headers: new HttpHeaders().set('Content-Type', 'application/json'),
           }).timeout(59000)
         . map(res=>res);
@@ -91,13 +91,29 @@ export class AccessProviders{
            headers:headers
       }
       
-      return this.http.post(this.server+'/update/'+id,JSON.stringify(body),{
+      return this.http.post(AccessProviders.server+'/update/'+id,JSON.stringify(body),{
           headers: new HttpHeaders().set('Content-Type', 'application/json'),
         }).timeout(59000)
       . map(res=>res);
       
       
   }
+
+  postSubmit(body){
+    let headers=new HttpHeaders({
+        'Content-Type':'applicationJson,charset-UTF-8'
+    });
+    let options={
+         headers:headers
+    }
+    
+    return this.http.post(AccessProviders.server+'/submitloan',JSON.stringify(body),{
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      }).timeout(59000)
+    . map(res=>res);
+    
+    
+}
      
         
 }

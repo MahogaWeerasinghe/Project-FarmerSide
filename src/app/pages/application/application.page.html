@@ -1,0 +1,237 @@
+<ion-header>
+  <ion-toolbar color="primary" class="ion-text-center">
+    <ion-title>Loan Application</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-item>
+  <ion-label>Date</ion-label>
+  <ion-datetime value="1990-02-19" placeholder="Select Date" [(ngModel)]='date'></ion-datetime>
+  
+</ion-item>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Facilities What you want </ion-label>
+    </ion-item>
+    
+    <ion-item>
+ 
+      <ion-label>What Crop type for you want ?</ion-label>
+      <ion-select interface="popover" [(ngModel)]="crop">
+        <ion-select-option >Paddy</ion-select-option>
+        <ion-select-option >Big Onion</ion-select-option>
+        <ion-select-option >Maize</ion-select-option>
+        <ion-select-option >Potato</ion-select-option>
+      </ion-select>
+    
+     </ion-item>
+
+     <ion-item>
+ 
+      <ion-label>What for </ion-label>
+      <ion-select interface="popover" [(ngModel)]="whatfor">
+        <ion-select-option >Investments</ion-select-option>
+        <ion-select-option >Working Capital</ion-select-option>
+      </ion-select>
+    
+     </ion-item>
+
+     <ion-item>
+      <ion-label>Describe in Detail :</ion-label>
+      <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='reason'></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Amount Required :</ion-label>
+      <ion-input type="text" placeholder="Rs :" [(ngModel)]='amount'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Repayment Period :</ion-label>
+        <ion-input type="text" placeholder="No of Months" [(ngModel)]='months'></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Agriculture Reports</ion-button>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Spouse Details</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Name of Wife/Husband in Full :</ion-label>
+          <ion-input type="text" placeholder="Name in Full" [(ngModel)]='spousename'></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>If Spouse is employed state name and address of employer</ion-label>
+            <ion-textarea interface="popover"  placeholder="If Spouse is employed state name and address of employer" [(ngModel)]='spo_emplo'></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>No of dependants & children :</ion-label>
+            <ion-input type="text" placeholder="No of Children" [(ngModel)]='children'></ion-input>
+            </ion-item>
+
+            <ion-item>
+    
+              <ion-button size="small" color="medium" (click)="applyloan($event)" >Attach Income Reports</ion-button>
+              </ion-item>
+
+
+              <ion-item>
+                <ion-label>Bank Details</ion-label>
+              </ion-item>
+
+              <ion-grid item-content>
+                <ion-row>
+                  <ion-col col-3>Bank name</ion-col>
+                  <ion-col col-3>Name of Branch</ion-col>
+                  <ion-col col-3>Account No</ion-col>
+                  <ion-col col-3>Type of Account</ion-col>
+              </ion-row>
+                <ion-row>
+                    <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+            </ion-row>
+          </ion-grid> 
+
+          <ion-item>
+            <ion-label class="hee">Security Information</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label><i>Fixed Property</i> </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Name and Location</ion-label>
+            <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='fix_name'></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Reg.No of deed,Date and notary name</ion-label>
+            <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='fix_deed'></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Size</ion-label>
+            <ion-input type="text" placeholder="Rs :" [(ngModel)]='fix_size'></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Current Value</ion-label>
+              <ion-input type="text" placeholder="Rs :" [(ngModel)]='fix_value'></ion-input>
+              </ion-item>
+
+              <ion-item>
+    
+                <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Income Reports</ion-button>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label><i>Motive Property</i> </ion-label>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>About that Property</ion-label>
+                  <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='mot_about'></ion-textarea>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Location</ion-label>
+                  <ion-input type="text" placeholder="Rs :" [(ngModel)]='mot_location'></ion-input>
+                </ion-item>
+
+
+                  <ion-item>
+                    <ion-label>Current Value</ion-label>
+                    <ion-input type="text" placeholder="Rs :" [(ngModel)]='mot_value'></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+    
+                      <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Income Reports</ion-button>
+                    </ion-item>
+
+
+                 <ion-item>
+                  <ion-label><i>Guarantor 01</i> 
+                  </ion-label>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Full Name</ion-label>
+                  <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua1_name'></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Occupation</ion-label>
+                  <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua1_occ'></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label>Telephone Number</ion-label>
+                    <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua1_tp'></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+  
+                      <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Income Reports</ion-button>
+                      </ion-item>
+
+                      <ion-item>
+                        <ion-label><i>Guarantor 02</i> </ion-label>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label>Full Name</ion-label>
+                        <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='gua2_name'></ion-textarea>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label>Occupation</ion-label>
+                        <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua2_occ'></ion-input>
+                        </ion-item>
+                    
+                        <ion-item>
+                          <ion-label>Telephone Number</ion-label>
+                          <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua2_tp'></ion-input>
+                          </ion-item>
+                    
+                          <ion-item>
+                        
+                            <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Income Reports</ion-button>
+                            </ion-item>
+                    
+                            <ion-item>
+                      
+                              <ion-button size="small" color="medium" (click)="submitapp()">Submit the application</ion-button>
+                              </ion-item>
+
+
+
+  </ion-list>
+
+
+
+
+
+</ion-content>
