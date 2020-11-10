@@ -30,9 +30,9 @@
       </ion-select>
     
      </ion-item>
-
-     <ion-item>
- 
+     <div *ngIf="hide">
+     <ion-item >
+     
       <ion-label>What for </ion-label>
       <ion-select interface="popover" [(ngModel)]="whatfor">
         <ion-select-option >Investments</ion-select-option>
@@ -40,7 +40,7 @@
       </ion-select>
     
      </ion-item>
-
+    </div>
      <ion-item>
       <ion-label>Describe in Detail :</ion-label>
       <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='reason'></ion-textarea>
@@ -57,7 +57,7 @@
         </ion-item>
 
         <ion-item>
-          <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Agriculture Reports</ion-button>
+          <ion-button size="small" color="medium" (click)="attachagrireports()">Attach Agriculture Reports</ion-button>
         </ion-item>
 
         <ion-item>
@@ -97,22 +97,22 @@
                   <ion-col col-3>Type of Account</ion-col>
               </ion-row>
                 <ion-row>
-                    <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
-                    <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
-                    <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
-                    <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
                 </ion-row>
                 <ion-row>
-                  <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
-                  <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
-                  <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
-                  <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
               </ion-row>
               <ion-row>
-                <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
-                <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
-                <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
-                <ion-col col-3><ion-input type="text" value=""></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
             </ion-row>
           </ion-grid> 
 

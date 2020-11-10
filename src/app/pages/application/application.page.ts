@@ -46,6 +46,7 @@ export class ApplicationPage implements OnInit {
   gua2_name:string="";
   gua2_occ:string="";
   gua2_tp:string="";
+  hide=false;
 
   
   disableButton;
@@ -59,16 +60,18 @@ export class ApplicationPage implements OnInit {
     private alertCtrl:AlertController,
     private acessPr:AccessProviders,) { 
 
-    this.storage.get("storage_lo").then((res)=>{
+    this.storage.get("storage_app").then((res)=>{
       console.log("loan id",res);
       this.loan_id=res;
+
+
 
       this.http.get(this.server+'/getloandetails/'+this.loan_id).map(res => res).subscribe(res=>{ 
         //this.storage.set('store_nic',res);
            this.data=res;
   
-             this.nic=this.data.loan_id;
-  
+             this.loan_id=this.data.loan_id;
+             
          });
    
 
@@ -89,6 +92,14 @@ export class ApplicationPage implements OnInit {
     });
   });
   console.log(this.nic);
+
+  if(this.loan_id=="L01"){
+    this.hide=false;
+  }
+
+  else{
+    this.hide=true;
+  }
           
   }
 
@@ -161,6 +172,8 @@ export class ApplicationPage implements OnInit {
         }));
       });
 
+      
+
     
   }
           
@@ -197,6 +210,27 @@ export class ApplicationPage implements OnInit {
 
     await alert.present();
   }
+
+ /* attachagrireports(){
+  
+      const fileTransfer: FileTransferObject = this.transfer.create();
+      let options: FileUploadOptions = {
+      //The name of the form element.(optional)
+      fileKey: ‘file’,
+      
+      //The file name to use when saving the file on the server(optional)
+      fileName: ‘name.pdf’,  
+      headers: {}
+      
+      }
+      fileTransfer.upload('url of your file', 'target url', options)
+      .then((data) => {
+      // success
+      }, (err) => {
+      // error
+      })
+     
+  }*/
 
 
 }

@@ -56,6 +56,10 @@ const routes: Routes = [
     path: 'loandetails',
     loadChildren: () => import('./pages/loandetails/loandetails.module').then( m => m.LoandetailsPageModule)
   },
+  /*{
+    path: 'myloans',
+    loadChildren: () => import('./pages/myloans/myloans.module').then( m => m.MyloansPageModule)
+  },*/
  /* {
     path: 'input',
     loadChildren: () => import('./pages/input/input.module').then( m => m.InputPageModule)
