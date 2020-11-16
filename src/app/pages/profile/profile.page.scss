@@ -1,0 +1,22 @@
+#header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+     width: 150px;
+      height: 150px;
+
+    h1 {
+      font-weight: 700;
+      font-size: 26px;
+      color: #010100;
+      margin-bottom: 15%;
+    }
+
+    img {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      border: 8px solid #ffffff;
+      align-items: center;
+    }
+  }

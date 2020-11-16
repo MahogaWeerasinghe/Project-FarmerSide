@@ -19,7 +19,7 @@ export class FarmerProfilePage implements OnInit {
     this.segment = ev.detail.value;
   }
 
-  username:string="";
+  username:string="User";
   datastore:any;
   server:string='http://localhost:8000';
   telephone_number:string="";
@@ -32,7 +32,7 @@ export class FarmerProfilePage implements OnInit {
  TpNo :string="";
  dob:string="";
  nic:string="";
-
+data2:any;
   
   constructor(private router :Router,
     private storage:Storage,
@@ -41,18 +41,20 @@ export class FarmerProfilePage implements OnInit {
     private acessPr:AccessProviders,)  { 
      
   this.storage.get('storage_XXX').then((res)=>{
- // console.log('Your name is',  res.username);
-  this.username=res.username;
-  //console.log('Your name is',  this.username);
 
-    //console.log(res);
-    //this.datastore=res;
+  this.username=res.username;
+  
     this.telephone_number=res.telephone_number;
-    //console.log(this.telephone_number);
+    
+    console.log("in farmer profile",this.telephone_number);
    
     
-  this.http.get(this.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
-    this.storage.set('storage2',res);
+  this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+    this.data2=res;  
+    //this.namefull=this.data2.namefull;
+    console.log("in farmer profile ",this.data2.nic);
+
+  this.storage.set('storage2',res);
       
         console.log(res);
         this.storage.get('storage2').then((res)=>{
@@ -67,7 +69,7 @@ export class FarmerProfilePage implements OnInit {
           this.dob=res.dob;
           this.nic=res.nic;
 
-          console.log(this.dob);
+          //console.log("in farmer profile ",this.nic);
 
 
         })
@@ -96,7 +98,9 @@ export class FarmerProfilePage implements OnInit {
   ngOnInit() {
   }
 
-  
+  slidesDidLoad(slides) {
+    slides.startAutoplay();
+  }
  
   
 

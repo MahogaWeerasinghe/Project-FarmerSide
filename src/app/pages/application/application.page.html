@@ -57,13 +57,33 @@
         </ion-item>
 
         <ion-item>
-          <ion-button size="small" color="medium" (click)="attachagrireports()">Attach Agriculture Reports</ion-button>
+          
+          <ion-button color="primary"  (click)="presentActionSheet()">Attach Agriculture Reports</ion-button>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6 *ngFor="let p of photos">
+                <img [src]="p"/>
+              </ion-col>
+            
+            </ion-row>
+        </ion-grid>
         </ion-item>
 
         <ion-item>
           <ion-label>Spouse Details</ion-label>
         </ion-item>
 
+        <ion-item >
+     
+          <ion-label>Civil Status</ion-label>
+          <ion-select interface="popover" [(ngModel)]="civil">
+            <ion-select-option >Married</ion-select-option>
+            <ion-select-option >Not Married</ion-select-option>
+            <ion-select-option >Divorced</ion-select-option>
+          </ion-select>
+        
+         </ion-item>
+          
         <ion-item>
           <ion-label>Name of Wife/Husband in Full :</ion-label>
           <ion-input type="text" placeholder="Name in Full" [(ngModel)]='spousename'></ion-input>
@@ -126,6 +146,22 @@
           <ion-item>
             <ion-label>Name and Location</ion-label>
             <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='fix_name'></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-button color="primary"  (click)="location()">Mark the land</ion-button>
+            <ion-row>
+                <ion-col col-4>
+                    <ion-button color="primary"  (click)="addlocation()">Add</ion-button>
+                </ion-col>
+               <ion-col col-4>
+                  Latitude :<strong>{{l1}}</strong>
+               </ion-col>
+               <ion-col col-4>
+                longitude :<strong>{{l2}}</strong>
+              </ion-col >
+            </ion-row>
+            Address:<ion-input type="text" placeholder="Address"  [(ngModel)]="addr"></ion-input>
           </ion-item>
 
           <ion-item>

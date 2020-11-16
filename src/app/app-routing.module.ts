@@ -56,6 +56,22 @@ const routes: Routes = [
     path: 'loandetails',
     loadChildren: () => import('./pages/loandetails/loandetails.module').then( m => m.LoandetailsPageModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'updatedetails',
+    loadChildren: () => import('./pages/updatedetails/updatedetails.module').then( m => m.UpdatedetailsPageModule)
+  },
+  {
+    path: 'gmap',
+    loadChildren: () => import('./pages/gmap/gmap.module').then( m => m.GmapPageModule)
+  },
+  {
+    path: 'demo',
+    loadChildren: () => import('./pages/demo/demo.module').then( m => m.DemoPageModule)
+  },
   /*{
     path: 'myloans',
     loadChildren: () => import('./pages/myloans/myloans.module').then( m => m.MyloansPageModule)

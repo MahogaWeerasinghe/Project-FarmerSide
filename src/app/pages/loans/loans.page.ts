@@ -88,7 +88,7 @@ export class LoansPage implements OnInit {
     console.log(this.dat);
     this.storage.set('storage_app',this.dat);
 
-    this.http.get(this.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+    this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
       //this.storage.set('storage2',res);
         
           console.log(res);

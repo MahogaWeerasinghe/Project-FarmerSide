@@ -11,7 +11,7 @@
 <ion-content>
 </ion-content>-->
 
-<ion-app>
+
   
   <ion-menu side="start" content-id="main-content">
     <ion-header>
@@ -26,7 +26,7 @@
         <ion-item >
           <ion-row>
             <ion-col>
-        <ion-card color="light">
+       
          <!-- <div class="img-wrapper">
             <img src="assets/img/user.png" />
             <ion-button color="light">
@@ -44,7 +44,13 @@
               </div>
             </ion-text>
           </ion-card-content>-->
-        </ion-card>
+
+          <div class="pro">
+            <img src="https://img.icons8.com/color/100/000000/farmer-male--v1.png"/>
+            <h1 style="font-size:1.4em" no-margin>Welcome <br>
+              {{username}}</h1>
+            </div>
+      
       </ion-col>
   </ion-row>
 
@@ -126,14 +132,14 @@
 
     <ion-content class="ion-padding">
 
-    <!--  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
         <ion-refresher-content
           pullingIcon="chevron-down-circle-outline"
           pullingText="Pull to refresh"
           refreshingSpinner="circles"
           refreshingText="Refreshing...">
         </ion-refresher-content>
-      </ion-refresher>-->
+      </ion-refresher>
       <ion-grid>
     
 <ion-row>
@@ -151,7 +157,7 @@
       </ion-segment-button>
     </ion-segment>
     
-        <ion-card class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'list1'" routerLink="/crop">
+       <!-- <ion-card class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'list1'" routerLink="/crop">
           <img src="assets/img/logo2.jpg" />
           <ion-card-header>
             <ion-card-subtitle>For Your Apply Loan Purposes</ion-card-subtitle>
@@ -160,7 +166,39 @@
           <ion-card-content>
            
           </ion-card-content>
-        </ion-card>
+        </ion-card>-->
+ 
+      <ion-slides *ngIf="segment === 'list1'"  pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
+
+        <ion-slide>
+          <div class="slide">
+            <img src='../../../assets/img/S1.png'/>
+            <h2>Welcome</h2>
+            <p>The <b>Govi - Navoda Loan App</b> is the easiest way to get  a agriculture Loan</p>
+          </div>
+        </ion-slide>
+
+        <ion-slide>
+          <img src="/assets/img/S2.jpg">
+          <h2>What is "Govi - Navoda" ?</h2>
+          <p><b>Govi - Navoda </b> is a mobile application for applying for agriculture loans to farmers.We provide several kind of banks to get your loans.So You can get a basic confirmation by that app.</p>
+        </ion-slide>
+
+        <ion-slide>
+          <img src="/assets/img/S3.jpg">
+          <h2>What are the Banks ?</h2>
+          <p>We have that banks</p>
+        </ion-slide>
+
+    <ion-slide>
+          <img src="/assets/img/S4.jpg">
+          <h2>Ready to get a loan ?</h2>
+          <ion-button fill="clear" (click)="tologin()">Login First <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+        </ion-slide>
+
+
+      </ion-slides>
+ 
       
     
     
@@ -168,13 +206,12 @@
     <!--  <ion-item>
         <ion-label>No Loan Obtained</ion-label>
       </ion-item>-->
-
-      <div class="card-background-page">
+  <div class="card-background-page">
 
      
       
         <ion-card routerLink="/tabs">
-          <img src="assets/img/my2.jpg" />
+          <img src="/assets/img/S5.jpg"/>
           <div class="card-title">My Loan History</div>
           <div class="card-subtitle">Click to view loan history</div>
         </ion-card>
@@ -182,14 +219,14 @@
       <ion-row>
         <ion-col>
         <ion-card routerLink="/crop">
-          <img src="assets/img/nl2.png" />
+          <img src="/assets/img/P2.jpg"/>
           <div class="card-title">New Loan</div>
           <div class="card-subtitle">Click to apply a new loan</div>
         </ion-card>
       </ion-col>
     <ion-col>
-        <ion-card>
-          <img src="assets/img/fam2.png" />
+        <ion-card routerLink="/profile">
+          <img src="assets/img/farmedit.png" />
           <div class="card-title">My Profile</div>
           <div class="card-subtitle">Click to view your Profile</div>
         </ion-card>
@@ -197,6 +234,10 @@
       </ion-row>
     </ion-grid>
       </div>
+   
+        
+        
+      
    </ion-list>
   </ion-col>
 
@@ -206,5 +247,5 @@
     </ion-content>
  
   </div>
-</ion-app>
+
 

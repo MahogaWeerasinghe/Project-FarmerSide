@@ -48,7 +48,7 @@ export class LoandetailsPage implements OnInit {
         this.maximum_loanamount=this.items.aximum_loanamount;
         this.Rateofinterest=this.items.Rateofinterest;
         this.Repaymentperiod=this.items.Repaymentperiod;
-        this.more_info=this.items.ore_info;
+        this.more_info=this.items.more_info;
 
         
 

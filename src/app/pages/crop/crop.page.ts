@@ -11,7 +11,7 @@ import {User, AccessProviders } from '../../pro/access';
   styleUrls: ['./crop.page.scss'],
 })
 export class CropPage implements OnInit {
-  server:string='http://localhost:8000';
+ // server:string='http://localhost:8000';
   public items : any;
   i:any;
   data:any;
@@ -28,7 +28,7 @@ export class CropPage implements OnInit {
    }
 
   getdata(){
-    this.http.get(this.server+'/bankdetails').map(res => res).subscribe(res=>{ 
+    this.http.get(AccessProviders.server+'/bankdetails').map(res => res).subscribe(res=>{ 
       this.items=res;
       console.log(res);
     });

@@ -3,20 +3,20 @@ ion-slide {
     flex-direction: column;
 }
 
-ion-img {
+/*ion-img {
     max-width: 50vh;
     max-height: 50vh;
     overflow: hidden;
-}
+}*/
 
 .slide-one {
-    background :url('../../../assets/img/background.jpeg') 0 0/ 100% 100% no-repeat;
-    color :#fff;
+   // background :url('../../../assets/img/background.jpeg') 0 0/ 100% 100% no-repeat;
+    color :rgb(2, 2, 2);
 }
 
 .slide-two {
-    background :url('../../../assets/img/loan.jpg') 0 0/ 100% 100% no-repeat;
-    color :#fff;
+   // background :url('../../../assets/img/S1.png') 0 0/ 100% 100% no-repeat;
+    color :rgb(2, 2, 2);
 
 }
 
@@ -29,3 +29,10 @@ ion-img {
     font-size: 14px;
 }
 
+ion-img {
+    max-height: 50%;
+    max-width: 80%;
+    margin: 60px 0 40px;
+    pointer-events: none;
+    overflow: hidden;
+}

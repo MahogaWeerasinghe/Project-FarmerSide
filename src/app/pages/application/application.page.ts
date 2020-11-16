@@ -4,8 +4,16 @@ import { Router,ActivatedRoute } from '@angular/router';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
 import { ToastController,LoadingController,AlertController,NavController } from '@ionic/angular';
 import {User, AccessProviders } from '../../pro/access';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { ActionSheetController } from '@ionic/angular';
+import { Injectable } from '@angular/core';
 
+//import { Console } from 'console';
 
+@Injectable({
+  providedIn: 'root' // just before your class
+})
 
 @Component({
   selector: 'app-application',
@@ -22,6 +30,12 @@ export class ApplicationPage implements OnInit {
   telephone_number:string="";
   nic:string="";
   loan_id:string="";
+
+
+  public photos:any;
+  cameradata:string;
+  base64Image:string
+
 
   date:string="";
   crop:string="";
@@ -47,6 +61,9 @@ export class ApplicationPage implements OnInit {
   gua2_occ:string="";
   gua2_tp:string="";
   hide=false;
+  l1:any;
+  l2:any;
+  addr:any;
 
   
   disableButton;
@@ -58,7 +75,9 @@ export class ApplicationPage implements OnInit {
     private toastCtrl:ToastController,
     private loadingCtrl:LoadingController,
     private alertCtrl:AlertController,
-    private acessPr:AccessProviders,) { 
+    private acessPr:AccessProviders,
+    private camera: Camera,
+    public actionSheetController: ActionSheetController,) { 
 
     this.storage.get("storage_app").then((res)=>{
       console.log("loan id",res);
@@ -66,7 +85,7 @@ export class ApplicationPage implements OnInit {
 
 
 
-      this.http.get(this.server+'/getloandetails/'+this.loan_id).map(res => res).subscribe(res=>{ 
+      this.http.get(AccessProviders.server+'/getloandetails/'+this.loan_id).map(res => res).subscribe(res=>{ 
         //this.storage.set('store_nic',res);
            this.data=res;
   
@@ -82,16 +101,18 @@ export class ApplicationPage implements OnInit {
 
     
 
-    this.http.get(this.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+    this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
      //this.storage.set('store_nic',res);
-        this.data=res;
-
-          this.nic=this.data.nic;
+     console.log(res);
+       this.data=res;
+       console.log(this.data);
+         this.nic=this.data.nic;
+         console.log("NIC" ,this.data.nic);
 
       });
     });
   });
-  console.log(this.nic);
+  
 
   if(this.loan_id=="L01"){
     this.hide=false;
@@ -106,10 +127,17 @@ export class ApplicationPage implements OnInit {
   
 
   ngOnInit() {
+    this.photos=[];
   }
   
   async submitapp(){
-    
+    console.log("NIC" ,this.nic);
+    console.log("NIC" ,this.loan_id);
+    console.log(this.crop);
+    console.log(this.date);
+    console.log(this.date);
+    console.log(this.date);
+    console.log(this.date);
     if(this.date==""){
       this.presentToast("Date is required");
   }else if(this.crop==""){
@@ -211,6 +239,22 @@ export class ApplicationPage implements OnInit {
     await alert.present();
   }
 
+  location(){
+    this.router.navigate(['/gmap']);
+  }
+
+  addlocation(){
+
+    this.storage.get('storage_location').then((res)=>{
+      console.log(res);
+      this.l1=res.t1;
+      this.l2=res.t2;
+      this.addr=res.t3;
+      //this.name=this.datastorage.Name;
+      console.log(this.l1);
+    });
+  }
+
  /* attachagrireports(){
   
       const fileTransfer: FileTransferObject = this.transfer.create();
@@ -232,5 +276,71 @@ export class ApplicationPage implements OnInit {
      
   }*/
 
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'choice media',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'camera',
+        role: 'destructive',
+        icon: 'camera',
+        handler: () => {
+         this.openCamera();
+        }
+      }, {
+        text: 'Gallery',
+        icon: 'camera',
+        handler: () => {
+          this.openGallery();
+        }
+      }
+      ]
+    });
+    await actionSheet.present();
+  }
+  add(){
+    let body={
+      images:this.cameradata
+    };
+  
+  }
+
+  openCamera(){
+    const options: CameraOptions = {
+      quality: 20,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+      this.cameradata=imageData;
+     this.base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.photos.push(this.base64Image);
+      this.photos.reverse();
+    }, (err) => {
+     // Handle error
+    });
+  }
+
+  openGallery(){
+    const options: CameraOptions = {
+      quality: 20,
+      sourceType:this.camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     this.cameradata=imageData;
+   this.base64Image = 'data:image/jpeg;base64,' + imageData;
+   this.photos.push(this.base64Image);
+   this.photos.reverse();
+    }, (err) => {
+     // Handle error
+    });
+  }
 
 }

@@ -5,11 +5,11 @@
 </ion-header>-->
 
 <ion-content>
-  <ion-slides pager = "true">
+  <ion-slides pager = "true" pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)" speed="3000">
     <ion-slide class="slide-one">
-      <img src="/assets/icon/Farmer.png">
-      <b><h1>GOVI - NENA </h1></b> 
-      <p class = "labelintro">
+      <img src="/assets/img/S5.jpg">
+      <b><h1 color="primary">Govi - Navoda Loan App</h1></b> 
+      <p class = "labelintro" color="primary">
         FOR YOUR AGRICULTURE LOAN PURPOSES
         
       </p>
@@ -21,7 +21,10 @@
           That's the Way
       </p>
         <ion-button color="success" (click)="openLogin()">Let's Login</ion-button>
-      
+      <br>
+
+      <br>
+      <ion-button color="dark" (click)="opendemo()">Quick Demo To Govi - Navoda Loan App</ion-button>
     </ion-slide>
   </ion-slides>
 

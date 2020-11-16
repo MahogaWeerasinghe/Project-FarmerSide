@@ -20,4 +20,13 @@ export class IntroPage implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  opendemo(){
+    this.router.navigate(['/demo']);
+  }
+
+  
+  slidesDidLoad(slides) {
+    slides.startAutoplay();
+  }
+ 
 }

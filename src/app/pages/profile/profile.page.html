@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="farmer-profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header no-border>
+  
+  <div id="header">
+  
+    <img src="https://img.icons8.com/color/100/000000/farmer-male--v1.png"/>
+  </div>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>Name with initial</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{choose}} {{nameini}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>Name in full</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{namefull}}
+    </ion-card-content>
+  </ion-card>
+  
+  
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>Address</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{address}}
+    </ion-card-content>
+  </ion-card>
+
+  
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>Telephone Number</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{TpNo}}
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>Date of Birth</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{dob}}
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>NIC No</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{nic}}
+    </ion-card-content>
+  </ion-card>
+
+  
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>E-mail address</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+     {{email}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row>
+    <ion-col>
+        
+      <ion-button size="small" color="medium" (click)="tryUpdate()" [disabled]="disableButton">Update Details</ion-button>
+    </ion-col>
+   </ion-row>
+  
+  
+ 
+
+</ion-content>

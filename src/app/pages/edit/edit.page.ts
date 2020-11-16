@@ -56,7 +56,6 @@ export class EditPage implements OnInit {
  async tryEdit(){
     //this.router.navigate(['/login']);
 
-
     if(this.choose==""){
         this.presentToast("Choose your type");
     }else if(this.nameini==""){

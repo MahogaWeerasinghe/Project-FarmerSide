@@ -64,12 +64,9 @@ export class LoginPage implements OnInit {
               console.log(res.data);
               
               this.storage.get('storage_XXX').then((val) => {
-                console.log('Your age is',  val.telephone_number);
-               // val.telephone_number
-                
-              //var getBackMyJSON = $('storage_XXX').data('telephone_number').key;
-              //console.log('Your age is', getBackMyJSON);
-              //this.navCtrl.push(farmerprofile,body);
+                console.log('Your login tp is',  val.telephone_number);
+                //console.log('Your login name is',  val.username);
+              
               });
             }else{
               loader.dismiss();
