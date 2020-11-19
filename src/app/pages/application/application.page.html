@@ -1,5 +1,9 @@
 <ion-header>
-  <ion-toolbar color="primary" class="ion-text-center">
+
+  <ion-toolbar color="secondary"  class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="crop"></ion-back-button>
+    </ion-buttons>
     <ion-title>Loan Application</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,6 +14,10 @@
   <ion-datetime value="1990-02-19" placeholder="Select Date" [(ngModel)]='date'></ion-datetime>
   
 </ion-item>
+
+
+
+
 
 <ion-content>
 
@@ -30,17 +38,21 @@
       </ion-select>
     
      </ion-item>
-     <div *ngIf="hide">
+    
      <ion-item >
      
       <ion-label>What for </ion-label>
       <ion-select interface="popover" [(ngModel)]="whatfor">
-        <ion-select-option >Investments</ion-select-option>
-        <ion-select-option >Working Capital</ion-select-option>
+        <ion-select-option >To get Property</ion-select-option>
+        <ion-select-option >Machinery purposes</ion-select-option>
+        <ion-select-option >Infrastructure development</ion-select-option>
+        <ion-select-option >To get Seeds</ion-select-option>
+        <ion-select-option >Fertilizer Purposes</ion-select-option>
+        <ion-select-option >Chemical(pest/weed)</ion-select-option>
       </ion-select>
     
      </ion-item>
-    </div>
+ 
      <ion-item>
       <ion-label>Describe in Detail :</ion-label>
       <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='reason'></ion-textarea>
@@ -57,17 +69,16 @@
         </ion-item>
 
         <ion-item>
-          
-          <ion-button color="primary"  (click)="presentActionSheet()">Attach Agriculture Reports</ion-button>
+          <ion-button color="secondary"   (click)="AgrireportActionSheet()">Attach Agriculture Reports</ion-button>
+        </ion-item>
           <ion-grid>
             <ion-row>
               <ion-col col-6 *ngFor="let p of photos">
                 <img [src]="p"/>
               </ion-col>
-            
             </ion-row>
         </ion-grid>
-        </ion-item>
+        
 
         <ion-item>
           <ion-label>Spouse Details</ion-label>
@@ -101,8 +112,15 @@
 
             <ion-item>
     
-              <ion-button size="small" color="medium" (click)="applyloan($event)" >Attach Income Reports</ion-button>
+              <ion-button size="small" color="secondary" (click)="incomereportActionSheet()">Attach Income Reports</ion-button>
               </ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-6 *ngFor="let p of repo">
+                    <img [src]="p"/>
+                  </ion-col>
+                </ion-row>
+            </ion-grid>
 
 
               <ion-item>
@@ -117,25 +135,25 @@
                   <ion-col col-3>Type of Account</ion-col>
               </ion-row>
                 <ion-row>
-                    <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
-                    <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
-                    <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
-                    <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" [(ngModel)]='B1name'></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" [(ngModel)]='B1branch'></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" [(ngModel)]='B1accountno'></ion-input></ion-col>
+                    <ion-col col-3><ion-input type="text" [(ngModel)]='B1type'></ion-input></ion-col>
                 </ion-row>
                 <ion-row>
-                  <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
-                  <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
-                  <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
-                  <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" [(ngModel)]='B2name'></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" [(ngModel)]='B2branch'></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" [(ngModel)]='B2accountno'></ion-input></ion-col>
+                  <ion-col col-3><ion-input type="text" [(ngModel)]='B2type'></ion-input></ion-col>
               </ion-row>
               <ion-row>
-                <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
-                <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
-                <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
-                <ion-col col-3><ion-input type="text" ></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" [(ngModel)]='B3name'></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" [(ngModel)]='B3branch'></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" [(ngModel)]='B3accountno'></ion-input></ion-col>
+                <ion-col col-3><ion-input type="text" [(ngModel)]='B3type'></ion-input></ion-col>
             </ion-row>
           </ion-grid> 
-
+      
           <ion-item>
             <ion-label class="hee">Security Information</ion-label>
           </ion-item>
@@ -145,33 +163,38 @@
 
           <ion-item>
             <ion-label>Name and Location</ion-label>
-            <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='fix_name'></ion-textarea>
+            <ion-textarea interface="popover"  placeholder="Name and Location" [(ngModel)]='fix_name'></ion-textarea>
           </ion-item>
 
           <ion-item>
-            <ion-button color="primary"  (click)="location()">Mark the land</ion-button>
             <ion-row>
+              <ion-col col-4>
+            <ion-button color="secondary"  (click)="location()">Mark the land</ion-button>
+          </ion-col>
                 <ion-col col-4>
-                    <ion-button color="primary"  (click)="addlocation()">Add</ion-button>
+                    <ion-button color="secondary"  (click)="addlocation()">Add</ion-button>
                 </ion-col>
                <ion-col col-4>
-                  Latitude :<strong>{{l1}}</strong>
+                  Latitude :<strong>{{i1}}</strong>
                </ion-col>
                <ion-col col-4>
-                longitude :<strong>{{l2}}</strong>
+                longitude :<strong>{{i2}}</strong>
               </ion-col >
             </ion-row>
-            Address:<ion-input type="text" placeholder="Address"  [(ngModel)]="addr"></ion-input>
+          </ion-item>
+          <ion-item>
+            Address:<ion-textarea type="text" placeholder="Address"  [(ngModel)]="addr"></ion-textarea>
+    
           </ion-item>
 
           <ion-item>
             <ion-label>Reg.No of deed,Date and notary name</ion-label>
-            <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='fix_deed'></ion-textarea>
+            <ion-textarea interface="popover"  placeholder="Reg.No of deed,Date and notary name" [(ngModel)]='fix_deed'></ion-textarea>
           </ion-item>
 
           <ion-item>
             <ion-label>Size</ion-label>
-            <ion-input type="text" placeholder="Rs :" [(ngModel)]='fix_size'></ion-input>
+            <ion-input type="text" placeholder="Size" [(ngModel)]='fix_size'></ion-input>
             </ion-item>
 
             <ion-item>
@@ -181,7 +204,7 @@
 
               <ion-item>
     
-                <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Income Reports</ion-button>
+                <ion-button size="small" color="secondary" (click)="fixeddocumentActionSheet()">Attach Documents</ion-button>
                 </ion-item>
 
                 <ion-item>
@@ -190,12 +213,12 @@
 
                 <ion-item>
                   <ion-label>About that Property</ion-label>
-                  <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='mot_about'></ion-textarea>
+                  <ion-textarea interface="popover"  placeholder="About that Property" [(ngModel)]='mot_about'></ion-textarea>
                 </ion-item>
 
                 <ion-item>
                   <ion-label>Location</ion-label>
-                  <ion-input type="text" placeholder="Rs :" [(ngModel)]='mot_location'></ion-input>
+                  <ion-input type="text" placeholder="Location" [(ngModel)]='mot_location'></ion-input>
                 </ion-item>
 
 
@@ -206,7 +229,7 @@
 
                   <ion-item>
     
-                      <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Income Reports</ion-button>
+                    <ion-button size="small" color="secondary" (click)="motivedocumentsActionSheet()">Attach Documents</ion-button>
                     </ion-item>
 
 
@@ -217,22 +240,22 @@
 
                 <ion-item>
                   <ion-label>Full Name</ion-label>
-                  <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua1_name'></ion-input>
+                  <ion-input type="text" placeholder="Full Name" [(ngModel)]='gua1_name'></ion-input>
                 </ion-item>
 
                 <ion-item>
                   <ion-label>Occupation</ion-label>
-                  <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua1_occ'></ion-input>
+                  <ion-input type="text" placeholder="Occupation" [(ngModel)]='gua1_occ'></ion-input>
                   </ion-item>
 
                   <ion-item>
                     <ion-label>Telephone Number</ion-label>
-                    <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua1_tp'></ion-input>
+                    <ion-input type="text" placeholder="Telephone Number" [(ngModel)]='gua1_tp'></ion-input>
                     </ion-item>
 
                     <ion-item>
   
-                      <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Income Reports</ion-button>
+                      <ion-button size="small" color="secondary" (click)="gua1ActionSheet()">Attach Income Reports</ion-button>
                       </ion-item>
 
                       <ion-item>
@@ -240,27 +263,27 @@
                       </ion-item>
                       <ion-item>
                         <ion-label>Full Name</ion-label>
-                        <ion-textarea interface="popover"  placeholder="Reason For Applying a Loan" [(ngModel)]='gua2_name'></ion-textarea>
+                        <ion-textarea interface="popover"  placeholder="Full Name" [(ngModel)]='gua2_name'></ion-textarea>
                       </ion-item>
                       <ion-item>
                         <ion-label>Occupation</ion-label>
-                        <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua2_occ'></ion-input>
+                        <ion-input type="text" placeholder="Occupation" [(ngModel)]='gua2_occ'></ion-input>
                         </ion-item>
                     
                         <ion-item>
                           <ion-label>Telephone Number</ion-label>
-                          <ion-input type="text" placeholder="Rs :" [(ngModel)]='gua2_tp'></ion-input>
+                          <ion-input type="text" placeholder="Telephone Number" [(ngModel)]='gua2_tp'></ion-input>
                           </ion-item>
                     
                           <ion-item>
                         
-                            <ion-button size="small" color="medium" (click)="applyloan($event)">Attach Income Reports</ion-button>
+                            <ion-button size="small" color="secondary" (click)="gua2ActionSheet()">Attach Income Reports</ion-button>
                             </ion-item>
                     
-                            <ion-item>
+                           
                       
-                              <ion-button size="small" color="medium" (click)="submitapp()">Submit the application</ion-button>
-                              </ion-item>
+                              <ion-button expand="block" color="secondary" (click)="submitapp()">Submit the application</ion-button>
+                             
 
 
 
@@ -270,4 +293,4 @@
 
 
 
-</ion-content>
+</ion-content>-->

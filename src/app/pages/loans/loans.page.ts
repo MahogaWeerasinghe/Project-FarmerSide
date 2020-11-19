@@ -12,7 +12,7 @@ import {User, AccessProviders } from '../../pro/access';
   styleUrls: ['./loans.page.scss'],
 })
 export class LoansPage implements OnInit {
-  server:string='http://localhost:8000';
+  //server:string='http://localhost:8000';
   public items : any;
   i:any;
   data:any;

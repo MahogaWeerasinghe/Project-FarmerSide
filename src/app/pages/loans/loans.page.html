@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start">
       <ion-back-button text="Back" defaultHref="crop"></ion-back-button>
     </ion-buttons>
@@ -11,23 +11,20 @@
 <ion-content>
 
   <ion-card *ngFor='let item of items' >
-    <img src='../../../assets/img/L1.jpg'/>
+    <img src='../../../assets/img/{{item.loan_logo}}'/>
     <ion-card-header>
-      <ion-card-subtitle>{{item.bank_id}}</ion-card-subtitle>
-      <ion-card-title>{{item.loan_id}}</ion-card-title>
+     
+      <ion-card-title> {{item.loan_name}}</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      {{item.loan_name}}
-    </ion-card-content>
-
+   
       <ion-row>
       <ion-col>
     
-        <ion-button expand="full"color="medium" (click)="ViewLoandetails($event)" id="{{item.loan_id}}">View loan details</ion-button>
+        <ion-button expand="full" color="secondary"(click)="ViewLoandetails($event)" id="{{item.loan_id}}">View loan details</ion-button>
       </ion-col>
       <ion-col>
       
-        <ion-button size="small" color="medium" (click)="applyloan($event)" id="{{item.loan_id}}">Apply Loan</ion-button>
+        <ion-button size="full" color="secondary" (click)="applyloan($event)" id="{{item.loan_id}}">Apply Loan</ion-button>
       </ion-col>
     </ion-row>
 

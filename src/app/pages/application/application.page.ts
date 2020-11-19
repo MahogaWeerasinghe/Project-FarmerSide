@@ -8,6 +8,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { ActionSheetController } from '@ionic/angular';
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 
 //import { Console } from 'console';
 
@@ -30,12 +31,36 @@ export class ApplicationPage implements OnInit {
   telephone_number:string="";
   nic:string="";
   loan_id:string="";
+  store:any;
 
+  appid:string="";
 
   public photos:any;
+  public repo:any;
+  public fix:any;
+  public mot:any;
+  public gu1:any;
+  public gua2:any;
+
+
+
   cameradata:string;
   base64Image:string
 
+  B1name:string="";
+  B1branch:string="";
+  B1accountno:string="";
+  B1type:string="";
+
+  B2name:string="";
+  B2branch:string="";
+  B2accountno:string="";
+  B2type:string="";
+
+  B3name:string="";
+  B3branch:string="";
+  B3accountno:string="";
+  B3type:string="";
 
   date:string="";
   crop:string="";
@@ -61,8 +86,8 @@ export class ApplicationPage implements OnInit {
   gua2_occ:string="";
   gua2_tp:string="";
   hide=false;
-  l1:any;
-  l2:any;
+  i1:any;
+  i2:any;
   addr:any;
 
   
@@ -128,9 +153,79 @@ export class ApplicationPage implements OnInit {
 
   ngOnInit() {
     this.photos=[];
+    this.repo=[];
   }
   
   async submitapp(){
+      console.log(this.nic);
+      console.log(this.B1name);
+      console.log(this.B2name);
+      console.log(this.B3name);
+    
+      if(this.B1name!=""){
+      let body ={
+        nic :this.nic,
+        bank_name : this.B1name,
+        branch : this.B1branch,
+        accountno : this.B1accountno,
+        type : this.B1type,
+  
+  
+      }
+  
+      this.acessPr.postaccount(body).subscribe((res:any)=>{
+        console.log(res);
+      },
+      (err: any) => {
+        console.log(err);
+        
+      });
+  }
+
+        
+  if(this.B2name!=""){
+    let body ={
+      nic :this.nic,
+      bank_name : this.B2name,
+      branch : this.B2branch,
+      accountno : this.B2accountno,
+      type : this.B2type,
+
+
+    }
+
+    this.acessPr.postaccount(body).subscribe((res:any)=>{
+      console.log(res);
+    },
+    (err: any) => {
+      console.log(err);
+      
+    });
+}
+
+    
+if(this.B3name!=""){
+  let body ={
+    nic :this.nic,
+    bank_name : this.B3name,
+    branch : this.B3branch,
+    accountno : this.B3accountno,
+    type : this.B3type,
+
+
+  }
+
+  this.acessPr.postaccount(body).subscribe((res:any)=>{
+    console.log(res);
+  },
+  (err: any) => {
+    console.log(err);
+    
+  });
+}
+
+    console.log("agrii",this.photos);
+    console.log("income",this.repo);
     console.log("NIC" ,this.nic);
     console.log("NIC" ,this.loan_id);
     console.log(this.crop);
@@ -156,7 +251,7 @@ export class ApplicationPage implements OnInit {
         let body={
           loan_id:this.loan_id,
           nic:this.nic,
-          date:this.date,
+          date:moment(this.date).format('YYYY-MM-DD'),
           crop:this.crop,
           whatfor:this.whatfor,
           reason:this.reason,
@@ -179,14 +274,39 @@ export class ApplicationPage implements OnInit {
           gua2_name:this.gua2_name,
           gua2_occ:this.gua2_occ,
           gua2_tp:this.gua2_tp,
+
                 
         }
         this.acessPr.postSubmit(body).subscribe((res:any)=>{
             if(res.status==true){
               loader.dismiss();
               this.disableButton=false;
+              console.log("before set",res);
+              this.storage.set("applicationinfo",res.data);
               this.presentToast(res.message);
-              this.router.navigate(['/farmer-profile']);
+              //this.router.navigate(['/farmer-profile']);
+
+              this.storage.get("applicationinfo").then((res)=>{
+  
+                this.store=res;
+                this.appid=this.store.id;
+                
+                console.log(this.appid);
+                if(this.photos!=null){
+                    for(let i=0;i<this.photos.length;i++){
+                      console.log(this.photos[i]);
+
+                       this.http.get(AccessProviders.server+'/submitAgrireports/'+this.appid+'/'+this.photos[i]).map(res => res).subscribe(res=>{ 
+                        console.log("success");
+                             
+                      });
+                    }
+                }
+
+                
+        
+        
+          });
 
             }else{
               loader.dismiss();
@@ -204,8 +324,17 @@ export class ApplicationPage implements OnInit {
 
     
   }
-          
-  }
+
+
+
+
+
+
+
+
+
+
+}
   //console.log(telephone_number);
   async presentToast(a) {
     let toast = await this.toastCtrl.create({
@@ -247,11 +376,11 @@ export class ApplicationPage implements OnInit {
 
     this.storage.get('storage_location').then((res)=>{
       console.log(res);
-      this.l1=res.t1;
-      this.l2=res.t2;
+      this.i1=res.t1;
+      this.i2=res.t2;
       this.addr=res.t3;
       //this.name=this.datastorage.Name;
-      console.log(this.l1);
+      console.log(this.i1);
     });
   }
 
@@ -277,22 +406,39 @@ export class ApplicationPage implements OnInit {
   }*/
 
 
-  async presentActionSheet() {
+  async AgrireportActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'choice media',
+      header: 'choose Your media',
       cssClass: 'my-custom-class',
       buttons: [{
-        text: 'camera',
+        text: 'Camera',
         role: 'destructive',
         icon: 'camera',
         handler: () => {
-         this.openCamera();
+         this.openCamera(this.photos);
         }
       }, {
         text: 'Gallery',
-        icon: 'camera',
+        icon: 'images',
         handler: () => {
-          this.openGallery();
+          this.openGallery(this.photos);
+        }
+      },
+      {
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          this.deleteimages(this.photos);
+          //console.log('Delete clicked');
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        icon: 'close',
+        handler: () => {
+          console.log('Cancel clicked');
         }
       }
       ]
@@ -306,41 +452,255 @@ export class ApplicationPage implements OnInit {
   
   }
 
-  openCamera(){
+  openCamera(arr:any[]){
     const options: CameraOptions = {
       quality: 20,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      allowEdit: true
+
     }
     
     this.camera.getPicture(options).then((imageData) => {
       this.cameradata=imageData;
      this.base64Image = 'data:image/jpeg;base64,' + imageData;
-      this.photos.push(this.base64Image);
-      this.photos.reverse();
+      arr.push(this.base64Image);
+      //arr.reverse();
     }, (err) => {
-     // Handle error
+      console.log(err);
     });
   }
 
-  openGallery(){
+  openGallery(arr:any[]){
     const options: CameraOptions = {
       quality: 20,
       sourceType:this.camera.PictureSourceType.PHOTOLIBRARY,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      allowEdit: true
     }
     
     this.camera.getPicture(options).then((imageData) => {
      this.cameradata=imageData;
    this.base64Image = 'data:image/jpeg;base64,' + imageData;
-   this.photos.push(this.base64Image);
-   this.photos.reverse();
+   arr.push(this.base64Image);
+   //arr.reverse();
     }, (err) => {
-     // Handle error
+      console.log(err);
     });
   }
+
+  async incomereportActionSheet(){
+    const actionSheet = await this.actionSheetController.create({
+      header: 'choose Your media',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Camera',
+        role: 'destructive',
+        icon: 'camera',
+        handler: () => {
+         this.openCamera(this.repo);
+        }
+      }, {
+        text: 'Gallery',
+        icon: 'images',
+        handler: () => {
+          this.openGallery(this.repo);
+        }
+      },
+      {
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          //console.log('Delete clicked');
+          this.deleteimages(this.repo);
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        icon: 'close',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+      ]
+    });
+    await actionSheet.present();
+  }
+
+
+  async fixeddocumentActionSheet(){
+    const actionSheet = await this.actionSheetController.create({
+      header: 'choose Your media',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Camera',
+        role: 'destructive',
+        icon: 'camera',
+        handler: () => {
+         this.openCamera(this.fix);
+        }
+      }, {
+        text: 'Gallery',
+        icon: 'images',
+        handler: () => {
+          this.openGallery(this.fix);
+        }
+      },
+      {
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          //console.log('Delete clicked');
+          this.deleteimages(this.fix);
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        icon: 'close',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+      ]
+    });
+    await actionSheet.present();
+  }
+
+
+  async motivedocumentsActionSheet(){
+    const actionSheet = await this.actionSheetController.create({
+      header: 'choose Your media',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Camera',
+        role: 'destructive',
+        icon: 'camera',
+        handler: () => {
+         this.openCamera(this.mot);
+        }
+      }, {
+        text: 'Gallery',
+        icon: 'images',
+        handler: () => {
+          this.openGallery(this.mot);
+        }
+      },
+      {
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          //console.log('Delete clicked');
+          this.deleteimages(this.mot);
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        icon: 'close',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+      ]
+    });
+    await actionSheet.present();
+  }
+
+
+  async gua1ActionSheet(){
+    const actionSheet = await this.actionSheetController.create({
+      header: 'choose Your media',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Camera',
+        role: 'destructive',
+        icon: 'camera',
+        handler: () => {
+         this.openCamera(this.gu1);
+        }
+      }, {
+        text: 'Gallery',
+        icon: 'images',
+        handler: () => {
+          this.openGallery(this.gu1);
+        }
+      },
+      {
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          //console.log('Delete clicked');
+          this.deleteimages(this.gu1);
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        icon: 'close',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+      ]
+    });
+    await actionSheet.present();
+  }
+
+
+  async gua2ActionSheet(){
+    const actionSheet = await this.actionSheetController.create({
+      header: 'choose Your media',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Camera',
+        role: 'destructive',
+        icon: 'camera',
+        handler: () => {
+         this.openCamera(this.gua2);
+        }
+      }, {
+        text: 'Gallery',
+        icon: 'images',
+        handler: () => {
+          this.openGallery(this.gua2);
+        }
+      },
+      {
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          //console.log('Delete clicked');
+          this.deleteimages(this.gua2);
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        icon: 'close',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+      ]
+    });
+    await actionSheet.present();
+  }
+  
+
+  deleteimages(arr:any[]){
+    arr.length=0;
+  }
+
+  
 
 }

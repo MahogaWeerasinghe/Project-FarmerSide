@@ -56,7 +56,7 @@
 
          
         </ion-item>
-        <ion-item routerLink="/edit">
+        <ion-item (click)="where()">
           <ion-icon name="person-outline" slot="start"></ion-icon>
           <ion-label>Edit Profile</ion-label>
           
@@ -111,7 +111,7 @@
 
   <div class="ion-page" id="main-content">
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar color="success">
   
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>

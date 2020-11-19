@@ -21,7 +21,7 @@ export class FarmerProfilePage implements OnInit {
 
   username:string="User";
   datastore:any;
-  server:string='http://localhost:8000';
+  //server:string='http://localhost:8000';
   telephone_number:string="";
  data:any;
 
@@ -40,7 +40,20 @@ data2:any;
     public http:HttpClient,
     private acessPr:AccessProviders,)  { 
      
-  this.storage.get('storage_XXX').then((res)=>{
+
+
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+  ngOnInit() {
+      this.storage.get('storage_XXX').then((res)=>{
 
   this.username=res.username;
   
@@ -84,18 +97,6 @@ data2:any;
        }
     )
   });
-
-  }
-
-  doRefresh(event) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 2000);
-  }
-  ngOnInit() {
   }
 
   slidesDidLoad(slides) {
@@ -122,4 +123,13 @@ data2:any;
  Edit(){
     this.router.navigate(['/edit']);
   }*/
+
+  where(){
+    if(this.nic==""){
+      this.router.navigate(['/edit']);
+    }
+    else{
+      this.router.navigate(['/updatedetails']);
+    }
+  }
 }

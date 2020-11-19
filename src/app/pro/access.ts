@@ -24,8 +24,8 @@ export class User {
 
 export class AccessProviders{
 // public static server:string='http://localhost:8000';
-
-public static server:string='http://192.168.43.128:8080';
+//public static server:string='http://192.168.43.128:8080'; 
+public static server:string='http://192.168.8.183:8080';
  currentUser: User;
  isLogged: Boolean = false;
 
@@ -134,7 +134,21 @@ postUpdate(body,id){
   
 }
 
-
+postaccount(body){
+  let headers=new HttpHeaders({
+      'Content-Type':'applicationJson,charset-UTF-8'
+  });
+  let options={
+       headers:headers
+  }
+  
+  return this.http.post(AccessProviders.server+'/insertaccount',JSON.stringify(body),{
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    }).timeout(59000)
+  . map(res=>res);
+  
+  
+}
      
         
 }

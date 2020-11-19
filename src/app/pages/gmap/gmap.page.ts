@@ -96,6 +96,7 @@ export class GmapPage  {
         let arr={
           't1':lattitude,'t2':longitude,'t3':this.address
         }
+        console.log(this.latitude);
         console.log(this.address);
         this.storage.set('storage_location',arr);
       })

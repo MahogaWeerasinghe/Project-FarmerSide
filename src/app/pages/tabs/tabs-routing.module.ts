@@ -13,7 +13,7 @@ const routes: Routes = [
       children :[
         {
           path : '',
-      loadChildren: () => import('../obtained-loans/obtained-loans.module').then( m => m.ObtainedLoansPageModule)
+      loadChildren: () => import('../../pages/obtained-loans/obtained-loans.module').then( m => m.ObtainedLoansPageModule)
     
         }
   ]
@@ -23,7 +23,7 @@ const routes: Routes = [
       children : [
         {
           path: '',
-      loadChildren: () => import('../approved-loans/approved-loans.module').then( m => m.ApprovedLoansPageModule)
+      loadChildren: () => import('../../pages/approved-loans/approved-loans.module').then( m => m.ApprovedLoansPageModule)
      }]
     
     },
@@ -32,7 +32,7 @@ const routes: Routes = [
       children:[
         {
           path:'',
-      loadChildren: () => import('../pending-loans/pending-loans.module').then( m => m.PendingLoansPageModule)
+      loadChildren: () => import('../../pages/pending-loans/pending-loans.module').then( m => m.PendingLoansPageModule)
      }] 
   },
 
@@ -41,21 +41,31 @@ const routes: Routes = [
       children:[
         {
           path:'',
-      loadChildren: () => import('../rejected-loans/rejected-loans.module').then( m => m.RejectedLoansPageModule)
+      loadChildren: () => import('../../pages/rejected-loans/rejected-loans.module').then( m => m.RejectedLoansPageModule)
         }]
     },
    
     
   
-]
-  },
+
+  
   {
     path :'',
-    redirectTo :'tabs/obtained-loans',
+    redirectTo :'/tabs/obtained-loans',
     pathMatch:'full'
 
 
-  },
+  }
+]
+},
+{
+  path :'',
+  redirectTo :'/tabs/obtained-loans',
+  pathMatch:'full'
+
+
+}];
+/*
   {
     path :'',
     redirectTo :'tabs/approved-loans',
@@ -73,8 +83,8 @@ const routes: Routes = [
     redirectTo :'tabs/rejected-loans',
     pathMatch:'full'
 
-  }
-]
+  }*/
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

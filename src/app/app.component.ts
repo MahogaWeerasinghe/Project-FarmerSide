@@ -13,6 +13,14 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  public appPages=[
+    {
+      title:'Tabs',
+      url:'/tabs',
+      icon:'list'
+
+    }
+  ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

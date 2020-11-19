@@ -5,10 +5,11 @@
 </ion-header>-->
 
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start">
       <ion-back-button text="Back" defaultHref="farmer-profile"></ion-back-button>
     </ion-buttons>
+    <ion-title class="ion-text-center">Our Banks</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -48,7 +49,7 @@
     <ion-card-content>
       {{item.bank_des}}
 
-      <ion-button expand="full"color="primary" (click)="ViewLoans($event)" id="{{item.bank_id}}">View the Loans</ion-button>
+      <ion-button expand="full" color="secondary" (click)="ViewLoans($event)" id="{{item.bank_id}}">View the Loans</ion-button>
     </ion-card-content>
   </div>
 </ion-col>

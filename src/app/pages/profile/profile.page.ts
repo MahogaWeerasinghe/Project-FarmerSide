@@ -34,62 +34,77 @@ data2:any;
     public http:HttpClient,
     private acessPr:AccessProviders,) { 
          
-  this.storage.get('storage_XXX').then((res)=>{
-    // console.log('Your name is',  res.username);
-     this.username=res.username;
-     //console.log('Your name is',  this.username);
-   
-       //console.log(res);
-       //this.datastore=res;
-       this.telephone_number=res.telephone_number;
-       //console.log(this.telephone_number);
-      
+ 
+    }
+
+    hee(){
+      this.storage.get('storage_XXX').then((res)=>{
+        // console.log('Your name is',  res.username);
+         this.username=res.username;
+         //console.log('Your name is',  this.username);
        
-     this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
-       //this.data2=res;  
-       //this.namefull=this.data2.namefull;
-   
-     this.storage.set('storage2',res);
-         
-           console.log(res);
-           this.storage.get('storage2').then((res)=>{
-             //console.log(res.nameini);
-   
-
-             this.choose=res.choose;
-             this.nameini=res.nameini;
-             this.namefull=res.namefull;
-             this.address=res.address;
-             this.TpNo=res.TpNo;
-             this.dob=res.dob;
-             this.nic=res.nic;
-             this.email=res.email;
-              this.data=res;
-
-   
-             console.log(this.dob);
-   
-   
-           })
+           //console.log(res);
+           //this.datastore=res;
+           this.telephone_number=res.telephone_number;
+           //console.log(this.telephone_number);
+          
            
-           
-        
-         
-         
-       },
-       err=>{
-           console.log(err);
-          }
-       )
-     });
+         this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+           this.data2=res;  
+           //this.storage.set('storage2',this.data2);
+           //this.namefull=this.data2.namefull;
+           this.choose=this.data2.choose;
+           this.nameini=this.data2.nameini;
+           this.namefull=this.data2.namefull;
+           this.address=this.data2.address;
+           this.TpNo=this.data2.TpNo;
+           this.dob=this.data2.dob;
+           this.nic=this.data2.nic;
+           this.email=this.data2.email;
+       
+    
+           console.log(this.data2.email);
+         //this.storage.set('storage2',res);
+             
+              // console.log(res);
+              /* this.storage.get('storage2').then((res)=>{
+                 //console.log(res.nameini);
+       
+    
+                 this.choose=res.choose;
+                 this.nameini=res.nameini;
+                 this.namefull=res.namefull;
+                 this.address=res.address;
+                 this.TpNo=res.TpNo;
+                 this.dob=res.dob;
+                 this.nic=res.nic;
+                 this.email=res.email;
+                  this.data=res;
+    
+       
+                 console.log(this.dob);
+       
+       
+               })*/
+               
+               
+            
+             
+             
+           },
+           err=>{
+               console.log(err);
+              }
+           )
+         });
     }
 
   ngOnInit() {
-    
+    this.hee();
     //window.location.reload();
   }
   async tryUpdate(){
-    if(this.data==null){
+    if(this.data2==null){
       this.router.navigate(['/edit']);
     }
     else{

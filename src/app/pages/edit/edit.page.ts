@@ -4,6 +4,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
 import { ToastController,LoadingController,AlertController,NavController } from '@ionic/angular';
 import {User, AccessProviders } from '../../pro/access';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-edit',
@@ -55,7 +56,7 @@ export class EditPage implements OnInit {
 	
  async tryEdit(){
     //this.router.navigate(['/login']);
-
+    //console.log(moment(this.dob).format('YYYY-MM-DD'));
     if(this.choose==""){
         this.presentToast("Choose your type");
     }else if(this.nameini==""){
@@ -100,7 +101,7 @@ export class EditPage implements OnInit {
             namefull:this.namefull,
             address:this.address,
             TpNo:this.TpNo,
-            dob:this.dob,
+            dob:moment(this.dob).format('YYYY-MM-DD'),
             nic:this.nic,
             email:this.email,
             
@@ -111,8 +112,9 @@ export class EditPage implements OnInit {
                 loader.dismiss();
                 this.disableButton=false;
                 this.presentToast(res.message);
-                //this.storage.set('storage2',res.data);
-                //console.log(res.data);
+                console.log(res.data);
+                this.storage.set('storage2',res.data);
+                
                 this.router.navigate(['/farmer-profile']);
 
               }else{
