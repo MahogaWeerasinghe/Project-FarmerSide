@@ -72,6 +72,14 @@ const routes: Routes = [
     path: 'demo',
     loadChildren: () => import('./pages/demo/demo.module').then( m => m.DemoPageModule)
   },
+  {
+    path: 'new',
+    loadChildren: () => import('./pages/new/new.module').then( m => m.NewPageModule)
+  },
+  {
+    path: 'loanviews',
+    loadChildren: () => import('./pages/loanviews/loanviews.module').then( m => m.LoanviewsPageModule)
+  },
   /*{
     path: 'myloans',
     loadChildren: () => import('./pages/myloans/myloans.module').then( m => m.MyloansPageModule)

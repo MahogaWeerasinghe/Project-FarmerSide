@@ -1,12 +1,14 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>{{loan_name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="loans"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{loan_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content >
 
-  <ion-label position="floating">lo</ion-label>
 
   <div>
   <ion-item>
@@ -48,18 +50,10 @@
 
   <ion-card>
     <ion-item>
-      <ion-label></ion-label>
+      <ion-label>{{eligible_crops}}</ion-label>
     </ion-item>
   </ion-card>
 
-  <div data-ng-app="" data-ng-init="names={{genera_info}}">
-    <p>Looping with ng-repeat:</p>
-    <ul>
-      <li data-ng-repeat="x in names">
-        {{ x }}
-      </li>
-    </ul>
-  </div>
    
   <ion-item>
     <ion-label color="primary"><i>Maximum Loan Amount</i> </ion-label>
@@ -67,7 +61,7 @@
 
   <ion-card>
     <ion-item>
-      <ion-label></ion-label>
+      <ion-label>{{maximum_loanamount}}</ion-label>
     </ion-item>
   </ion-card>
 
@@ -77,7 +71,7 @@
 
   <ion-card>
     <ion-item>
-      <ion-label></ion-label>
+      <ion-label>{{Rateofinterest}}</ion-label>
     </ion-item>
   </ion-card>
 
@@ -87,7 +81,7 @@
 
   <ion-card>
     <ion-item>
-      <ion-label></ion-label>
+      <ion-label>{{Repaymentperiod}}</ion-label>
     </ion-item>
   </ion-card>
 
@@ -97,7 +91,7 @@
 
   <ion-card>
     <ion-item>
-      <ion-label></ion-label>
+      <ion-label>{{more_info}}</ion-label>
     </ion-item>
   </ion-card>
 

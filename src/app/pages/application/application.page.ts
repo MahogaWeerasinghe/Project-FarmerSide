@@ -22,6 +22,11 @@ import * as moment from 'moment';
   styleUrls: ['./application.page.scss'],
 })
 export class ApplicationPage implements OnInit {
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
+  }
+
+  
   server:string='http://localhost:8000';
   public items : any;
   i:any;
@@ -32,7 +37,7 @@ export class ApplicationPage implements OnInit {
   nic:string="";
   loan_id:string="";
   store:any;
-
+  selectTabs;
   appid:string="";
 
   public photos:any;
@@ -41,6 +46,8 @@ export class ApplicationPage implements OnInit {
   public mot:any;
   public gu1:any;
   public gua2:any;
+
+  public type:string;
 
 
 
@@ -103,7 +110,8 @@ export class ApplicationPage implements OnInit {
     private acessPr:AccessProviders,
     private camera: Camera,
     public actionSheetController: ActionSheetController,) { 
-
+      this.selectTabs="want";
+      
     this.storage.get("storage_app").then((res)=>{
       console.log("loan id",res);
       this.loan_id=res;
@@ -262,6 +270,9 @@ if(this.B3name!=""){
           spo_emplo:this.spo_emplo,
           children:this.children,
           fix_name:this.fix_name,
+          latitude:this.i1,
+          longitude:this.i2,
+          address:this.addr,
           fix_deed:this.fix_deed,
           fix_size:this.fix_size,
           fix_value:this.fix_value,
@@ -274,7 +285,7 @@ if(this.B3name!=""){
           gua2_name:this.gua2_name,
           gua2_occ:this.gua2_occ,
           gua2_tp:this.gua2_tp,
-
+      
                 
         }
         this.acessPr.postSubmit(body).subscribe((res:any)=>{
@@ -293,15 +304,154 @@ if(this.B3name!=""){
                 
                 console.log(this.appid);
                 if(this.photos!=null){
+                    this.type="agri";
                     for(let i=0;i<this.photos.length;i++){
                       console.log(this.photos[i]);
-
-                       this.http.get(AccessProviders.server+'/submitAgrireports/'+this.appid+'/'+this.photos[i]).map(res => res).subscribe(res=>{ 
-                        console.log("success");
-                             
+                      console.log(this.appid);
+                      let body ={
+                        app_id:this.appid,
+                        agr_images:this.photos[i],
+                        type:this.type
+                      }
+                    
+                      this.acessPr.postagri(body).subscribe((res:any)=>{
+                        console.log(res);
+                      },
+                      (err: any) => {
+                        console.log(err);
+                        
                       });
+                    
                     }
                 }
+
+                if(this.repo!=null){
+                  this.type="repo";
+                  for(let i=0;i<this.repo.length;i++){
+                    console.log(this.repo[i]);
+                    console.log(this.appid);
+                    let body ={
+                      app_id:this.appid,
+                      agr_images:this.repo[i],
+                      type:this.type
+                  
+                    }
+                  
+                    this.acessPr.postagri(body).subscribe((res:any)=>{
+                      console.log(res);
+                    },
+                    (err: any) => {
+                      console.log(err);
+                      
+                    });
+                  
+                  }
+              }
+
+              if(this.fix!=null){
+                this.type="fix";
+                for(let i=0;i<this.fix.length;i++){
+                  console.log(this.fix[i]);
+                  console.log(this.appid);
+                  let body ={
+                    app_id:this.appid,
+                    agr_images:this.fix[i],
+                    type:this.type
+                
+                  }
+                
+                  this.acessPr.postagri(body).subscribe((res:any)=>{
+                    console.log(res);
+                  },
+                  (err: any) => {
+                    console.log(err);
+                    
+                  });
+                
+                }
+            }
+
+            if(this.mot!=null){
+              this.type="mot";
+              for(let i=0;i<this.mot.length;i++){
+                console.log(this.mot[i]);
+                console.log(this.appid);
+                let body ={
+                  app_id:this.appid,
+                  agr_images:this.mot[i],
+                  type:this.type
+              
+                }
+              
+                this.acessPr.postagri(body).subscribe((res:any)=>{
+                  console.log(res);
+                },
+                (err: any) => {
+                  console.log(err);
+                  
+                });
+              
+              }
+          }
+
+          if(this.gu1!=null){
+            this.type="gu1";
+            for(let i=0;i<this.gu1.length;i++){
+              console.log(this.gu1[i]);
+              console.log(this.appid);
+              let body ={
+                app_id:this.appid,
+                agr_images:this.gu1[i],
+                type:this.type
+            
+              }
+            
+              this.acessPr.postagri(body).subscribe((res:any)=>{
+                console.log(res);
+              },
+              (err: any) => {
+                console.log(err);
+                
+              });
+            
+            }
+        }
+
+        if(this.gua2!=null){
+          this.type="gua2";
+          for(let i=0;i<this.gua2.length;i++){
+            console.log(this.gua2[i]);
+            console.log(this.appid);
+            let body ={
+              app_id:this.appid,
+              agr_images:this.gua2[i],
+              type:this.type
+          
+            }
+          
+            this.acessPr.postagri(body).subscribe((res:any)=>{
+              console.log(res);
+            },
+            (err: any) => {
+              console.log(err);
+              
+            });
+          
+          }
+      }
+
+      this.http.get(AccessProviders.server+'/insertagain/'+this.loan_id+'/'+this.appid+'/'+this.nic).map(res => res).subscribe((res:any)=>{ 
+          console.log(this.loan_id);
+          console.log(this.appid);
+          console.log(this.nic);
+
+
+      });
+
+
+
+
+
 
                 
         

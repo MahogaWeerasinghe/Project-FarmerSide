@@ -10,12 +10,13 @@
   <ion-card *ngFor='let item of items' >
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label>Loan Name : {{item.loan_id}}</ion-label>
-      <ion-button fill="outline" slot="end" (click)="more()">More Details</ion-button>
+      <ion-label> {{item.loan_name}}</ion-label>
+      <ion-button fill="outline" slot="end" (click)="ViewLoanviews($event)" id="{{item.id}}">More Details</ion-button>
 
     </ion-item>
   
     <ion-card-content>
+    
       Application No : {{item.id}}
     </ion-card-content>
   </ion-card>

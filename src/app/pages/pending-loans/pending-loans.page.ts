@@ -17,6 +17,7 @@ export class PendingLoansPage implements OnInit {
   nic:string="";
   loan_id:string="";
   id:string="";
+  dat:number;
   public items : any;
   constructor(
     private router:Router,
@@ -48,10 +49,12 @@ export class PendingLoansPage implements OnInit {
  
      
        console.log("nic is ",this.nic);
-       this.http.get(AccessProviders.server+'/getappdetails/'+this.nic).map(res => res).subscribe(res=>{ 
+       this.http.get(AccessProviders.server+'/showapplyloan/'+this.nic).map(res => res).subscribe((res:any)=>{ 
         //this.storage.set('store_nic',res);
         console.log(res);
-        this.items=res;
+        this.items=res.message;
+
+        
           //this.data=res;
           //console.log(this.data);
             //this.nic=this.data.nic;
@@ -70,5 +73,21 @@ export class PendingLoansPage implements OnInit {
 
     });
   }
+
+
+  
+  ViewLoanviews(event:any){
+
+  console.log(event.target.id);
+  this.dat=event.target.id;
+  console.log(this.dat);
+  this.storage.set('storage_appid',this.dat);
+ 
+  this.storage.get("storage_appid").then((res)=>{
+    console.log(res);
+  });
+
+  this.router.navigate(['/loanviews']);
+}
 
 }
