@@ -1,23 +1,23 @@
 <ion-header>
-  <ion-toolbar color="primary" class="ion-text-center">
-    <ion-title>Pending Loans</ion-title>
+  <ion-toolbar>
+    <ion-title class="ion-text-left"><i><b>Pending Loans</b></i></ion-title>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
 
-  <ion-card *ngFor='let item of items' >
+  <ion-card *ngFor='let item of items'>
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
       <ion-label> {{item.loan_name}}</ion-label>
-      <ion-button fill="outline" slot="end" (click)="ViewLoanviews($event)" id="{{item.id}}">More Details</ion-button>
+      <ion-button fill="outline" slot="end" (click)="ViewLoanviews($event)" id="{{item.app_id}}">Click to More Details</ion-button>
 
     </ion-item>
   
     <ion-card-content>
     
-      Application No : {{item.id}}
+      Application No : {{item.app_id}}
     </ion-card-content>
   </ion-card>
   

@@ -18,54 +18,96 @@
 
 
 <ion-content>
+  <ion-card>
+    <ion-card>
 
-<ion-list>
-<ion-item style="color:#999">
+     <ion-grid>
+       <ion-row>
+    <ion-col size="4">
+
   <ion-label >Choose</ion-label>
+    </ion-col>
+  <ion-col size="8">
   <ion-select interface="popover" [(ngModel)]='choose'>
     <ion-select-option value="Mr">Mr</ion-select-option>
     <ion-select-option value="mrs">Mrs</ion-select-option>
     <ion-select-option value="miss">Miss</ion-select-option>
   </ion-select>
-</ion-item>
+</ion-col>
+  </ion-row>
 
-<ion-item>
+
+  <ion-row>
+    <ion-col size="4">
+
   <ion-label>Name with Initial :</ion-label>
+  </ion-col>
+  <ion-col size="8">
   <ion-input type="text" placeholder="ex : B.J Weerasinghe" [(ngModel)]='nameini'></ion-input>
-</ion-item>
+</ion-col>
+</ion-row>
 
-<ion-item>
+
+<ion-row>
+  <ion-col size="4">
+
 <ion-label>Name represented by Initials :</ion-label>
+</ion-col>
+<ion-col size="8">
 <ion-input type="text" placeholder="ex : Bandula Jayantha Weerasinghe" [(ngModel)]='namefull'></ion-input>
-</ion-item>
+</ion-col>
+</ion-row>
 
-
-
-<ion-item>
+<ion-row>
+  <ion-col size="4">
 <ion-label>Private Address :</ion-label>
+</ion-col>
+<ion-col size="8">
 <ion-input type="text" placeholder="ex : 172/34 Webada Kadawatha" [(ngModel)]='address'></ion-input>
-</ion-item>
+</ion-col>
+</ion-row>
 
-<ion-item>
+
+<ion-row>
+  <ion-col size="4">
 <ion-label>Telephone Number :</ion-label>
+</ion-col>
+<ion-col size="8">
 <ion-input type="text" placeholder="ex : 0836281991" [(ngModel)]='TpNo'></ion-input>
-</ion-item>
+</ion-col>
+</ion-row>
 
-<ion-item>
+<ion-row>
+  <ion-col size="4">
 <ion-label>Date Of Birth</ion-label>
+</ion-col>
+<ion-col size="8">
 <ion-datetime value="1990-02-19" placeholder="Select Date" [(ngModel)]='dob'></ion-datetime>
+</ion-col>
+</ion-row>
 
-</ion-item>
-
-<ion-item>
+<ion-row>
+  <ion-col size="4">
 <ion-label>NIC No :</ion-label>
+</ion-col>
+<ion-col size="8">
 <ion-input type="text" placeholder="6043022705V" [(ngModel)]='nic' ></ion-input>
-</ion-item>
+</ion-col>
+</ion-row>
 
-<ion-item>
+
+<ion-row>
+  <ion-col size="4">
 <ion-label>Email Address :</ion-label>
+</ion-col>
+<ion-col size="8">
 <ion-input type="text" placeholder="ex :jayantha@gmail.com" [(ngModel)]='email'></ion-input>
-</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-card>
+</ion-card>
+
 
 <ion-row>
 <ion-col>
@@ -79,5 +121,4 @@
 
 
 
-</ion-list>
 </ion-content>

@@ -153,7 +153,7 @@ export class UpdatedetailsPage implements OnInit {
               this.presentToast(res.message);
               //this.storage.set('storage2',res.data);
               console.log(res.data);
-              this.router.navigate(['/farmer-profile']);
+              this.router.navigate(['/profile']);
 
             }else{
               loader.dismiss();

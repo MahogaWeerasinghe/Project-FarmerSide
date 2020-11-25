@@ -1,9 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Rejected-Loans</ion-title>
+    <ion-title><i><b>Rejected-Loans</b></i></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
+
+  <ion-card *ngFor='let item of items'>
+    <ion-card-header>
+      <div id="header">
+        <ion-card-title><h1><b>Your Loan is Rejected</b></h1></ion-card-title>
+      <img class="circle-pic"  src="/assets/img/untick.jpg" alt="ion">
+      
+      <ion-card-title><h1><b>Sorry</b></h1></ion-card-title>
+     
+    </div>
+    </ion-card-header>
+    <ion-card-content>
+     
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          Loan Name :
+        </ion-col>
+        <ion-col size="8">
+          {{item.loan_name}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          Application Number :
+        </ion-col>
+        <ion-col size="8">
+          {{item.application_id}}
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    </ion-card-content>
+  
+    <ion-footer>
+      <ion-button expand="block" color="secondary" (click)="showaction($event)" id="{{item.application_id}}">Why My Loan is Rejected ?</ion-button>
+
+    </ion-footer>
+  </ion-card> 
+  
+ 
+ 
 
 </ion-content>

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="tabs/rejected-loans"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Rejected Loan Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card *ngFor='let item of items'>
+       
+    <ion-card-header>
+      <div id="header">
+  
+      
+      <ion-card-title><h1><b>Sorry !</b></h1></ion-card-title>
+     
+    </div>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Rejected Date </b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>{{item.rejected_date}}</ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Rejected Reason </b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>{{item.rejected_reason}}</ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+ 
+   
+
+    </ion-grid>
+  <ion-grid>
+  <ion-row>
+
+ <ion-col size="5">
+    <ion-button color="secondary"  (click)="details()">Contact Us</ion-button>
+  </ion-col>
+  <ion-col size="5">
+    <ion-button color="secondary"  (click)="details($event)" id="{{item.application_id}}">Application</ion-button>
+  </ion-col>
+    </ion-row>
+           
+    </ion-grid>
+    </ion-card>
+    </ion-card>
+
+
+
+</ion-content>

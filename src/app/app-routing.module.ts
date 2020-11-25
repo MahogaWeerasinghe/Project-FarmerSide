@@ -80,6 +80,18 @@ const routes: Routes = [
     path: 'loanviews',
     loadChildren: () => import('./pages/loanviews/loanviews.module').then( m => m.LoanviewsPageModule)
   },
+  {
+    path: 'payments',
+    loadChildren: () => import('./pages/payments/payments.module').then( m => m.PaymentsPageModule)
+  },
+  {
+    path: 'approveddetails',
+    loadChildren: () => import('./pages/approveddetails/approveddetails.module').then( m => m.ApproveddetailsPageModule)
+  },
+  {
+    path: 'rejecteddetails',
+    loadChildren: () => import('./pages/rejecteddetails/rejecteddetails.module').then( m => m.RejecteddetailsPageModule)
+  },
   /*{
     path: 'myloans',
     loadChildren: () => import('./pages/myloans/myloans.module').then( m => m.MyloansPageModule)

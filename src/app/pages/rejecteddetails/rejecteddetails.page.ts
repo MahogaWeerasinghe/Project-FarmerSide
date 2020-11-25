@@ -5,13 +5,12 @@ import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
 import { ToastController,LoadingController,AlertController,NavController } from '@ionic/angular';
 import {User, AccessProviders } from '../../pro/access';
 
-
 @Component({
-  selector: 'app-rejected-loans',
-  templateUrl: './rejected-loans.page.html',
-  styleUrls: ['./rejected-loans.page.scss'],
+  selector: 'app-rejecteddetails',
+  templateUrl: './rejecteddetails.page.html',
+  styleUrls: ['./rejecteddetails.page.scss'],
 })
-export class RejectedLoansPage implements OnInit {
+export class RejecteddetailsPage implements OnInit {
   telephone_number:any="";
   data:any;
   nic:string="";
@@ -20,8 +19,6 @@ export class RejectedLoansPage implements OnInit {
   dat:number;
   public items : any;
 
-  hidecongrats=true;
-  hidedet=false;
 
   constructor(
     private router:Router,
@@ -32,12 +29,10 @@ export class RejectedLoansPage implements OnInit {
     private storage:Storage,
     private navCtrl:NavController,
     public http:HttpClient,
-    
   ) { }
 
   ngOnInit() {
-    this.hidecongrats=true;
-  this.hidedet=false;
+
     this.storage.get('storage_XXX').then((val) => {
       console.log('Your tel is',  val.telephone_number);
      this.telephone_number=val.telephone_number;
@@ -76,41 +71,21 @@ export class RejectedLoansPage implements OnInit {
 
     });
 
-
-
-  }
-
+    this.storage.get("storage_rejeappid").then((res)=>{
+      console.log(res);
   
-
-  showaction(event){
-    this.hidecongrats=false;
-  this.hidedet=true;
-
   
-  console.log(event.target.id);
-  this.dat=event.target.id;
-  console.log(this.dat);
-  this.storage.set('storage_rejeappid',this.dat);
- 
-  this.storage.get("storage_rejeappid").then((res)=>{
-    console.log(res);
-
-    
-
- 
-    this.navCtrl.navigateRoot('/rejecteddetails');
-
+    this.http.get(AccessProviders.server+'/showrejectloandata/'+res).map(res => res).subscribe((res:any)=>{ 
+      //this.storage.set('store_nic',res);
+      console.log(res);
+      this.items=res.message;
+  
+      
    
-  this.http.get(AccessProviders.server+'/showrejectloandata/'+res).map(res => res).subscribe((res:any)=>{ 
-    //this.storage.set('store_nic',res);
-    console.log(res);
-    this.items=res.message;
-
-    
- 
-
+  
+      });
     });
-  });
+
 
   }
 

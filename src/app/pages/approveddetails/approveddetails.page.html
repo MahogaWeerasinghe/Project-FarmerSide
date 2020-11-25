@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="tabs/approved-loans"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">approved Loan Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor='let item of items'>
+    <ion-card>
+       
+    <ion-card-header>
+      <div id="header">
+  
+      
+      <ion-card-title><h1><b>Congratulations !</b></h1></ion-card-title>
+     
+    </div>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Approved Date </b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>{{item.date}}</ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+ 
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Date You Come </b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>{{item.date_you_come}}</ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+    
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Special Notices </b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>{{item.special_notices}}</ion-card-subtitle>
+        </ion-col>
+        
+    
+  </ion-row>
+
+  <ion-row>
+ 
+    <ion-button color="secondary"  (click)="details()">Contact Us</ion-button>
+  
+    
+    </ion-row>
+           
+    </ion-grid>
+    </ion-card>
+    </ion-card>
+
+</ion-content>

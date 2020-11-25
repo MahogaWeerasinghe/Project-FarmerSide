@@ -37,6 +37,15 @@ data2:any;
  
     }
 
+    doRefresh(event:any) {
+      console.log('Begin async operation');
+  
+      setTimeout(() => {
+        console.log('Async operation has ended');
+        event.target.complete();
+      }, 2000);
+    }
+
     hee(){
       this.storage.get('storage_XXX').then((res)=>{
         // console.log('Your name is',  res.username);
@@ -114,12 +123,5 @@ data2:any;
    
   }
 
-  doRefresh(event) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 2000);
-  }
+  
 }

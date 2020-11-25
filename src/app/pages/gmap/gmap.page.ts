@@ -113,4 +113,6 @@ export class GmapPage  {
   back(){
     this.router.navigate(['/application']);
   }
+
+  
 }

@@ -10,90 +10,111 @@
 <ion-content >
 
 
-  <div>
-  <ion-item>
+    <ion-row>
+      <ion-col size="4">
+
     <ion-label color="primary"><i>General Information</i> </ion-label>
-  </ion-item>
- 
 
-  <ion-card>
-    <ion-item>
-      <ion-label>{{genera_info}}</ion-label>
-    </ion-item>
-  </ion-card>
-</div>
- 
-  <ion-item>
+</ion-col> 
+<ion-col size="8">
+
+  <ul *ngFor='let i of arr2'>
+    <li>{{i}}</li>
+    </ul> 
+
+  </ion-col>
+</ion-row>
+
+<ion-row>
+  <ion-col size="4">
+
+
     <ion-label color="primary"><i>Special Information</i> </ion-label>
-  </ion-item>
 
-  <ion-card>
-    <ion-item>
+  </ion-col> 
+  <ion-col size="8">
       <ion-label>{{specific_info}}</ion-label>
-    </ion-item>
-  </ion-card>
- 
+    </ion-col>
+  </ion-row>
   
-  <ion-item>
-    <ion-label color="primary"><i>Eligible Borrowers</i> </ion-label>
-  </ion-item>
-
-  <ion-card>
-    <ion-item>
-      <ion-label>{{eligible_borrowers}}</ion-label>
-    </ion-item>
-  </ion-card>
  
-  <ion-item>
-    <ion-label color="primary"><i>Eligible Crops</i> </ion-label>
-  </ion-item>
 
-  <ion-card>
-    <ion-item>
+  <ion-row>
+    <ion-col size="4">
+    <ion-label color="primary"><i>Eligible Borrowers</i> </ion-label>
+  </ion-col> 
+  <ion-col size="8" >
+
+    <ul *ngFor='let i of arr'>
+      <li>{{i}}</li>
+      </ul> 
+  
+    </ion-col>
+  </ion-row>
+  
+
+
+  <ion-row>
+    <ion-col size="4">
+    <ion-label color="primary"><i>Eligible Crops</i> </ion-label>
+
+  </ion-col> 
+  <ion-col size="8" >
+
+
       <ion-label>{{eligible_crops}}</ion-label>
-    </ion-item>
-  </ion-card>
 
    
-  <ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="4">
     <ion-label color="primary"><i>Maximum Loan Amount</i> </ion-label>
-  </ion-item>
+  </ion-col> 
+  <ion-col size="8" >
 
-  <ion-card>
-    <ion-item>
       <ion-label>{{maximum_loanamount}}</ion-label>
-    </ion-item>
-  </ion-card>
 
-  <ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="4">
     <ion-label color="primary"><i>Rate of Interest</i> </ion-label>
-  </ion-item>
 
-  <ion-card>
-    <ion-item>
+  </ion-col> 
+  <ion-col size="8" >
+
       <ion-label>{{Rateofinterest}}</ion-label>
-    </ion-item>
-  </ion-card>
 
-  <ion-item>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row>
+    <ion-col size="4">
     <ion-label color="primary"><i>Repayment Period</i> </ion-label>
-  </ion-item>
-
-  <ion-card>
-    <ion-item>
+  </ion-col> 
+  <ion-col size="8" >
       <ion-label>{{Repaymentperiod}}</ion-label>
-    </ion-item>
-  </ion-card>
 
-  <ion-item>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row>
+    <ion-col size="4">
     <ion-label color="primary"><i>more information</i> </ion-label>
-  </ion-item>
 
-  <ion-card>
-    <ion-item>
+  </ion-col> 
+  <ion-col size="8" >
+
+
       <ion-label>{{more_info}}</ion-label>
-    </ion-item>
-  </ion-card>
+  
+    </ion-col>
+  </ion-row>
 
 
 

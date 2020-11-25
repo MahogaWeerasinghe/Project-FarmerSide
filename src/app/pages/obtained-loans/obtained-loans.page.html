@@ -1,9 +1,98 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Obtained-Loans</ion-title>
+    <ion-title><b><i>Obtained-Loans</i></b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+  <ion-card>
+    <ion-item (click)="set()">
+      <ion-icon name="reader-outline" slot="start"></ion-icon>
+      <ion-icon name="{{icon}}" slot="end"></ion-icon>
+      <ion-label>Loan Name : Application No </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="hideMe">
+    <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Bank Name</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>Ex</ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Branch</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>Ex</ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Issued Date</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>Ex</ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Expired Date</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>Ex</ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Amount</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>Ex</ion-card-subtitle>
+        </ion-col>
+        
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Amount for installment</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>Ex</ion-card-subtitle>
+          </ion-col>
+          
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>Number of installments</b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-card-subtitle>Ex</ion-card-subtitle>
+            </ion-col>
+            
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <ion-card-subtitle></ion-card-subtitle>
+              </ion-col>
+              <ion-col size="8">
+              <ion-button color="secondary"  (click)="details()">More Details</ion-button>
+              </ion-col>
+              
+              </ion-row>
+    </ion-grid>
+    </ion-card>
+</ion-card>
+
+
 
 </ion-content>

@@ -26,7 +26,8 @@ export class LoandetailsPage implements OnInit {
   Rateofinterest:string="";
   Repaymentperiod:string="";
   more_info:string="";
-  
+  arr:any[]=[];
+  arr2:any[]=[];
   constructor(private router :Router,
     private storage:Storage,
     private navCtrl:NavController,
@@ -51,7 +52,15 @@ export class LoandetailsPage implements OnInit {
         this.more_info=this.items.more_info;
 
         
+        this.arr=this.eligible_borrowers.split(',');
+        for(this.i in this.arr){
+          console.log(this.arr[this.i]);
+        }
 
+        this.arr2=this.genera_info.split('.');
+        for(this.i in this.arr2){
+          console.log(this.arr2[this.i]);
+        }
         //console.log(res);
         });
 

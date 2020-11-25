@@ -162,6 +162,10 @@ export class ApplicationPage implements OnInit {
   ngOnInit() {
     this.photos=[];
     this.repo=[];
+    this.fix=[];
+    this.mot=[];
+    this.gu1=[];
+    this.gua2=[];
   }
   
   async submitapp(){
@@ -300,7 +304,7 @@ if(this.B3name!=""){
               this.storage.get("applicationinfo").then((res)=>{
   
                 this.store=res;
-                this.appid=this.store.id;
+                this.appid=this.store.id + 1;
                 
                 console.log(this.appid);
                 if(this.photos!=null){
@@ -440,10 +444,11 @@ if(this.B3name!=""){
           }
       }
 
-      this.http.get(AccessProviders.server+'/insertagain/'+this.loan_id+'/'+this.appid+'/'+this.nic).map(res => res).subscribe((res:any)=>{ 
+      this.http.get(AccessProviders.server+'/insertagain/'+this.loan_id+'/'+this.appid+'/'+this.nic+'/'+this.date).map(res => res).subscribe((res:any)=>{ 
           console.log(this.loan_id);
           console.log(this.appid);
           console.log(this.nic);
+          console.log(this.date);
 
 
       });
