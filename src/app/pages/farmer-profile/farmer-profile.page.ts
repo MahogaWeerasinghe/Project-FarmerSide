@@ -49,56 +49,61 @@ data2:any;
 
     setTimeout(() => {
       console.log('Async operation has ended');
+      this.get();
       event.target.complete();
     }, 2000);
   }
   ngOnInit() {
-      this.storage.get('storage_XXX').then((res)=>{
-
-  this.username=res.username;
-  
-    this.telephone_number=res.telephone_number;
+    this.get();
     
-    console.log("in farmer profile",this.telephone_number);
-   
-    
-  this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
-    this.data2=res;  
-    //this.namefull=this.data2.namefull;
-    console.log("in farmer profile ",this.data2.nic);
-
-  this.storage.set('storage2',res);
-      
-        console.log(res);
-        this.storage.get('storage2').then((res)=>{
-          //console.log(res.nameini);
-
- 
-          this.choose=res.choose;
-          this.nameini=res.nameini;
-          this.namefull=res.namefull;
-          this.address=res.address;
-          this.TpNo=res.TpNo;
-          this.dob=res.dob;
-          this.nic=res.nic;
-
-          //console.log("in farmer profile ",this.nic);
-
-
-        })
-        
-        
-     
-      
-      
-    },
-    err=>{
-        console.log(err);
-       }
-    )
-  });
   }
 
+  get(){
+    this.storage.get('storage_XXX').then((res)=>{
+
+      this.username=res.username;
+      
+        this.telephone_number=res.telephone_number;
+        
+        console.log("in farmer profile",this.telephone_number);
+       
+        
+      this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+        this.data2=res;  
+        //this.namefull=this.data2.namefull;
+        console.log("in farmer profile ",this.data2.nic);
+    
+      this.storage.set('storage2',res);
+          
+            console.log(res);
+            this.storage.get('storage2').then((res)=>{
+              //console.log(res.nameini);
+    
+     
+              this.choose=res.choose;
+              this.nameini=res.nameini;
+              this.namefull=res.namefull;
+              this.address=res.address;
+              this.TpNo=res.TpNo;
+              this.dob=res.dob;
+              this.nic=res.nic;
+    
+              //console.log("in farmer profile ",this.nic);
+    
+    
+            })
+            
+            
+         
+          
+          
+        },
+        err=>{
+            console.log(err);
+           }
+        )
+      });
+  }
   slidesDidLoad(slides) {
     slides.startAutoplay();
   }

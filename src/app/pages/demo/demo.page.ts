@@ -17,4 +17,8 @@ export class DemoPage implements OnInit {
   tologin(){
     this.router.navigate(['/login']);
   }
+
+  openbanks(){
+    this.router.navigate(['/crop']);
+  }
 }

@@ -34,21 +34,36 @@
 
 <ion-content [fullscreen]="true">
   <ion-segment [(ngModel)]="selectTabs">
+    <ion-grid>
+
+  <ion-row>
+    <ion-col>
     <ion-segment-button value="want" class="ion-text-center">
      <ion-label>Step 1</ion-label>
     </ion-segment-button>
+  </ion-col>
+<ion-col>
     <ion-segment-button value="missed">
       <ion-label>Step 2</ion-label>
     </ion-segment-button>
+  </ion-col>
+<ion-col>
     <ion-segment-button value="contact">
       <ion-label>Step 3</ion-label>
     </ion-segment-button>
+  </ion-col>
+<ion-col>
     <ion-segment-button value="Security">
       <ion-label>Step 4</ion-label>
     </ion-segment-button>
+  </ion-col>
+<ion-col>
     <ion-segment-button value="gua">
       <ion-label>Step 5</ion-label>
     </ion-segment-button>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
   </ion-segment>
 
   <div *ngIf="selectTabs == 'want'">

@@ -119,7 +119,9 @@ async presentAlert(a) {
     //this.router.navigate(['/farmer-profile']);
   
         
-   
+    openagri(){
+      this.router.navigate(['/agriofficer']);
+    }
 
 
 }

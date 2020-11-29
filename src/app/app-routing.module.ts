@@ -92,6 +92,22 @@ const routes: Routes = [
     path: 'rejecteddetails',
     loadChildren: () => import('./pages/rejecteddetails/rejecteddetails.module').then( m => m.RejecteddetailsPageModule)
   },
+  {
+    path: 'paymentdetails',
+    loadChildren: () => import('./pages/paymentdetails/paymentdetails.module').then( m => m.PaymentdetailsPageModule)
+  },
+  {
+    path: 'agriofficer',
+    loadChildren: () => import('./pages/agriofficer/agriofficer.module').then( m => m.AgriofficerPageModule)
+  },
+  {
+    path: 'agrirequests',
+    loadChildren: () => import('./pages/agrirequests/agrirequests.module').then( m => m.AgrirequestsPageModule)
+  },
+  {
+    path: 'agrirequestsenter',
+    loadChildren: () => import('./pages/agrirequestsenter/agrirequestsenter.module').then( m => m.AgrirequestsenterPageModule)
+  },
   /*{
     path: 'myloans',
     loadChildren: () => import('./pages/myloans/myloans.module').then( m => m.MyloansPageModule)

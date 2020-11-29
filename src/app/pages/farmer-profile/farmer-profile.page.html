@@ -22,10 +22,8 @@
     </ion-header>
     <ion-content>
      
-      <ion-list>
-        <ion-item >
-          <ion-row>
-            <ion-col>
+  
+  
        
          <!-- <div class="img-wrapper">
             <img src="assets/img/user.png" />
@@ -47,15 +45,21 @@
 
           <div class="header">
             <img src="https://img.icons8.com/color/100/000000/farmer-male--v1.png"/>
-            <h1 style="font-size:1.4em" no-margin>Welcome <br>
-              {{username}}</h1>
+        
+            <ion-grid>
+            <ion-row>
+              <ion-col><img src="assets/img/star.png" /></ion-col>
+              <ion-col><img src="assets/img/star.png" /></ion-col>
+              <ion-col><img src="assets/img/star.png" /></ion-col>
+              <ion-col><img src="assets/img/star.png" /></ion-col>
+              <ion-col><img src="assets/img/star.png" /></ion-col>
+              
+            </ion-row>
+          </ion-grid>
+
             </div>
       
-      </ion-col>
-  </ion-row>
-
-         
-        </ion-item>
+            <ion-list>
         <ion-item (click)="where()">
           <ion-icon name="person-outline" slot="start"></ion-icon>
           <ion-label>Edit Profile</ion-label>
@@ -78,6 +82,11 @@
         <ion-item routerLink="/tabs">
           <ion-icon name="documents-outline" slot="start"></ion-icon>
           <ion-label>Loan History</ion-label>
+   
+        </ion-item>
+        <ion-item routerLink="/payments">
+          <ion-icon name="cash-outline" slot="start"></ion-icon>
+          <ion-label>Payments</ion-label>
    
         </ion-item>
       
@@ -209,13 +218,88 @@
   <div class="card-background-page">
 
      
-      
+    <ion-grid>
+      <ion-row>
+      <ion-card>
+        <ion-row>
+          <ion-col>
+            <ion-col size="4">
+                  <ion-label color="primary"><i>General Information</i> </ion-label>
+          </ion-col> 
+          <ion-col size="8">
+              regytghsjnhrgsng dg
+          
+            </ion-col>
+          </ion-col>
+          <ion-col>
+            <ion-col size="4">
+
+              <ion-label color="primary"><i>General Information</i> </ion-label>
+          
+          </ion-col> 
+          <ion-col size="8">
+              regytghsjnhrgsng dg
+          
+            </ion-col>
+
+
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col>        
+            <ion-col size="4">
+              <ion-label color="primary"><i>Loan Scheme</i> </ion-label>
+          </ion-col> 
+          <ion-col size="8">
+            NCRCS
+          </ion-col>
+          </ion-col>
+
+
+          <ion-col>
+            <ion-row>        
+              <ion-col size="4">
+                <ion-label color="primary"><i>Previous Payment Status</i> </ion-label>
+              </ion-col> 
+              <ion-col size="8">
+                  Valid
+              </ion-col>
+          </ion-row>
+            <ion-row>        
+              <ion-col size="4">
+                <ion-label color="primary"><i>Next Payment</i> </ion-label>
+              </ion-col> 
+            <ion-col size="8">
+              SEPtember 5
+            </ion-col>
+          </ion-row>
+          </ion-col>
+
+        </ion-row>
+
+
+
+      </ion-card>
+    </ion-row>
+      <ion-row>
+        <ion-col>
+        <ion-card routerLink="/tabs">
+          <img src="/assets/img/S5.jpg"/>
+          <div class="card-title">Payments</div>
+          <div class="card-subtitle">Click to view loan history</div>
+        </ion-card>
+      </ion-col>
+     
+    <ion-col>
         <ion-card routerLink="/tabs">
           <img src="/assets/img/S5.jpg"/>
           <div class="card-title">My Loan History</div>
           <div class="card-subtitle">Click to view loan history</div>
         </ion-card>
-        <ion-grid>
+      </ion-col>
+      </ion-row> 
+
       <ion-row>
         <ion-col>
         <ion-card routerLink="/crop">

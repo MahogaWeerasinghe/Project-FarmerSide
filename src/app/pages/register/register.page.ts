@@ -66,7 +66,7 @@ export class RegisterPage implements OnInit {
           },(err=>{
             loader.dismiss();
             this.disableButton=false;
-            this.presentAlert('Timeout');
+            this.presentAlert('Telephone Number is Used');
           }));
         });
 
@@ -76,7 +76,7 @@ export class RegisterPage implements OnInit {
   async presentToast(a) {
     let toast = await this.toastCtrl.create({
       message: a,
-      duration: 3000,
+      duration: 2000,
       position: 'top'
     });
   toast.present();
@@ -89,7 +89,7 @@ export class RegisterPage implements OnInit {
       
       buttons: [
         {
-          text: 'close',
+          text: 'cancel',
           handler: (blah) => {
             console.log('Confirm Cancel: blah');
           }
