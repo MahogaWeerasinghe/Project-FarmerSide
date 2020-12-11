@@ -30,6 +30,11 @@ export class AgrirequestPage implements OnInit {
   ao_status:string;
   ai_status:string;
   do_status:string;
+  bank_status:string;
+  crop:string;
+  whatfor:string;
+  variety:string;
+  sizeof:string;
 
   constructor(private router :Router,
     private storage:Storage,
@@ -49,13 +54,19 @@ export class AgrirequestPage implements OnInit {
 
   do(){
     this.storage.get('storage_XXX').then((val) => {
-      console.log('Your tel is',  val.telephone_number);
-     this.telephone_number=val.telephone_number;
+      console.log('Your tel is',  val.nic);
+     this.nic=val.nic;
+    
+     this.storage.get("applicationinfo").then((res)=>{
+
+      this.store=res;
+
+      this.app_id=this.store.id;
+      console.log(this.app_id);
+   
     
 
-    
-
-    this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+    this.http.get(AccessProviders.server+'/getapplicantdetails'+this.app_id).map(res => res).subscribe(res=>{ 
      //this.storage.set('store_nic',res);
      console.log(res);
        this.data=res;
@@ -64,8 +75,13 @@ export class AgrirequestPage implements OnInit {
          this.nameini=this.data.nameini;
          this.choose=this.data.choose;
          this.TpNo=this.data.TpNo;
+         this.crop=this.data.crop;
+         this.whatfor=this.data.whatfor;
+       
          console.log("NIC" ,this.data.nic);
+        
 
+        });
       });
     });
 
@@ -94,7 +110,10 @@ export class AgrirequestPage implements OnInit {
     District:this.District,
     ao_status:"false",
     ai_status:"false",
-    do_status:"false"
+    do_status:"false",
+    bank_status:"false",
+    variety:this.variety,
+    sizeof:this.sizeof
 
 
   }

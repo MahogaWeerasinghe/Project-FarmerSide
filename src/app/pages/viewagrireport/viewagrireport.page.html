@@ -1,0 +1,155 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="/viewstatusdetails"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agriculture Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor='let item of items'>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Date</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>{{item.ao_date}}</ion-card-subtitle>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+    <ion-card *ngFor='let item of items'>
+      <ion-label color="primary"><strong>Personal Information</strong></ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Membership No</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.mem_id}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Fertilizer Sub No</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.fert_id}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+    <ion-card *ngFor='let item of items'>
+      <ion-label color="primary"><strong>Past Performance</strong></ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Year</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.year}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Season</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.season}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Area</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.area}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Crop</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.crop_type}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+
+        
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Subsederies</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.subse}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-card>
+
+   <ion-card >
+      <ion-label color="primary"><strong>Agriculture Loan Details</strong></ion-label>
+      <ion-card *ngFor='let item of data'>
+      <ion-grid>
+        <ion-row >
+          <ion-col size="4">
+            <ion-card-subtitle><b>Bank Name</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.bank_name}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Amount</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.b_amount}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      </ion-card>
+    </ion-card>
+
+    <ion-card *ngFor='let item of items'>
+      <ion-label color="primary"><strong>Harvest</strong></ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Quantity</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.quantity}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>income</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.income}}</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+
+
+
+
+
+</ion-content>

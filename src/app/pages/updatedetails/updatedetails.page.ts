@@ -51,12 +51,12 @@ export class UpdatedetailsPage implements OnInit {
 
       this.username=res.username;
       
-        this.telephone_number=res.telephone_number;
+        this.nic=res.nic;
         
-        console.log("in farmer profile",this.telephone_number);
+        console.log("in farmer profile",this.nic);
        
         
-      this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+      this.http.get(AccessProviders.server+'/getdetails/'+this.nic).map(res => res).subscribe(res=>{ 
         this.data2=res;  
         //this.namefull=this.data2.namefull;
         console.log("in farmer profile ",this.data2.nic);
@@ -141,12 +141,11 @@ export class UpdatedetailsPage implements OnInit {
           address:this.address,
           TpNo:this.TpNo,
           dob:moment(this.dob).format('YYYY-MM-DD'),
-          nic:this.nic,
           email:this.email,
           
          
         }
-        this.acessPr.postUpdate(body,this.telephone_number).subscribe((res:any)=>{
+        this.acessPr.postUpdate(body,this.nic).subscribe((res:any)=>{
             if(res.status==true){
               loader.dismiss();
               this.disableButton=false;

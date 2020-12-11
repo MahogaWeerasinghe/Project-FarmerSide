@@ -12,7 +12,6 @@ import * as moment from 'moment';
   styleUrls: ['./edit.page.scss'],
 })
 export class EditPage implements OnInit {
-  telephone_number:string="";
   choose:string="";
   nameini:string="";
   namefull:string="";
@@ -32,12 +31,12 @@ export class EditPage implements OnInit {
     private alertCtrl:AlertController,
     private acessPr:AccessProviders,) {
       this.storage.get('storage_XXX').then((val) => {
-        console.log('Your age is',  val.telephone_number);
-        this.telephone_number=val.telephone_number
+        console.log('Your age is',  val.nic);
+        this.nic=val.nic
         
     });
     
-    console.log(this.telephone_number);
+    console.log(this.nic);
 
     }
     
@@ -77,10 +76,7 @@ export class EditPage implements OnInit {
     {
       this.presentToast("date of birth is required");
     }
-    else if(this.nic=="")
-    {
-      this.presentToast("NIC is required");
-    }
+   
     else if(this.email=="")
     {
       this.presentToast("email is required");
@@ -95,14 +91,13 @@ export class EditPage implements OnInit {
         return new Promise(resoler=>{
           let body={
             
-            telephone_number:this.telephone_number,
+            nic:this.nic,
             choose:this.choose,
             nameini:this.nameini,
             namefull:this.namefull,
             address:this.address,
             TpNo:this.TpNo,
             dob:moment(this.dob).format('YYYY-MM-DD'),
-            nic:this.nic,
             email:this.email,
             
            
@@ -115,7 +110,7 @@ export class EditPage implements OnInit {
                 console.log(res.data);
                 this.storage.set('storage2',res.data);
                 
-                this.router.navigate(['/farmer-profile']);
+                this.router.navigate(['/profile']);
 
               }else{
                 loader.dismiss();

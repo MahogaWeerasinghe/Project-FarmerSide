@@ -1,20 +1,16 @@
-<ion-header [translucent]="true">
-
+<ion-header>
   <ion-toolbar color="secondary">
-    <ion-button (click)="loadMap()" shape="round" color="danger">
-      <ion-icon slot="start" name="locate"></ion-icon>
-      Where I Am
-    </ion-button>
-    <ion-title slot="end">Google Map</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="airequestenter"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Location</ion-title>
   </ion-toolbar>
-  
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
   <div class="map-wrapper">
     <div id="map_center">
-      <img src="assets/icon/marker.png" >
+      <img src="assets/icon/marker.png" />
     </div>
     <div #map id="map"></div>
   </div>
@@ -46,5 +42,6 @@
     </ion-row>
   </ion-grid>
 
-  <ion-button (click)="back()">submit</ion-button>
+
+
 </ion-content>

@@ -6,11 +6,11 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
 export class User {
     
-  telephone_number: string;
+  nic: string;
 
-  constructor( telephone_number: string) {
+  constructor( nic: string) {
    
-    this.telephone_number = telephone_number;
+    this.nic = nic;
   }
 }
 
@@ -58,7 +58,7 @@ public static server:string='http://192.168.8.183:8080';
           let options={
               headers:headers
           }
-          this.currentUser = new User(body.telephone_number);
+          this.currentUser = new User(body.nic);
           this.isLogged = true;
           return this.http.post(AccessProviders.server+'/login',JSON.stringify(body),{
               headers: new HttpHeaders().set('Content-Type', 'application/json'),

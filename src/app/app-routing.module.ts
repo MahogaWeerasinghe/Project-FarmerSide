@@ -140,6 +140,26 @@ const routes: Routes = [
     path: 'doofficerequestenter',
     loadChildren: () => import('./pages/doofficerequestenter/doofficerequestenter.module').then( m => m.DoofficerequestenterPageModule)
   },
+  {
+    path: 'viewstatus',
+    loadChildren: () => import('./pages/viewstatus/viewstatus.module').then( m => m.ViewstatusPageModule)
+  },
+  {
+    path: 'viewstatusdetails',
+    loadChildren: () => import('./pages/viewstatusdetails/viewstatusdetails.module').then( m => m.ViewstatusdetailsPageModule)
+  },
+  {
+    path: 'viewagrireport',
+    loadChildren: () => import('./pages/viewagrireport/viewagrireport.module').then( m => m.ViewagrireportPageModule)
+  },
+  {
+    path: 'viewaireport',
+    loadChildren: () => import('./pages/viewaireport/viewaireport.module').then( m => m.ViewaireportPageModule)
+  },
+  {
+    path: 'location',
+    loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
+  },
   /*{
     path: 'myloans',
     loadChildren: () => import('./pages/myloans/myloans.module').then( m => m.MyloansPageModule)

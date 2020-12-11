@@ -4,6 +4,7 @@ import { ToastController,LoadingController,AlertController, NavController } from
 import { AccessProviders } from '../../pro/access';
 import {Storage} from '@ionic/storage';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
+import * as moment from 'moment';
 
 
 @Component({
@@ -22,6 +23,8 @@ export class AirequestenterPage implements OnInit {
   ai_id:string;
   ai_status:string;
   rep_id:string="";
+  app_id:string;
+  ai_date:string;
   constructor(
     private router:Router,
     private toastCtrl:ToastController,
@@ -56,6 +59,7 @@ export class AirequestenterPage implements OnInit {
           this.nameini=this.data[0].nameini;
           this.nic=this.data[0].nic;
           this.mem_id=this.data[0].mem_id;
+          this.app_id=this.data[0].app_id;
           console.log(this.choose);
          
        });
@@ -65,10 +69,12 @@ export class AirequestenterPage implements OnInit {
   }
   details(){
     let body={
-      size:this.size,
+      //size:this.size,
       es_amount:this.es_amount,
       ai_status:"true",
-      ai_id:this.ai_id
+      ai_id:this.ai_id,
+      ai_date:moment(this.ai_date).format('YYYY-MM-DD'),
+
      
 
     }
@@ -91,6 +97,12 @@ export class AirequestenterPage implements OnInit {
   
   }));
 
+  }
+
+  location(){
+    this.storage.set('storage_loaction',this.app_id);
+
+    this.router.navigate(['/location']);
   }
 
 }

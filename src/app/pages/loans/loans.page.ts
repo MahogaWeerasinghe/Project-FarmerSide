@@ -18,7 +18,7 @@ export class LoansPage implements OnInit {
   data:any;
   dat:string="";
   bank_id:string;
-  telephone_number:string="";
+  nic:string="";
 
   constructor( private router :Router,
     private storage:Storage,
@@ -28,8 +28,8 @@ export class LoansPage implements OnInit {
     private alertCtrl: AlertController) {
 
       this.storage.get('storage_XXX').then((val) => {
-        console.log('Your age is',  val.telephone_number);
-       this.telephone_number=val.telephone_number;
+        console.log('Your age is',  val.nic);
+       this.nic=val.nic;
       });
       this.storage.get("storage_co").then((res)=>{
         console.log(res);
@@ -90,7 +90,7 @@ export class LoansPage implements OnInit {
     console.log(this.dat);
     this.storage.set('storage_app',this.dat);
 
-    this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+    this.http.get(AccessProviders.server+'/getdetails/'+this.nic).map(res => res).subscribe(res=>{ 
       //this.storage.set('storage2',res);
         
           console.log(res);

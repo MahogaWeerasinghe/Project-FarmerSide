@@ -63,12 +63,12 @@ data2:any;
 
       this.username=res.username;
       
-        this.telephone_number=res.telephone_number;
+        this.nic=res.nic;
         
-        console.log("in farmer profile",this.telephone_number);
+        console.log("in farmer profile",this.nic);
        
         
-      this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+      this.http.get(AccessProviders.server+'/getdetails/'+this.nic).map(res => res).subscribe(res=>{ 
         this.data2=res;  
         //this.namefull=this.data2.namefull;
         console.log("in farmer profile ",this.data2.nic);
@@ -130,7 +130,7 @@ data2:any;
   }*/
 
   where(){
-    if(this.nic==""){
+    if(this.dob==""){
       this.router.navigate(['/edit']);
     }
     else{

@@ -55,11 +55,11 @@ data2:any;
        
            //console.log(res);
            //this.datastore=res;
-           this.telephone_number=res.telephone_number;
+           this.nic=res.nic;
            //console.log(this.telephone_number);
           
            
-         this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+         this.http.get(AccessProviders.server+'/getdetails/'+this.nic).map(res => res).subscribe(res=>{ 
            this.data2=res;  
            //this.storage.set('storage2',this.data2);
            //this.namefull=this.data2.namefull;

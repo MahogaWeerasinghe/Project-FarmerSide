@@ -11,7 +11,7 @@ import { AccessProviders } from '../../pro/access';
 })
 export class RegisterPage implements OnInit {
   username:string="";
-  telephone_number:string="";
+  nic:string="";
   password:string="";
 
   disableButton;
@@ -37,16 +37,8 @@ export class RegisterPage implements OnInit {
   
     if(this.username==""){
         this.presentToast("User name is required");
-    }else if(this.telephone_number==""){
-      this.presentToast("Telephone number is required");
-    }
-
-    else if(isNumeric(this.telephone_number)){
-      this.presentToast("telephone Number not valid");
-    }
-   
-    else if(this.telephone_number.length!=10){
-      this.presentToast("telephone Number require 10 numbers");
+    }else if(this.nic==""){
+      this.presentToast("nic is required");
     }
 
    
@@ -65,7 +57,7 @@ export class RegisterPage implements OnInit {
           let body={
            
             username:this.username,
-            telephone_number:this.telephone_number,
+            nic:this.nic,
             password:this.password,
            
           }
@@ -84,7 +76,7 @@ export class RegisterPage implements OnInit {
           },(err=>{
             loader.dismiss();
             this.disableButton=false;
-            this.presentAlert('Telephone Number is Used');
+            this.presentAlert('National identy Card Number is Used');
           }));
         });
 

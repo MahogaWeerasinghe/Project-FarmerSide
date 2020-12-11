@@ -12,7 +12,7 @@ import {Storage} from '@ionic/storage';
 })
 export class LoginPage implements OnInit {
   username:string="";
-  telephone_number:string="";
+ nic:string="";
   password:string="";
 
   disableButton;
@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
 
  async tryLogin(){
     //this.router.navigate(['/farmer-profile']);
-   if(this.telephone_number==""){
+   if(this.nic==""){
     this.presentToast("Telephone number is required");
   }else if(this.password=="")
   {
@@ -50,7 +50,7 @@ export class LoginPage implements OnInit {
         let body={
          
           
-          telephone_number:this.telephone_number,
+          nic:this.nic,
           password:this.password,
          
         }
@@ -64,7 +64,7 @@ export class LoginPage implements OnInit {
               console.log(res.data);
               
               this.storage.get('storage_XXX').then((val) => {
-                console.log('Your login tp is',  val.telephone_number);
+                console.log('Your login nic is',  val.nic);
                 //console.log('Your login name is',  val.username);
               
               });

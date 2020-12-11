@@ -9,6 +9,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { ActionSheetController } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-agrirequestsenter',
@@ -41,6 +42,7 @@ export class AgrirequestsenterPage implements OnInit {
   cameradata:string;
   base64Image:string;
   ao_id:string;
+  ao_date:string;
 
 
   
@@ -142,6 +144,10 @@ export class AgrirequestsenterPage implements OnInit {
 
 
   details(){
+    this.http.get(AccessProviders.server+'/dltloans/'+this.rep_id).map(res => res).subscribe((res:any)=>{ 
+
+    });
+
     console.log(this.photos[0]);
     console.log(this.sub);
 
@@ -162,8 +168,9 @@ export class AgrirequestsenterPage implements OnInit {
       ao_status:"true",
       ao_photos:this.photos[0],
       subse:this.subse,
-      ao_id:this.ao_id
-
+      ao_id:this.ao_id,
+      ao_date:moment(this.ao_date).format('YYYY-MM-DD'),
+      
     }
 
     this.acessPr.postagrirep(body,this.rep_id).subscribe((res:any)=>{
