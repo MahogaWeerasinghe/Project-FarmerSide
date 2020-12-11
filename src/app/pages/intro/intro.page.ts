@@ -25,7 +25,7 @@ export class IntroPage implements OnInit {
   }
 
   openagri(){
-    this.router.navigate(['/agriofficer']);
+    this.router.navigate(['/officers']);
   }
 
   

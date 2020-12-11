@@ -15,6 +15,7 @@ export class RegisterPage implements OnInit {
   password:string="";
 
   disableButton;
+  mine:any[]=[];
 
   constructor(private router:Router,
     private toastCtrl:ToastController,
@@ -26,17 +27,34 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
   async tryRegister(){
-    //this.router.navigate(['/login']);
-
+  
+    const isNumeric = (val: string) : boolean => {
+      return isNaN(Number(val));
+   }
+   
+      
+   
   
     if(this.username==""){
         this.presentToast("User name is required");
     }else if(this.telephone_number==""){
       this.presentToast("Telephone number is required");
-    }else if(this.password=="")
+    }
+
+    else if(isNumeric(this.telephone_number)){
+      this.presentToast("telephone Number not valid");
+    }
+   
+    else if(this.telephone_number.length!=10){
+      this.presentToast("telephone Number require 10 numbers");
+    }
+
+   
+    else if(this.password=="")
     {
       this.presentToast("Password is required");
     }
+   
     else{
       this.disableButton=true;
       const loader=await this.loadingCtrl.create({

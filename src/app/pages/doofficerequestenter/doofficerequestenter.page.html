@@ -1,0 +1,216 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="airequest"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Verify the Agriculture Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor='let item of data'>
+    <ion-label color="secondary">Personal Information</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>Name</ion-label>
+        </ion-col>
+        <ion-col size="8">
+         {{item.choose}} {{item.nameini}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>Nic No</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          {{item.nic}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>membership No</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          {{item.mem_id}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>fertilizer sub No</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          {{item.fert_id}}
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-card>
+
+  <ion-card *ngFor='let item of data'>
+    <ion-label color="secondary">Apply Loan Details</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Crop Type</ion-label>
+        </ion-col>
+        <ion-col size="7">
+         {{item.crop}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Prurpose</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.whatfor}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Location</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.address}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Reason</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.reason}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+      <ion-col size="5">
+        <ion-label>Amount Required</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.amount}}
+      </ion-col>
+    </ion-row>
+
+
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-label color="secondary">Report of Agriculture Officer</ion-label>
+    <ion-card  *ngFor='let item of data'>
+      <ion-label color="secondary">Past Performance</ion-label>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Year</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.year}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Season</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.season}}
+        </ion-col>
+      </ion-row>
+      <div class="ou">
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Area</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            {{item.area}}
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Crop</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            {{item.crop_type}}
+          </ion-col>
+          
+        </ion-row>
+        
+        
+      </div>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Subsidiaries</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.subse}}
+        </ion-col>
+      </ion-row>
+      
+    </ion-card>
+
+    
+  <ion-card *ngFor='let item of data'>
+
+    <ion-label color="secondary">Harvest</ion-label>
+    <ion-grid>
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Quantity</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.quantity}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Income</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.income}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+
+
+
+
+  <ion-card *ngFor='let item of data'>
+
+    <ion-label color="secondary">Agriculture Estimate</ion-label>
+    <ion-grid>
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Size of the project</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.size}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Estimated amount</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.es_amount}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+
+  <ion-row>
+    <ion-col size="4">
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-col>
+    <ion-col size="8">
+    <ion-button color="secondary"  (click)="details()">Submit Report</ion-button>
+    </ion-col>
+    
+    </ion-row>
+
+</ion-card>
+</ion-content>

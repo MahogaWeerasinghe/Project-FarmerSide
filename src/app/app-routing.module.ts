@@ -108,6 +108,38 @@ const routes: Routes = [
     path: 'agrirequestsenter',
     loadChildren: () => import('./pages/agrirequestsenter/agrirequestsenter.module').then( m => m.AgrirequestsenterPageModule)
   },
+  {
+    path: 'officers',
+    loadChildren: () => import('./pages/officers/officers.module').then( m => m.OfficersPageModule)
+  },
+  {
+    path: 'aiofficer',
+    loadChildren: () => import('./pages/aiofficer/aiofficer.module').then( m => m.AiofficerPageModule)
+  },
+  {
+    path: 'doofficer',
+    loadChildren: () => import('./pages/doofficer/doofficer.module').then( m => m.DoofficerPageModule)
+  },
+  {
+    path: 'agrirequest',
+    loadChildren: () => import('./pages/agrirequest/agrirequest.module').then( m => m.AgrirequestPageModule)
+  },
+  {
+    path: 'airequest',
+    loadChildren: () => import('./pages/airequest/airequest.module').then( m => m.AirequestPageModule)
+  },
+  {
+    path: 'airequestenter',
+    loadChildren: () => import('./pages/airequestenter/airequestenter.module').then( m => m.AirequestenterPageModule)
+  },
+  {
+    path: 'doofficerequest',
+    loadChildren: () => import('./pages/doofficerequest/doofficerequest.module').then( m => m.DoofficerequestPageModule)
+  },
+  {
+    path: 'doofficerequestenter',
+    loadChildren: () => import('./pages/doofficerequestenter/doofficerequestenter.module').then( m => m.DoofficerequestenterPageModule)
+  },
   /*{
     path: 'myloans',
     loadChildren: () => import('./pages/myloans/myloans.module').then( m => m.MyloansPageModule)

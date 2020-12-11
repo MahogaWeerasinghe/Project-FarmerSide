@@ -74,19 +74,19 @@ export class ApplicationPage implements OnInit {
   crop:string="";
   whatfor:string="";
   reason:string="";
-  amount:number;
-  months:number;
+  amount:string="";
+  months:string="";
   civil:string="";
   spousename:string="";
   spo_emplo:string="";
-  children:number;
+  children:string="";
   fix_name:string="";
   fix_deed:string="";
-  fix_size:number;
-  fix_value:number;
+  fix_size:string="";
+  fix_value:string="";
   mot_about:string="";
   mot_location:string="";
-  mot_value:number;
+  mot_value:string="";
   gua1_name:string="";
   gua1_occ:string="";
   gua1_tp:string="";
@@ -97,6 +97,7 @@ export class ApplicationPage implements OnInit {
   i1:any;
   i2:any;
   addr:any;
+  subse:string="";
 
   
   disableButton;
@@ -170,11 +171,19 @@ export class ApplicationPage implements OnInit {
   }
   
   async submitapp(){
+    /*
       console.log(this.nic);
       console.log(this.B1name);
       console.log(this.B2name);
       console.log(this.B3name);
+      console.log(this.whatfor);
+
     
+    for(let i=0;i<this.whatfor.length;i++){
+      this.subse=this.subse+','+this.whatfor[i];
+    }
+    
+      console.log(this.subse);
       if(this.B1name!=""){
       let body ={
         nic :this.nic,
@@ -236,6 +245,7 @@ if(this.B3name!=""){
     
   });
 }
+  console.log(this.whatfor);
 
     console.log("agrii",this.photos);
     console.log("income",this.repo);
@@ -308,28 +318,7 @@ if(this.B3name!=""){
                 this.appid=this.store.id + 1;
                 
                 console.log(this.appid);
-                if(this.photos!=null){
-                    this.type="agri";
-                    for(let i=0;i<this.photos.length;i++){
-                      console.log(this.photos[i]);
-                      console.log(this.appid);
-                      let body ={
-                        app_id:this.appid,
-                        agr_images:this.photos[i],
-                        type:this.type
-                      }
-                    
-                      this.acessPr.postagri(body).subscribe((res:any)=>{
-                        console.log(res);
-                      },
-                      (err: any) => {
-                        console.log(err);
-                        
-                      });
-                    
-                    }
-                }
-
+                
                 if(this.repo!=null){
                   this.type="repo";
                   for(let i=0;i<this.repo.length;i++){
@@ -445,22 +434,15 @@ if(this.B3name!=""){
           }
       }
 
-      this.http.get(AccessProviders.server+'/insertagain/'+this.loan_id+'/'+this.appid+'/'+this.nic+'/'+this.date).map(res => res).subscribe((res:any)=>{ 
-          console.log(this.loan_id);
-          console.log(this.appid);
-          console.log(this.nic);
-          console.log(this.date);
-
-
-      });
+   
+*/
 
 
 
 
-
-
+      this.router.navigate(['/agrirequest']);
                 
-        
+        /*
         
           });
 
@@ -479,7 +461,7 @@ if(this.B3name!=""){
       
 
     
-  }
+ }
 
 
 
@@ -488,7 +470,7 @@ if(this.B3name!=""){
 
 
 
-
+*/
 
 }
   //console.log(telephone_number);

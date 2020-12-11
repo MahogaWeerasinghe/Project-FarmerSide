@@ -24,7 +24,8 @@ export class LoansPage implements OnInit {
     private storage:Storage,
     private navCtrl:NavController,
     public http:HttpClient,
-    private acessPr:AccessProviders,) {
+    private acessPr:AccessProviders,
+    private alertCtrl: AlertController) {
 
       this.storage.get('storage_XXX').then((val) => {
         console.log('Your age is',  val.telephone_number);
@@ -83,6 +84,7 @@ export class LoansPage implements OnInit {
 
 
   applyloan(event:any){
+
     console.log(event.target.id);
     this.dat=event.target.id;
     console.log(this.dat);
@@ -113,6 +115,10 @@ export class LoansPage implements OnInit {
 
     });
 
+
   }
+
+
+  
 
 }

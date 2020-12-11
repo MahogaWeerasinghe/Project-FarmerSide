@@ -61,7 +61,7 @@ export class UpdatedetailsPage implements OnInit {
         //this.namefull=this.data2.namefull;
         console.log("in farmer profile ",this.data2.nic);
     
-      this.storage.set('storage2',res);
+        this.storage.set('storage2',res);
           
             console.log(res);
             this.storage.get('storage2').then((res)=>{

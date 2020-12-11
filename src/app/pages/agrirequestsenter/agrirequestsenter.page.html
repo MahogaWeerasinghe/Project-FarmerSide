@@ -1,15 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>agrirequestsenter</ion-title>
+  <ion-toolbar color="secondary"  class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="agrirequest"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agriculture Officer Report</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
+    <ion-label color="primary"><strong>Personal Information</strong></ion-label>
     <ion-grid>
       <ion-row>
         <ion-col size="4">
-          <ion-card-subtitle><b>Name with Initial </b></ion-card-subtitle>
+          <ion-card-subtitle><b>Name</b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
           <ion-card-subtitle>{{choose}} {{nameini}}</ion-card-subtitle>
@@ -18,43 +22,7 @@
       </ion-row>
       <ion-row>
         <ion-col size="4">
-          <ion-card-subtitle><b>Name in full</b></ion-card-subtitle>
-        </ion-col>
-        <ion-col size="8">
-          <ion-card-subtitle>{{namefull}}</ion-card-subtitle>
-        </ion-col>
-        
-      </ion-row>
-      <ion-row>
-        <ion-col size="4">
-          <ion-card-subtitle><b>Private Address </b></ion-card-subtitle>
-        </ion-col>
-        <ion-col size="8">
-          <ion-card-subtitle> {{address}}</ion-card-subtitle>
-        </ion-col>
-        
-      </ion-row>
-      <ion-row>
-        <ion-col size="4">
-          <ion-card-subtitle><b>Telephone Number</b></ion-card-subtitle>
-        </ion-col>
-        <ion-col size="8">
-          <ion-card-subtitle> {{TpNo}}</ion-card-subtitle>
-        </ion-col>
-        
-      </ion-row>
-      <ion-row>
-        <ion-col size="4">
-          <ion-card-subtitle><b>Date Of Birth</b></ion-card-subtitle>
-        </ion-col>
-        <ion-col size="8">
-          <ion-card-subtitle>{{dob}}</ion-card-subtitle>
-        </ion-col>
-        
-      </ion-row>
-      <ion-row>
-        <ion-col size="4">
-          <ion-card-subtitle><b>NIC No </b></ion-card-subtitle>
+          <ion-card-subtitle><b>Nic No</b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
           <ion-card-subtitle>{{nic}}</ion-card-subtitle>
@@ -63,27 +31,224 @@
       </ion-row>
       <ion-row>
         <ion-col size="4">
-          <ion-card-subtitle><b>Email Address </b></ion-card-subtitle>
+          <ion-card-subtitle><b>membership no</b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
-          <ion-card-subtitle>{{email}}</ion-card-subtitle>
+          <ion-input type="text" placeholder="memebershp no" [(ngModel)]="mem_id" ></ion-input>
         </ion-col>
         
       </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>fertilizer sub No</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-input type="text" placeholder="fertilizer sub No" [(ngModel)]="fert_id" ></ion-input>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+
+    </ion-card>
+
+    <ion-card>
+      <ion-label color="primary"><strong>Past Performance</strong></ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Year</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-select value="1996" [(ngModel)]="year">
+              <ion-select-option value="1989">1989</ion-select-option>
+              <ion-select-option value="1990">1990</ion-select-option>
+              <ion-select-option value="1991">1991</ion-select-option>
+              <ion-select-option value="1992">1992</ion-select-option>
+              <ion-select-option value="1993">1993</ion-select-option>
+              <ion-select-option value="1994">1994</ion-select-option>
+              <ion-select-option value="1995">1995</ion-select-option>
+              <ion-select-option value="1996">1996</ion-select-option>
+              <ion-select-option value="1997">1997</ion-select-option>
+              <ion-select-option value="1998">1998</ion-select-option>
+              <ion-select-option value="1999">1999</ion-select-option>
+            </ion-select>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Season</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-select interface="popover" [(ngModel)]="season">
+              <ion-select-option >Yala</ion-select-option>
+              <ion-select-option >Maha</ion-select-option>
+            </ion-select>
+          </ion-col>
+          
+        </ion-row>
+ 
+        <div class="ou">
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>Area</b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-input type="text" placeholder="area" [(ngModel)]="area" ></ion-input>
+            </ion-col>
+            
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>Crop</b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-input type="text" placeholder="Crop" [(ngModel)]="crop_type" ></ion-input>
+            </ion-col>
+            
+          </ion-row>
+          
+          
+        </div>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Subsedaries</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+          
+              
+              <ion-select multiple="true" cancelText="NO" okText="Yes" [(ngModel)]="sub">
+                <ion-select-option value="Seed">Seed</ion-select-option>
+                <ion-select-option value="Fertilizer">Fertilizer</ion-select-option>
+                <ion-select-option value="Chemical">Chemical</ion-select-option>
+              </ion-select>
+         
+          </ion-col>
+          
+        </ion-row>
+
+        
+      </ion-grid>
+  
+    </ion-card>
+
+       
+    
+
+    <ion-card>
+      <ion-label color="primary"><strong>Agriculture Loan Details</strong></ion-label>
+     <form #addressForm="ngForm" (ngSubmit)="logValue()">
+    <br>
+      <ion-col><button type="button" class="btn btn-primary mb-2" (click)="addAddress()">Add Loan</button></ion-col>
+          <section class="container border mb-4 p-3" *ngFor="let address of addresses; let i = index;">
+  
+    
+              
+         
+                    <ion-row>
+                      <ion-col>
+                        <ion-card-subtitle><b>Bank Name</b></ion-card-subtitle>
+                      </ion-col>
+                      <ion-col>  
+                      <input type="text" class="form-control" [(ngModel)]="address.bank_name" name="address_{{address.id}}"/>
+                    </ion-col>
+                    </ion-row>
+            
+                      <ion-row>
+                        <ion-col>
+                          <ion-card-subtitle><b>Amount</b></ion-card-subtitle>
+                    </ion-col>
+                  <ion-col>
+                      <input type="text" class="form-control" [(ngModel)]="address.b_amount" name="street_{{address.id}}" />
+                    </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+
+                      <ion-col> <button type="button" class="btn btn-danger btn-sm" (click)="removeAddress(i)">Remove Loan</button></ion-col>
+                    </ion-row>
+               
+             
+          </section>
+    
+  
+        
+    </form>
+  </ion-card>
+
+
+
+<ion-card>
+  <ion-label color="primary"><strong>Harvest</strong></ion-label>
+  <ion-grid>
+    <ion-row>
+    <ion-col size="4">
+      <ion-card-subtitle><b>Quantity</b></ion-card-subtitle>
+    </ion-col>
+    <ion-col size="8">
+      <ion-input type="text" placeholder="Quantity" [(ngModel)]="quantity" ></ion-input>
+    </ion-col>
+    
+  </ion-row>
+  <ion-row>
+    <ion-col size="4">
+      <ion-card-subtitle><b>Income</b></ion-card-subtitle>
+    </ion-col>
+    <ion-col size="8">
+      <ion-input type="text" placeholder="income" [(ngModel)]="income" ></ion-input>
+    </ion-col>
+    
+  </ion-row>
+  </ion-grid>
+
+
+ 
+
+
+
+
+
+</ion-card>
+
+<ion-card>
+  <ion-label color="primary"><strong>Attach Documents</strong></ion-label>
+  <ion-item>
+            
+    <ion-button size="small" color="secondary" (click)="agriofficerActionSheet()">Click here</ion-button>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 *ngFor="let p of photos">
+          <img [src]="p"/>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+</ion-card>
+
+
+
+
+
+
+
+
+
 
       <ion-row>
        <ion-col size="4">
          <ion-card-subtitle></ion-card-subtitle>
        </ion-col>
        <ion-col size="8">
-       <ion-button color="secondary"  (click)="details()">Edit Details</ion-button>
+       <ion-button color="secondary"  (click)="details()">Submit Report</ion-button>
        </ion-col>
        
        </ion-row>
 
     
-    </ion-grid>
-  </ion-card> 
+    
+   
 
 
 

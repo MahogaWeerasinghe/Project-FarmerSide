@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="officers"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Welcome {{name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br>
+  <ion-slides pager = "true" pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)" speed="3000" color="success">
+    <ion-slide *ngFor="let slide of slideData">
+      <img src="{{slide.image}}" />
+    </ion-slide>
+  </ion-slides>
+
+  <br>
+  <ion-card *ngFor='let item of items'>
+
+           <ion-grid>
+             <ion-row>
+               <ion-col size="4">
+                 <ion-card-subtitle><b>Name </b></ion-card-subtitle>
+               </ion-col>
+               <ion-col size="8">
+                 <ion-card-subtitle>{{item.name}}</ion-card-subtitle>
+               </ion-col>
+               
+             </ion-row>
+          
+             <ion-row>
+               <ion-col size="4">
+                 <ion-card-subtitle><b>NIC NO</b></ion-card-subtitle>
+               </ion-col>
+               <ion-col size="8">
+                 <ion-card-subtitle>{{item.nic}}</ion-card-subtitle>
+               </ion-col>
+               
+             </ion-row>
+             <ion-row>
+               <ion-col size="4">
+                 <ion-card-subtitle><b>Telephone Number</b></ion-card-subtitle>
+               </ion-col>
+               <ion-col size="8">
+                 <ion-card-subtitle>{{item.telephone_no}}</ion-card-subtitle>
+               </ion-col>
+               
+             </ion-row>
+             <ion-row>
+              <ion-col size="4">
+                <ion-card-subtitle><b>Grama Division Number</b></ion-card-subtitle>
+              </ion-col>
+              <ion-col size="8">
+                <ion-card-subtitle>{{item.GN_No}}</ion-card-subtitle>
+              </ion-col>
+              
+            </ion-row>
+             <ion-row>
+               <ion-col size="4">
+                 <ion-card-subtitle><b>GN Division</b></ion-card-subtitle>
+               </ion-col>
+               <ion-col size="8">
+                 <ion-card-subtitle>{{item.GN_Division}}</ion-card-subtitle>
+               </ion-col>
+               
+             </ion-row>
+         
+             <ion-row>
+              <ion-col size="4">
+                <ion-card-subtitle><b>Agrarian Service Division</b></ion-card-subtitle>
+              </ion-col>
+              <ion-col size="8">
+                <ion-card-subtitle>{{item.Agr_service_dev}}</ion-card-subtitle>
+              </ion-col>
+              
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <ion-card-subtitle><b>District</b></ion-card-subtitle>
+              </ion-col>
+              <ion-col size="8">
+                <ion-card-subtitle>{{item.District}}</ion-card-subtitle>
+              </ion-col>
+              
+            </ion-row>
+
+           <!--<ion-row>
+              <ion-col size="4">
+                <ion-card-subtitle></ion-card-subtitle>
+              </ion-col>
+              <ion-col size="8">
+              <ion-button color="secondary"  (click)="details()">Edit Details</ion-button>
+              </ion-col>
+              
+              </ion-row>-->
+
+           
+           </ion-grid>
+           <br>
+           <br>
+           <br>
+            <ion-card>
+              <ion-label color="secondary">You Have Requests on that {{GN_No}} Division</ion-label>
+      
+       <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-button color="secondary" id="{{item.GN_No}}" (click)="requests($event)">View Requests</ion-button>
+          </ion-col>
+          <ion-col size="8">
+         
+          </ion-col>
+          
+          </ion-row>
+   
+       </ion-grid>
+            </ion-card>
+      </ion-card>
+
+</ion-content>

@@ -1,0 +1,70 @@
+<!--<ion-header no-border>
+  <ion-toolbar color="success">
+    <ion-title>login To App</ion-title>
+  </ion-toolbar>
+</ion-header>-->
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" routerLink="/intro">
+        <ion-icon slot="icon-only" name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!--<ion-content>
+  <ion-list>
+   
+    <ion-item transparent>
+      
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+       <ion-input type="text" placeholder="Telephone Number" [(ngModel)]="telephone_number" ></ion-input>
+    </ion-item>
+    <ion-item transparent>
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input type="password" placeholder="Password"[(ngModel)]="password" ></ion-input>
+   </ion-item>
+   
+
+   <ion-button expand="full" class="ion-padding" color="success" (click)="tryLogin()">Login</ion-button>
+  
+  </ion-list>
+  <p class="ion-padding info-1">
+    <br/>
+    If you do not have an account, Click <span (click)="openRegister()"><b> register now </b> </span>
+  </p>
+</ion-content>-->
+
+<ion-content>
+  <div id="header">
+    <h1>Login As A Officer</h1>
+    <img src="/assets/img/officer.jpg"/>
+  </div>
+
+
+  <ion-list>
+   
+    <ion-item transparent >
+      
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+       <ion-input type="text" placeholder="National Identy Card No" [(ngModel)]="nic" ></ion-input>
+    </ion-item>
+    <ion-item transparent>
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input type="password" placeholder="Password"[(ngModel)]="password" ></ion-input>
+   </ion-item>
+   
+  </ion-list>
+  <p>
+   <ion-button  expand="block" shape="round" class="ion-padding" color="success" (click)="tryLogin()">Login</ion-button>
+  
+  </p>
+ 
+
+  
+ 
+    
+
+</ion-content>

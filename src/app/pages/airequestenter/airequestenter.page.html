@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="airequest"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Agriculture Estimate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-label color="secondary">Personal Information</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>Name</ion-label>
+        </ion-col>
+        <ion-col size="8">
+         {{choose}} {{nameini}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>Nic No</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          {{nic}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>membership No</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          {{mem_id}}
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-card>
+
+  <ion-card *ngFor='let item of data'>
+    <ion-label color="secondary">Apply Loan Details</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Crop Type</ion-label>
+        </ion-col>
+        <ion-col size="7">
+         {{item.crop}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Prurpose</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.whatfor}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Location</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.address}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Reason</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.reason}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+      <ion-col size="5">
+        <ion-label>Amount Required</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.amount}}
+      </ion-col>
+    </ion-row>
+
+
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+
+    <ion-label color="secondary">Agriculture Estimate</ion-label>
+    <ion-grid>
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Size of the project</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        <ion-input type="text" placeholder="Size of the project" [(ngModel)]="size" ></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Estimated amount</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        <ion-input type="text" placeholder="Estimated amount" [(ngModel)]="es_amount" ></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+
+  <ion-row>
+    <ion-col size="4">
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-col>
+    <ion-col size="8">
+    <ion-button color="secondary"  (click)="details()">Submit Report</ion-button>
+    </ion-col>
+    
+    </ion-row>
+
+
+</ion-content>

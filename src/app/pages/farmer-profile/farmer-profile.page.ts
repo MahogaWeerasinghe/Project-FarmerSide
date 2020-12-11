@@ -137,4 +137,8 @@ data2:any;
       this.router.navigate(['/updatedetails']);
     }
   }
+
+  tobanks(){
+    this.router.navigate(['/crop']);
+  }
 }

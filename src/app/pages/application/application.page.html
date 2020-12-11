@@ -67,11 +67,14 @@
   </ion-segment>
 
   <div *ngIf="selectTabs == 'want'">
+    <ion-row>
+      <ion-col>
     <ion-item>
       <ion-label>Facilities What you want </ion-label>
     </ion-item>
+    </ion-col>
+    <ion-col>
     <ion-item>
- 
       <ion-label>What Crop type for you want ?</ion-label>
       <ion-select interface="popover" [(ngModel)]="crop">
         <ion-select-option >Paddy</ion-select-option>
@@ -81,20 +84,44 @@
       </ion-select>
     
      </ion-item>
+     </ion-col>
+    </ion-row>
     
      <ion-item >
      
       <ion-label>What for </ion-label>
       <ion-select interface="popover" [(ngModel)]="whatfor">
-        <ion-select-option >To get Property</ion-select-option>
-        <ion-select-option >Machinery purposes</ion-select-option>
-        <ion-select-option >Infrastructure development</ion-select-option>
         <ion-select-option >To get Seeds</ion-select-option>
         <ion-select-option >Fertilizer Purposes</ion-select-option>
         <ion-select-option >Chemical(pest/weed)</ion-select-option>
       </ion-select>
     
      </ion-item>
+
+     <ion-item>
+       <ion-row>
+        <ion-label>Where Locate</ion-label>
+       </ion-row>
+      
+      <ion-row>
+        <ion-col col-4>
+      <ion-button color="secondary"  (click)="location()">Mark the land</ion-button>
+    </ion-col>
+          <ion-col col-4>
+              <ion-button color="secondary"  (click)="addlocation()">Add</ion-button>
+          </ion-col>
+         <ion-col col-4>
+            Latitude :<strong>{{i1}}</strong>
+         </ion-col>
+         <ion-col col-4>
+          longitude :<strong>{{i2}}</strong>
+        </ion-col >
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      Address:<ion-textarea type="text" placeholder="Address"  [(ngModel)]="addr"></ion-textarea>
+
+    </ion-item>
  
      <ion-item>
       <ion-label>Describe in Detail :</ion-label>
@@ -111,16 +138,7 @@
         <ion-input type="text" placeholder="No of Months" [(ngModel)]='months'></ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-button color="secondary"   (click)="AgrireportActionSheet()">Attach Agriculture Reports</ion-button>
-        </ion-item>
-          <ion-grid>
-            <ion-row>
-              <ion-col col-6 *ngFor="let p of photos">
-                <img [src]="p"/>
-              </ion-col>
-            </ion-row>
-        </ion-grid>
+    
   </div>
 
   <div *ngIf="selectTabs == 'missed'">
@@ -216,26 +234,7 @@
       <ion-textarea interface="popover"  placeholder="Name and Location" [(ngModel)]='fix_name'></ion-textarea>
     </ion-item>
 
-    <ion-item>
-      <ion-row>
-        <ion-col col-4>
-      <ion-button color="secondary"  (click)="location()">Mark the land</ion-button>
-    </ion-col>
-          <ion-col col-4>
-              <ion-button color="secondary"  (click)="addlocation()">Add</ion-button>
-          </ion-col>
-         <ion-col col-4>
-            Latitude :<strong>{{i1}}</strong>
-         </ion-col>
-         <ion-col col-4>
-          longitude :<strong>{{i2}}</strong>
-        </ion-col >
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      Address:<ion-textarea type="text" placeholder="Address"  [(ngModel)]="addr"></ion-textarea>
-
-    </ion-item>
+    
 
     <ion-item>
       <ion-label>Reg.No of deed,Date and notary name</ion-label>
