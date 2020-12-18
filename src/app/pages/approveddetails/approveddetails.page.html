@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="tabs/approved-loans"></ion-back-button>
+      <ion-back-button defaultHref="tabs/approved-loans"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">approved Loan Details</ion-title>
   </ion-toolbar>
@@ -9,8 +9,8 @@
 
 <ion-content>
 
-  <ion-card *ngFor='let item of items'>
-    <ion-card>
+
+    <ion-card *ngFor='let item of items'>
        
     <ion-card-header>
       <div id="header">
@@ -26,7 +26,7 @@
           <ion-card-subtitle><b>Approved Date </b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
-          <ion-card-subtitle>{{item.date}}</ion-card-subtitle>
+          <ion-card-subtitle>{{item.approved_date}}</ion-card-subtitle>
         </ion-col>
         
       </ion-row>
@@ -52,15 +52,25 @@
     
   </ion-row>
 
-  <ion-row>
- 
+</ion-grid>
+</ion-card>
+
+
+ <br>
+ <ion-row>
+   <ion-col>
     <ion-button color="secondary"  (click)="details()">Contact Us</ion-button>
+   </ion-col>
+ 
+  <ion-col>
+   <ion-button color="secondary"  (click)="application()">To Application</ion-button>
+  </ion-col>
+</ion-row>
   
     
-    </ion-row>
+
            
-    </ion-grid>
-    </ion-card>
-    </ion-card>
+
+
 
 </ion-content>

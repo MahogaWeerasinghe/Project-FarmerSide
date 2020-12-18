@@ -4,6 +4,8 @@ import { Router,ActivatedRoute } from '@angular/router';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
 import { ToastController,LoadingController,AlertController,NavController } from '@ionic/angular';
 import {User, AccessProviders } from '../../pro/access';
+import { Location } from "@angular/common";
+
 
 
 @Component({
@@ -34,10 +36,15 @@ export class ViewstatusdetailsPage implements OnInit {
     private navCtrl:NavController,
     public http:HttpClient,
     private acessPr:AccessProviders,
+    private home: Location
   ) { }
 
   ngOnInit() {
     this.get();
+  }
+
+  back(){
+    this.home.back();
   }
 
   get(){
@@ -95,36 +102,52 @@ export class ViewstatusdetailsPage implements OnInit {
 
   }
 
-  showdet(event){
+  showao(event){
   
     
     console.log(event.target.id);
     this.dat=event.target.id;
     console.log(this.dat);
-    this.storage.set('storage_repiddet',this.dat);
+    this.storage.set('storage_id',this.dat);
    
-    this.storage.get("storage_repiddet").then((res)=>{
+    this.storage.get("storage_id").then((res)=>{
       console.log(res);
 
   });
 
-  this.navCtrl.navigateRoot('/viewagrireport');
+  this.navCtrl.navigateRoot('/agrihistorydetails');
 }
 
-showdetes(event){
+showai(event){
   
     
   console.log(event.target.id);
   this.dat=event.target.id;
   console.log(this.dat);
-  this.storage.set('storage_esiddet',this.dat);
+  this.storage.set('storage_id',this.dat);
  
-  this.storage.get("storage_esiddet").then((res)=>{
+  this.storage.get("storage_id").then((res)=>{
     console.log(res);
 
 });
 
-this.navCtrl.navigateRoot('/viewaireport');
+this.navCtrl.navigateRoot('/aihistorydetails');
+}
+
+showdo(event){
+  
+    
+  console.log(event.target.id);
+  this.dat=event.target.id;
+  console.log(this.dat);
+  this.storage.set('storage_id',this.dat);
+ 
+  this.storage.get("storage_id").then((res)=>{
+    console.log(res);
+
+});
+
+this.navCtrl.navigateRoot('/dohistorydetails');
 }
   
 

@@ -75,16 +75,19 @@
           <ion-icon name="create-outline" slot="start"></ion-icon>
           <ion-label>Apply Loan</ion-label>
         </ion-item>
+
+        <ion-item routerLink="/viewstatus">
+          <ion-icon name="search-outline" slot="start"></ion-icon>
+          <ion-label>Agriculture Report Status</ion-label>
+   
+        </ion-item>
+
         <ion-item routerLink="/tabs">
           <ion-icon name="documents-outline" slot="start"></ion-icon>
-          <ion-label>Loan History</ion-label>
+          <ion-label>My Loans</ion-label>
    
         </ion-item>
-        <ion-item routerLink="/viewstatus">
-          <ion-icon name="documents-outline" slot="start"></ion-icon>
-          <ion-label>View Status</ion-label>
-   
-        </ion-item>
+     
         <ion-item routerLink="/payments">
           <ion-icon name="cash-outline" slot="start"></ion-icon>
           <ion-label>Payments</ion-label>
@@ -121,7 +124,7 @@
 
   <div class="ion-page" id="main-content">
     <ion-header>
-      <ion-toolbar color="success">
+      <ion-toolbar color="secondary">
   
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>

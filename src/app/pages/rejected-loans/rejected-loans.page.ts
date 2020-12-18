@@ -22,6 +22,7 @@ export class RejectedLoansPage implements OnInit {
 
   hidecongrats=true;
   hidedet=false;
+  hide2=false;
 
   constructor(
     private router:Router,
@@ -39,17 +40,10 @@ export class RejectedLoansPage implements OnInit {
     this.hidecongrats=true;
   this.hidedet=false;
     this.storage.get('storage_XXX').then((val) => {
-      console.log('Your tel is',  val.telephone_number);
-     this.telephone_number=val.telephone_number;
+      console.log('Your tel is',  val.nic);
+     this.nic=val.nic;
 
-     this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
-      //this.storage.set('store_nic',res);
-      console.log(res);
-        this.data=res;
-        console.log(this.data);
-          this.nic=this.data.nic;
-          console.log("NIC" ,this.data.nic);
- 
+  
      
        console.log("nic is ",this.nic);
        this.http.get(AccessProviders.server+'/showrejectloan/'+this.nic).map(res => res).subscribe((res:any)=>{ 
@@ -57,7 +51,9 @@ export class RejectedLoansPage implements OnInit {
         console.log(res);
         this.items=res.message;
 
-        
+        if(res.message.length==0){
+          this.hide2=true;
+        }
           //this.data=res;
           //console.log(this.data);
             //this.nic=this.data.nic;
@@ -66,7 +62,7 @@ export class RejectedLoansPage implements OnInit {
             //this.id=this.data.id;
    
          });
-        });
+      
 
 
 
@@ -83,17 +79,19 @@ export class RejectedLoansPage implements OnInit {
   
 
   showaction(event){
-    this.hidecongrats=false;
-  this.hidedet=true;
+    console.log(event.target.id);
+    this.dat=event.target.id;
+    console.log(this.dat);
 
   
-  console.log(event.target.id);
-  this.dat=event.target.id;
-  console.log(this.dat);
-  this.storage.set('storage_rejeappid',this.dat);
- 
-  this.storage.get("storage_rejeappid").then((res)=>{
+
+  this.storage.set('storage_appid',	this.dat);
+  //this.storage.set('storage_approveappid',this.approve_id);
+
+  this.storage.get("storage_appid").then((res)=>{
     console.log(res);
+
+  });
 
     
 
@@ -101,7 +99,7 @@ export class RejectedLoansPage implements OnInit {
     this.navCtrl.navigateRoot('/rejecteddetails');
 
    
-  this.http.get(AccessProviders.server+'/showrejectloandata/'+res).map(res => res).subscribe((res:any)=>{ 
+  /*this.http.get(AccessProviders.server+'/showrejectloandata/'+res).map(res => res).subscribe((res:any)=>{ 
     //this.storage.set('store_nic',res);
     console.log(res);
     this.items=res.message;
@@ -110,7 +108,7 @@ export class RejectedLoansPage implements OnInit {
  
 
     });
-  });
+  });*/
 
   }
 

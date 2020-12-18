@@ -1,0 +1,359 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Agriculture Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor='let item of data'>
+    <ion-label color="primary">Personal Information</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>Name</ion-label>
+        </ion-col>
+        <ion-col size="8">
+         {{item.choose}} {{item.nameini}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>Nic No</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          {{item.nic}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>membership No</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          {{item.mem_id}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>fertilizer sub No</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          {{item.fert_id}}
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-card>
+
+  <ion-card *ngFor='let item of data'>
+    <ion-label color="primary">Apply Loan Details</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Crop Type</ion-label>
+        </ion-col>
+        <ion-col size="7">
+         {{item.crop}}
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Purpose</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.whatfor}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Location</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          <ion-button  size="small" color="primary"  (click)="where()">View Loacation</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Reason</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.reason}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+      <ion-col size="5">
+        <ion-label>Amount Required</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.amount}}
+      </ion-col>
+    </ion-row>
+
+
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-label color="primary">Report of Agriculture Officer</ion-label>
+    <ion-card  *ngFor='let item of data'>
+      <ion-label color="secondary">Past Performance</ion-label>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Year</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.year}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Season</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.season}}
+        </ion-col>
+      </ion-row>
+      <div class="ou">
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Area</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            {{item.area}}
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Crop</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            {{item.crop_type}}
+          </ion-col>
+          
+        </ion-row>
+        
+        
+      </div>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label>Subsidiaries</ion-label>
+        </ion-col>
+        <ion-col size="7">
+          {{item.subse}}
+        </ion-col>
+      </ion-row>
+      
+    </ion-card>
+
+    
+  <ion-card *ngFor='let item of data'>
+
+    <ion-label color="primary">Harvest</ion-label>
+    <ion-grid>
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Quantity</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.quantity}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Income</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.income}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+
+
+
+
+ 
+  <ion-card>
+    <ion-label color="primary">Agriculture Loan Details</ion-label>
+    <ion-card *ngFor='let item of data2'>
+    <ion-grid>
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Bank Name</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.bank_name}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="5">
+        <ion-label>Amount</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        {{item.b_amount}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+  </ion-card>
+  <ion-card>
+
+    <ion-label color="primary">Agriculture Officer Attachments</ion-label>
+    <ion-grid>
+
+      <ion-row>
+       
+        <ion-col col-6 >
+          <img *ngFor="let p of data" src="{{p.ao_photos}}"/>
+
+      </ion-col>
+    </ion-row>
+
+  
+  </ion-grid>
+  </ion-card>
+
+</ion-card>
+  <ion-card *ngFor='let item of data3'>
+
+    <ion-label color="primary">Agriculture Estimate</ion-label>
+    
+    
+    <br>
+    <div class="ou">
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-subtitle><strong>Requirement</strong></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card-subtitle><strong>Estimated Value</strong></ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+      
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-subtitle><b>Clean the Land</b></ion-card-subtitle>
+          
+        </ion-col>
+        <ion-col size="6">
+          {{item.forclean}}
+        </ion-col>
+        
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-subtitle><b>Land Preparation</b></ion-card-subtitle>
+          
+        </ion-col>
+        <ion-col size="6">
+          {{item.forland}}
+        </ion-col>
+        
+      </ion-row>
+      
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-subtitle><b>For Seed</b></ion-card-subtitle>
+          
+        </ion-col>
+        <ion-col size="6">
+          {{item.forseed}}
+        </ion-col>
+        
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-subtitle><b>For Fertilizer</b></ion-card-subtitle>
+          
+        </ion-col>
+        <ion-col size="6">
+          {{item.forfertilizer}}
+        </ion-col>
+        
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-subtitle><b>For Chemicals</b></ion-card-subtitle>
+          
+        </ion-col>
+        <ion-col size="6">
+          {{item.forchemicals}}
+        </ion-col>
+        
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-subtitle><b>For get harvest</b></ion-card-subtitle>
+          
+        </ion-col>
+        <ion-col size="6">
+          {{item.forharvest}}
+        </ion-col>
+        
+      </ion-row>
+      
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-subtitle><b>Others</b></ion-card-subtitle>
+          
+        </ion-col>
+        <ion-col size="6">
+          {{item.forothers}}
+        </ion-col>
+        
+      </ion-row>
+      
+    
+
+    </div>
+
+    <div class="ou">
+      <ion-row>
+        <ion-col size="6">
+          <ion-card-subtitle><strong>Total Amount</strong></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card-subtitle><strong>{{item.totalamount}}</strong></ion-card-subtitle>
+        </ion-col>
+        
+      </ion-row>
+      </div>
+
+      <ion-card>
+
+        <ion-label color="primary">Agriculture Instructor Attachments</ion-label>
+        <ion-grid>
+    
+          <ion-row>
+           
+            <ion-col col-6 >
+              <img *ngFor="let p of data" src="{{p.ai_photos}}"/>
+    
+          </ion-col>
+        </ion-row>
+    
+      
+      </ion-grid>
+      </ion-card>
+
+
+    </ion-card>
+  
+
+</ion-content>

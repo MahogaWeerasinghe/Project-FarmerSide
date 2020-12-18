@@ -23,7 +23,7 @@ export class ApproveddetailsPage implements OnInit {
 
   ngOnInit() {
     
-  this.storage.get("storage_approveappid").then((res)=>{
+  this.storage.get("storage_appid").then((res)=>{
     console.log(res);
 
     
@@ -44,6 +44,13 @@ export class ApproveddetailsPage implements OnInit {
 
 
   });
+
+  }
+
+  
+
+  application(){
+    this.navCtrl.navigateRoot('/loanviews');
 
   }
 

@@ -30,22 +30,16 @@ export class PaymentsPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.call();
+   this.call();
 
   }
 
   call(){
     this.storage.get('storage_XXX').then((val) => {
-      console.log('Your tel is',  val.telephone_number);
-     this.telephone_number=val.telephone_number;
+      console.log('Your nic is',  val.nic);
+     this.nic=val.nic;
 
-     this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
-      //this.storage.set('store_nic',res);
-      console.log(res);
-        this.data=res;
-        console.log(this.data);
-          this.nic=this.data.nic;
-          console.log("NIC" ,this.data.nic);
+
 
      
    
@@ -67,7 +61,7 @@ export class PaymentsPage implements OnInit {
         });
  
        });
-      });
+     
     
 
   }

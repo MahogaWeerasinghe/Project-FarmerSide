@@ -1,7 +1,7 @@
 
 
     <ion-content fullscreen class="ion-padding" scroll-y="false">
-      <ion-slides>
+      <ion-slides pager = "true" pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)" speed="3000" color="success">
 
         <ion-slide>
           <div class="slide">

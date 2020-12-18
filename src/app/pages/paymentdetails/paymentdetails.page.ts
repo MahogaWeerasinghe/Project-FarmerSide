@@ -4,6 +4,8 @@ import { Router,ActivatedRoute } from '@angular/router';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
 import { ToastController,LoadingController,AlertController,NavController } from '@ionic/angular';
 import {User, AccessProviders } from '../../pro/access';
+import { Location } from "@angular/common";
+
 
 @Component({
   selector: 'app-paymentdetails',
@@ -29,10 +31,15 @@ export class PaymentdetailsPage implements OnInit {
     private storage:Storage,
     private navCtrl:NavController,
     public http:HttpClient,
+    private home: Location
   ) { }
 
   ngOnInit() {
     this.call();
+  }
+
+  back(){
+    this.home.back();
   }
 
   call(){

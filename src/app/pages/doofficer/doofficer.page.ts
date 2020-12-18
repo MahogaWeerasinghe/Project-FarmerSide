@@ -16,6 +16,15 @@ export class DoofficerPage implements OnInit {
   dat:any;
   name:string;
   GN_No:string;
+
+  
+  slider: any;
+    slideOptions = {
+    initialSlide: 0,
+    slidesPerView: 1,
+    autoplay: true
+    };
+
   constructor(
     private router:Router,
     private toastCtrl:ToastController,
@@ -27,8 +36,18 @@ export class DoofficerPage implements OnInit {
     public http:HttpClient,
   ) { }
 
+  slideData = [
+    { image: "/assets/img/d3.jpg" },
+    { image: "/assets/img/d1.jpg" },
+    { image: "/assets/img/d2.jpg" }
+  ]
+
   ngOnInit() {
     this.call();
+  }
+
+  slidesDidLoad(slides) {
+    slides.startAutoplay();
   }
 
   
@@ -65,6 +84,20 @@ export class DoofficerPage implements OnInit {
     });
 
     this.navCtrl.navigateRoot('/doofficerequest');
+  }
+
+  
+  history(event:any){
+    console.log(event.target.id);
+    this.dat=event.target.id;
+    console.log(this.dat);
+    this.storage.set('storage_DOH',this.dat);
+   
+    this.storage.get("storage_DOH").then((res)=>{
+      console.log(res);
+    });
+
+    this.navCtrl.navigateRoot('/dohistory');
   }
 
 

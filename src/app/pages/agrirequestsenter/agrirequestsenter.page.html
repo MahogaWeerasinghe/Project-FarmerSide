@@ -1,13 +1,17 @@
 <ion-header>
   <ion-toolbar color="secondary"  class="ion-text-center">
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="agrirequest"></ion-back-button>
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
+
     <ion-title>Agriculture Officer Report</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
  
   <ion-card>
   <ion-row>

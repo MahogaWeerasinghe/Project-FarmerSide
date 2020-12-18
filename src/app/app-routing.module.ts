@@ -160,6 +160,46 @@ const routes: Routes = [
     path: 'location',
     loadChildren: () => import('./pages/location/location.module').then( m => m.LocationPageModule)
   },
+  {
+    path: 'estimate',
+    loadChildren: () => import('./pages/estimate/estimate.module').then( m => m.EstimatePageModule)
+  },
+  {
+    path: 'agrihistory',
+    loadChildren: () => import('./pages/agrihistory/agrihistory.module').then( m => m.AgrihistoryPageModule)
+  },
+  {
+    path: 'aihistory',
+    loadChildren: () => import('./pages/aihistory/aihistory.module').then( m => m.AihistoryPageModule)
+  },
+  {
+    path: 'dohistory',
+    loadChildren: () => import('./pages/dohistory/dohistory.module').then( m => m.DohistoryPageModule)
+  },
+  {
+    path: 'agrihistorydetails',
+    loadChildren: () => import('./pages/agrihistorydetails/agrihistorydetails.module').then( m => m.AgrihistorydetailsPageModule)
+  },
+  {
+    path: 'aihistorydetails',
+    loadChildren: () => import('./pages/aihistorydetails/aihistorydetails.module').then( m => m.AihistorydetailsPageModule)
+  },
+  {
+    path: 'dohistorydetails',
+    loadChildren: () => import('./pages/dohistorydetails/dohistorydetails.module').then( m => m.DohistorydetailsPageModule)
+  },
+  {
+    path: 'report',
+    loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule)
+  },
+  {
+    path: 'obtain-loans-view',
+    loadChildren: () => import('./pages/obtain-loans-view/obtain-loans-view.module').then( m => m.ObtainLoansViewPageModule)
+  },
+  {
+    path: 'demobanks',
+    loadChildren: () => import('./pages/demobanks/demobanks.module').then( m => m.DemobanksPageModule)
+  },
   /*{
     path: 'myloans',
     loadChildren: () => import('./pages/myloans/myloans.module').then( m => m.MyloansPageModule)

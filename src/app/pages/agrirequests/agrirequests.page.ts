@@ -4,6 +4,8 @@ import { ToastController,LoadingController,AlertController, NavController } from
 import { AccessProviders } from '../../pro/access';
 import {Storage} from '@ionic/storage';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
+import { Location } from "@angular/common";
+
 
 @Component({
   selector: 'app-agrirequests',
@@ -25,6 +27,7 @@ export class AgrirequestsPage implements OnInit {
     private storage:Storage,
     private navCtrl:NavController,
     public http:HttpClient,
+    private home: Location
   ) { }
 
       doRefresh(event:any) {
@@ -40,6 +43,11 @@ export class AgrirequestsPage implements OnInit {
   ngOnInit() {
     this.call();
   }
+
+  back(){
+    this.home.back();
+  }
+
 
   call(){
     this.storage.get("storage_gn").then((res)=>{

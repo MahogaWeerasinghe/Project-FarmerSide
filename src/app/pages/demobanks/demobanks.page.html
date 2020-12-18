@@ -1,0 +1,39 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+   
+    <ion-title class="ion-text-center">Our Banks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="animate__animated animate__slideInUp animate__fast"  *ngFor='let item of items' >
+    
+<ion-grid>
+<ion-row>
+  <ion-col>
+    <div>
+    <ion-card-header>
+      <ion-card-subtitle>{{item.bank_id}}</ion-card-subtitle>
+      <ion-card-title> {{item.bank_name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{item.bank_des}}
+
+      <ion-button expand="full" color="secondary" (click)="ViewLoans()" >View the Loans</ion-button>
+    </ion-card-content>
+  </div>
+</ion-col>
+<ion-col>
+  <div>
+    <img src="assets/img/{{item.bank_logo}}" />
+  </div>
+</ion-col>
+  </ion-row>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>
+

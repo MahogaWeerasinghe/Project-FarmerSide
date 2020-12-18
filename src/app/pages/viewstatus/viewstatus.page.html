@@ -2,7 +2,9 @@
   <ion-toolbar color="secondary">
 
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="/farmer-profile"></ion-back-button>
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title>View Status</ion-title>
   </ion-toolbar>
@@ -89,6 +91,13 @@
     </ion-row>
     
   </ion-card>
+  <ion-card *ngIf="hide2">
+    <ion-label>
+      <div class="f">
+      <strong>No Requests</strong>
+      </div>
+  </ion-label>
 
+  </ion-card>
 
 </ion-content>

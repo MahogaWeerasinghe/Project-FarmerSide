@@ -4,6 +4,7 @@ import { ToastController,LoadingController,AlertController, NavController } from
 import { AccessProviders } from '../../pro/access';
 import {Storage} from '@ionic/storage';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
+import { Location } from "@angular/common";
 @Component({
   selector: 'app-agriofficer',
   templateUrl: './agriofficer.page.html',
@@ -32,6 +33,7 @@ export class AgriofficerPage implements OnInit {
     private storage:Storage,
     private navCtrl:NavController,
     public http:HttpClient,
+    private home: Location
   ) { }
 
   
@@ -86,5 +88,22 @@ export class AgriofficerPage implements OnInit {
       this.navCtrl.navigateRoot('/agrirequests');
     }
   
+    history(event:any){
+      console.log(event.target.id);
+      this.dat=event.target.id;
+      console.log(this.dat);
+      this.storage.set('storage_AOH',this.dat);
+     
+      this.storage.get("storage_AOH").then((res)=>{
+        console.log(res);
+      });
+  
+      this.navCtrl.navigateRoot('/agrihistory');
+    }
+
+    back(){
+      //this.home.back();
+      this.navCtrl.navigateRoot('/officers');
+    }
 
 }

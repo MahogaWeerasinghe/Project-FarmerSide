@@ -1,11 +1,14 @@
 <ion-header>
-  <ion-toolbar color="secondary" >
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="farmer-profile"></ion-back-button>
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">View My Loan Details</ion-title>
+    <ion-title class="ion-text-center">View My loan details</ion-title>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content fullscreen>
 
@@ -502,6 +505,18 @@
        
       </ion-grid>
       </ion-card>
+
   </ion-card>
+  <br>
+  <ion-card>
+  <ion-label>Click here to view Agriculture Report</ion-label>  
+  <ion-row>
+    <ion-col>
+      <ion-button size="default" expand="block" color="secondary" (click)="viewAgricultureReport()">Agriculture Report</ion-button>
+    </ion-col>
+  </ion-row>
+  </ion-card>
+
+
    
 </ion-content>

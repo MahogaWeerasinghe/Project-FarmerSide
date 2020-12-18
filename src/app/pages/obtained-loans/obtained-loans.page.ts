@@ -14,6 +14,9 @@ import {User, AccessProviders } from '../../pro/access';
 export class ObtainedLoansPage implements OnInit {
   hideMe=false;
   icon:string="chevron-down-outline";
+  data:any;
+  nic:string;
+  dat:number;
   constructor(
     private router:Router,
     private toastCtrl:ToastController,
@@ -26,22 +29,46 @@ export class ObtainedLoansPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.call();
   }
 
-  set(){
-   // console.log(this.app_id);
-    if(this.hideMe==false){
-      this.icon="chevron-up-outline";
-      this.hideMe=true;
-    }
+  call(){
+    this.storage.get('storage_XXX').then((res)=>{
+      console.log(res.nic);
+      this.nic=res.nic;
+   
 
-    else{
-      this.hideMe=false;
-      this.icon="chevron-down-outline";
-    }
-  
-  
+    this.http.get(AccessProviders.server+'/getobtain/'+this.nic).map(res => res).subscribe((res:any)=>{ 
+      //this.storage.set('store_nic',res);
+      console.log(res);
+      this.data=res.message;
+
+    
+       
+     });
+
+    });
   }
+
+  more(event){
+  
+    
+    console.log(event.target.id);
+    this.dat=event.target.id;
+    console.log(this.dat);
+    this.storage.set('storage_obid',this.dat);
+   
+    this.storage.get("storage_obid").then((res)=>{
+      console.log(res);
+
+  });
+
+  this.navCtrl.navigateRoot('/obtain-loans-view');
+}
+
+  
+  
+
 
 
 }

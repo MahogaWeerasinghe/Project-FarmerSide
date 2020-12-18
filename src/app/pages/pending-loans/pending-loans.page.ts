@@ -19,6 +19,7 @@ export class PendingLoansPage implements OnInit {
   id:string="";
   dat:number;
   public items : any;
+  hide2=false;
   constructor(
     private router:Router,
     private toastCtrl:ToastController,
@@ -32,14 +33,16 @@ export class PendingLoansPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.get();
+  
+  }
 
-
-    
+  get(){
     this.storage.get('storage_XXX').then((val) => {
-      console.log('Your tel is',  val.telephone_number);
-     this.telephone_number=val.telephone_number;
+      console.log('Your tel is',  val.nic);
+     this.nic=val.nic;
 
-     this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
+     this.http.get(AccessProviders.server+'/getdetails/'+this.nic).map(res => res).subscribe(res=>{ 
       //this.storage.set('store_nic',res);
       console.log(res);
         this.data=res;
@@ -53,6 +56,11 @@ export class PendingLoansPage implements OnInit {
         //this.storage.set('store_nic',res);
         console.log(res);
         this.items=res.message;
+
+        if(res.message.length==0){
+          this.hide2=true;
+          console.log("hii");
+        }
 
         
           //this.data=res;

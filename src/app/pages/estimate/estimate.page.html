@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>estimate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-label color="primary"><strong>Past Performance</strong></ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Year</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-select value="2020" [(ngModel)]="year">
+            <ion-select-option value="2020">2020</ion-select-option>
+            <ion-select-option value="2019">2019</ion-select-option>
+            <ion-select-option value="2018">2018</ion-select-option>
+            <ion-select-option value="2017">2017</ion-select-option>
+            <ion-select-option value="2016">2016</ion-select-option>
+            <ion-select-option value="2015">2015</ion-select-option>
+            <ion-select-option value="2014">2014</ion-select-option>
+            <ion-select-option value="2013">2013</ion-select-option>
+            <ion-select-option value="2012">2012</ion-select-option>
+            <ion-select-option value="2011">2011</ion-select-option>
+            <ion-select-option value="2010">2010</ion-select-option>
+          </ion-select>
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Season</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-select interface="popover" [(ngModel)]="season">
+            <ion-select-option >Yala</ion-select-option>
+            <ion-select-option >Maha</ion-select-option>
+          </ion-select>
+        </ion-col>
+        
+      </ion-row>
+
+      <div class="ou">
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Area</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-input type="text" placeholder="area" [(ngModel)]="area" ></ion-input>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Crop</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-input type="text" placeholder="Crop" [(ngModel)]="crop_type" ></ion-input>
+          </ion-col>
+          
+        </ion-row>
+        
+        
+      </div>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Subsedaries</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+        
+            
+            <ion-select multiple="true" cancelText="NO" okText="Yes" [(ngModel)]="sub">
+              <ion-select-option value="Seed">Seed</ion-select-option>
+              <ion-select-option value="Fertilizer">Fertilizer</ion-select-option>
+              <ion-select-option value="Chemical">Chemical</ion-select-option>
+            </ion-select>
+       
+        </ion-col>
+        
+      </ion-row>
+
+      
+    </ion-grid>
+
+  </ion-card>
+
+     
+
+</ion-content>

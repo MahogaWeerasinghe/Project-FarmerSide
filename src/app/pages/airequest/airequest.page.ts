@@ -48,10 +48,10 @@ export class AirequestPage implements OnInit {
     this.storage.get("storage_gn").then((res)=>{
       console.log(res);
       this.GN_No=res;
-
+      console.log(this.GN_No);
       this.http.get(AccessProviders.server+'/viewai/'+this.GN_No).map(res => res).subscribe((res:any)=>{ 
         this.items=res.message;
-        //console.log("AO",this.items);
+        console.log("AO",this.items);
       });
   
 

@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="airequestenter"></ion-back-button>
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title class="ion-text-center">Location</ion-title>
   </ion-toolbar>
@@ -37,7 +39,7 @@
         <b>Address</b>
       </ion-col>
       <ion-col>
-        {{address}}
+        {{location}}
       </ion-col>
     </ion-row>
   </ion-grid>

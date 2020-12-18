@@ -8,7 +8,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { ActionSheetController } from '@ionic/angular';
 import { Injectable } from '@angular/core';
-
+import { Location } from "@angular/common";
 import * as moment from 'moment';
 
 @Component({
@@ -63,7 +63,8 @@ export class AgrirequestsenterPage implements OnInit {
     private alertCtrl:AlertController,
     private acessPr:AccessProviders,
     private camera: Camera,
-    public actionSheetController: ActionSheetController,) {
+    public actionSheetController: ActionSheetController,
+    private home: Location) {
 
     }
 
@@ -113,6 +114,10 @@ export class AgrirequestsenterPage implements OnInit {
 
   logValue() {
     console.log(this.addresses);
+  }
+  
+  back(){
+    this.home.back();
   }
 
 

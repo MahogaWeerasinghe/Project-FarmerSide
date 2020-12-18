@@ -33,45 +33,9 @@ export class RejecteddetailsPage implements OnInit {
 
   ngOnInit() {
 
-    this.storage.get('storage_XXX').then((val) => {
-      console.log('Your tel is',  val.telephone_number);
-     this.telephone_number=val.telephone_number;
-
-     this.http.get(AccessProviders.server+'/getdetails/'+this.telephone_number).map(res => res).subscribe(res=>{ 
-      //this.storage.set('store_nic',res);
-      console.log(res);
-        this.data=res;
-        console.log(this.data);
-          this.nic=this.data.nic;
-          console.log("NIC" ,this.data.nic);
  
-     
-       console.log("nic is ",this.nic);
-       this.http.get(AccessProviders.server+'/showrejectloan/'+this.nic).map(res => res).subscribe((res:any)=>{ 
-        //this.storage.set('store_nic',res);
-        console.log(res);
-        this.items=res.message;
 
-        
-          //this.data=res;
-          //console.log(this.data);
-            //this.nic=this.data.nic;
-            //console.log("NIC" ,this.data.nic);
-            //this.loan_id = this.data.loan_id;
-            //this.id=this.data.id;
-   
-         });
-        });
-
-
-
-
-
-
-
-    });
-
-    this.storage.get("storage_rejeappid").then((res)=>{
+    this.storage.get("storage_appid").then((res)=>{
       console.log(res);
   
   
@@ -86,6 +50,11 @@ export class RejecteddetailsPage implements OnInit {
       });
     });
 
+
+  }
+
+  application(){
+    this.navCtrl.navigateRoot('/loanviews');
 
   }
 

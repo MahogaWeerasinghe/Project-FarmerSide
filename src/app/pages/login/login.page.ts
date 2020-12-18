@@ -28,15 +28,30 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  
+
   openRegister(){
     this.router.navigate(['/register']);
   }
 
  async tryLogin(){
+  const isNumeric = (val: string) : boolean => {
+    return isNaN(Number(val));
+ }
     //this.router.navigate(['/farmer-profile']);
-   if(this.nic==""){
-    this.presentToast("Telephone number is required");
-  }else if(this.password=="")
+    if(this.nic==""){
+      this.presentToast("NIC is required");
+    }
+    else if((this.nic.length!=10)){
+      this.presentToast("NIC require 10 numbers");
+    }
+    else if(isNumeric(this.nic.substr(0,9))){
+      this.presentToast("Numbers Only Have");
+    }
+   
+    else if(this.nic.substr(this.nic.length-1)!="V"){
+      this.presentToast("Last Character should be V");
+    }else if(this.password=="")
   {
     this.presentToast("Password is required");
   }

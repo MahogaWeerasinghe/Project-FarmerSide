@@ -5,6 +5,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { AccessProviders } from '../../pro/access';
 import {Storage} from '@ionic/storage';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
+import { Location } from "@angular/common";
 
 declare var google;
 
@@ -18,22 +19,22 @@ export class LocationPage {
   map: any;
   latitude :number;
   longitude:number;
-  address:string;
+  location:string;
   land:any;
-  data:any;
+  items:any;
 
   constructor(private router:Router,
     private geolocation: Geolocation,
     private nativeGeocoder: NativeGeocoder,
     private storage:Storage,
     private acessPr:AccessProviders,
-    public http:HttpClient,) { 
-      this.storage.get('storage_loaction').then((res)=>{
+    public http:HttpClient,
+    private home: Location) { 
+      this.storage.get('storage_location').then((res)=>{
         this.land=res;
         console.log( res);
        this.http.get(AccessProviders.server+'/getapplicantdetails/'+ this.land).subscribe((res:any)=>{ 
-          this.data=res.message;
-          this.address=res.message[0].address; 
+          this.location=res.message[0].location; 
           this.latitude=res.message[0].latitude;
           this.longitude=res.message[0].longitude;
           console.log(this.latitude+this.longitude);
@@ -48,6 +49,10 @@ export class LocationPage {
   ngOnInit() {
   }
 
+  back(){
+    this.home.back();
+  }
+  
   loadMap(){
     this.geolocation.getCurrentPosition().then((resp) => {
 

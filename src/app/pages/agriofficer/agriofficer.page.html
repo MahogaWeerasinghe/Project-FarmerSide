@@ -2,7 +2,7 @@
   <ion-toolbar color="secondary">
 
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="officers"></ion-back-button>
+      <ion-back-button defaultHref="officers"></ion-back-button>
     </ion-buttons>
     <ion-title>Welcome {{name}}</ion-title>
   </ion-toolbar>
@@ -105,11 +105,11 @@
          <ion-label color="secondary">You Have Requests on that {{GN_No}} Division</ion-label>
        <ion-grid>
         <ion-row>
-          <ion-col size="4">
+          <ion-col size="6">
             <ion-button color="secondary" id="{{item.GN_No}}" (click)="requests($event)">Requests</ion-button>
           </ion-col>
-          <ion-col size="8">
-            
+          <ion-col size="6">
+            <ion-button color="secondary" id="{{item.nic}}" (click)="history($event)">History</ion-button>
           </ion-col>
           
           </ion-row>
@@ -117,5 +117,5 @@
        </ion-grid>
       </ion-card>
       </ion-card>
-
+      
 </ion-content>

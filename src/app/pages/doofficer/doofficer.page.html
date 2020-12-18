@@ -1,13 +1,21 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="officers"></ion-back-button>
+      <ion-back-button  defaultHref="officers"></ion-back-button>
     </ion-buttons>
     <ion-title>Welcome {{name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <br>
+  <ion-slides pager = "true" pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)" speed="3000" color="success">
+    <ion-slide *ngFor="let slide of slideData">
+      <img src="{{slide.image}}" />
+    </ion-slide>
+  </ion-slides>
+
+  <br>
   <ion-card *ngFor='let item of items'>
 
            <ion-grid>
@@ -86,11 +94,11 @@
   
    <ion-grid>
     <ion-row>
-      <ion-col size="4">
-        <ion-button color="secondary" id="{{item.Agr_service_dev}}" (click)="requests($event)">View Requests</ion-button>
+      <ion-col size="6">
+        <ion-button color="secondary" id="{{item.Agr_service_dev}}" (click)="requests($event)">Requests</ion-button>
       </ion-col>
-      <ion-col size="8">
-     
+      <ion-col size="6">
+        <ion-button color="secondary" id="{{item.nic}}" (click)="history($event)">History</ion-button>
       </ion-col>
       
       </ion-row>

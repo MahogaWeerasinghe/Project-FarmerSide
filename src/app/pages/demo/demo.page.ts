@@ -12,6 +12,10 @@ export class DemoPage implements OnInit {
 
   ngOnInit() {
   }
+  
+  slidesDidLoad(slides) {
+    slides.startAutoplay();
+  }
 
 
   tologin(){
@@ -19,6 +23,6 @@ export class DemoPage implements OnInit {
   }
 
   openbanks(){
-    this.router.navigate(['/crop']);
+    this.router.navigate(['/demobanks']);
   }
 }

@@ -77,6 +77,20 @@ export class AiofficerPage implements OnInit {
     this.navCtrl.navigateRoot('/airequest');
   }
 
+  history(event:any){
+    console.log(event.target.id);
+    this.dat=event.target.id;
+    console.log(this.dat);
+    this.storage.set('storage_AIH',this.dat);
+   
+    this.storage.get("storage_AIH").then((res)=>{
+      console.log(res);
+    });
+
+    this.navCtrl.navigateRoot('/aihistory');
+  }
+
+
 
 
 

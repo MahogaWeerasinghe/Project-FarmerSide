@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Obtain loans View</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+ 
+  <ion-card *ngFor='let item of data'>
+
+    <ion-grid>
+      <ion-row >
+        <ion-col><ion-label size="4"><b>Loan Name</b></ion-label></ion-col>
+        <ion-col><ion-label>{{item.loan_name}}</ion-label></ion-col>
+      
+      </ion-row> 
+      <ion-row >
+        <ion-col><ion-label size="4"><b>Issued date</b></ion-label></ion-col>
+        <ion-col><ion-label>{{item.issued_date}}</ion-label></ion-col>
+      
+      </ion-row> 
+  <ion-row >
+    <ion-col><ion-label size="4"><b>Loan Amount</b></ion-label></ion-col>
+    <ion-col><ion-label>{{item.amount}}</ion-label></ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-label size="4"><b>Interest Rate</b></ion-label></ion-col>
+    <ion-col><ion-label>{{item.interest_rate}}%</ion-label></ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-label size="4"><b>Expired Date</b></ion-label></ion-col>
+    <ion-col><ion-label>{{item.expired_date}}</ion-label></ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-label size="4"><b>Total amount</b></ion-label></ion-col>
+    <ion-col><ion-label>{{item.total_amount}}</ion-label></ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-label size="4"><b>No of installments</b></ion-label></ion-col>
+    <ion-col><ion-label>{{item.no_of_installment}}</ion-label></ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-label size="4"><b>installment</b></ion-label></ion-col>
+    <ion-col><ion-label>{{item.installment}}</ion-label></ion-col>
+
+  </ion-row>
+</ion-grid>
+<br>
+
+
+
+</ion-card>
+<ion-card>
+  <br>
+  <ion-row>
+    <ion-col>
+      <ion-button size="default" expand="block" color="secondary" (click)="payments()">To Payment</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button size="default" expand="block" color="secondary" (click)="application()">To Application</ion-button>
+    </ion-col>
+  </ion-row>
+  <br>
+</ion-card>

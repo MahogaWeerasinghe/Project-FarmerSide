@@ -2,13 +2,17 @@
 
   <ion-toolbar color="secondary"  class="ion-text-center">
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="agriofficer"></ion-back-button>
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title>Agriculture Requests</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+ 
+
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content

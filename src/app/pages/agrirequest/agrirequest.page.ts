@@ -66,17 +66,17 @@ export class AgrirequestPage implements OnInit {
    
     
 
-    this.http.get(AccessProviders.server+'/getapplicantdetails'+this.app_id).map(res => res).subscribe(res=>{ 
+    this.http.get(AccessProviders.server+'/getapplicantdetails/'+this.app_id).map(res => res).subscribe((res:any)=>{ 
      //this.storage.set('store_nic',res);
      console.log(res);
        this.data=res;
        console.log(this.data);
-         this.nic=this.data.nic;
-         this.nameini=this.data.nameini;
-         this.choose=this.data.choose;
-         this.TpNo=this.data.TpNo;
-         this.crop=this.data.crop;
-         this.whatfor=this.data.whatfor;
+         //this.nic=this.data[0].nic;
+         this.nameini=res.message[0].nameini;
+         this.choose=res.message[0].choose;
+         this.TpNo=res.message[0].TpNo;
+         this.crop=res.message[0].crop;
+       //  this.whatfor=this.data.whatfor;
        
          console.log("NIC" ,this.data.nic);
         
@@ -124,7 +124,7 @@ export class AgrirequestPage implements OnInit {
   },
   (err: any) => {
     console.log(err);
-    
+    //this.router.navigate(['/farmer-profile']);
   });
 
 

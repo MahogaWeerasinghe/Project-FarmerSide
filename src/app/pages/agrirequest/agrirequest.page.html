@@ -2,7 +2,7 @@
 
   <ion-toolbar color="secondary"  class="ion-text-center">
     <ion-buttons slot="start">
-      <ion-back-button text="Back" defaultHref="application"></ion-back-button>
+      <ion-back-button  defaultHref="application"></ion-back-button>
     </ion-buttons>
     <ion-title>Request a Report</ion-title>
   </ion-toolbar>
@@ -50,33 +50,27 @@
       
     </ion-row>
 
-    <ion-row>
-      <ion-col size="4">
-        <ion-card-subtitle><b>Purpose</b></ion-card-subtitle>
-      </ion-col>
-      <ion-col size="8">
-        <ion-card-subtitle>{{whatfor}}</ion-card-subtitle>
-      </ion-col>
-      
-    </ion-row>
+  
+
+
 
     <ion-row>
-      <ion-col size="4">
-        <ion-card-subtitle><b>Type of Purpose</b></ion-card-subtitle>
+      <ion-col >
+        <ion-card-subtitle><b>Purpose in brief</b></ion-card-subtitle>
       </ion-col>
-      <ion-col size="8">
-        <ion-input type="text" placeholder="Type of Purpose" [(ngModel)]="variety" ></ion-input>
+      <ion-col>
+        <ion-input type="text" placeholder="Purpose in brief" [(ngModel)]="variety" ></ion-input>
       </ion-col>
       
     </ion-row>
 
     
     <ion-row>
-      <ion-col size="4">
-        <ion-card-subtitle><b>Size of the area</b></ion-card-subtitle>
+      <ion-col >
+        <ion-card-subtitle><b>Size of the Land</b></ion-card-subtitle>
       </ion-col>
-      <ion-col size="8">
-        <ion-input type="text" placeholder="Size of the area" [(ngModel)]="sizeof" ></ion-input>
+      <ion-col>
+        <ion-input type="text" placeholder="Size of the Land" [(ngModel)]="sizeof" ></ion-input>
       </ion-col>
       
     </ion-row>

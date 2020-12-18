@@ -4,6 +4,8 @@ import { Router,ActivatedRoute } from '@angular/router';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
 import { ToastController,LoadingController,AlertController,NavController } from '@ionic/angular';
 import {User, AccessProviders } from '../../pro/access';
+import { Location } from "@angular/common";
+
 @Component({
   selector: 'app-loanviews',
   templateUrl: './loanviews.page.html',
@@ -52,7 +54,13 @@ export class LoanviewsPage implements OnInit {
     private storage:Storage,
     private navCtrl:NavController,
     public http:HttpClient,
+    private home: Location
   ) { }
+
+  back(){
+    this.home.back();
+  }
+
 
   ngOnInit() {
 
@@ -278,5 +286,10 @@ export class LoanviewsPage implements OnInit {
     
     });
 
+  }
+
+
+  viewAgricultureReport(){
+    this.navCtrl.navigateRoot('/report');
   }
 }

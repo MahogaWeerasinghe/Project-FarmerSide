@@ -171,7 +171,7 @@ export class ApplicationPage implements OnInit {
   }
   
   async submitapp(){
-    /*
+   
       console.log(this.nic);
       console.log(this.B1name);
       console.log(this.B2name);
@@ -179,12 +179,10 @@ export class ApplicationPage implements OnInit {
       console.log(this.whatfor);
 
     
-    for(let i=0;i<this.whatfor.length;i++){
-      this.subse=this.subse+','+this.whatfor[i];
-    }
+   
     
-      console.log(this.subse);
-      if(this.B1name!=""){
+   
+   /*   if(this.B1name!=""){
       let body ={
         nic :this.nic,
         bank_name : this.B1name,
@@ -244,7 +242,7 @@ if(this.B3name!=""){
     console.log(err);
     
   });
-}
+}*/
   console.log(this.whatfor);
 
     console.log("agrii",this.photos);
@@ -276,7 +274,7 @@ if(this.B3name!=""){
           nic:this.nic,
           date:moment(this.date).format('YYYY-MM-DD'),
           crop:this.crop,
-          whatfor:this.whatfor,
+         // whatfor:this.whatfor,
           reason:this.reason,
           amount:this.amount,
           months:this.months,
@@ -285,9 +283,9 @@ if(this.B3name!=""){
           spo_emplo:this.spo_emplo,
           children:this.children,
           fix_name:this.fix_name,
-          latitude:this.i1,
-          longitude:this.i2,
-          address:this.addr,
+          latitude:12.33,
+          longitude:31.24,
+          location:this.addr,
           fix_deed:this.fix_deed,
           fix_size:this.fix_size,
           fix_value:this.fix_value,
@@ -432,7 +430,7 @@ if(this.B3name!=""){
             });
           
           }
-      }*/
+      }
 
    
 
@@ -443,7 +441,7 @@ if(this.B3name!=""){
       this.router.navigate(['/agrirequest']);
                 
       
-        /*
+        
           });
 
             }else{
@@ -461,7 +459,7 @@ if(this.B3name!=""){
       
 
     
- }*/
+ }
 
 
 
