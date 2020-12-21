@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="new-requests"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Loan Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <br>
+
+  <ion-grid>
+    <ion-row class="bold">
+      <ion-col size="4">Name</ion-col>
+      <ion-col size="4">Apply Date</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor='let item of items'>
+      <ion-col class="col" size="4.5">{{item.nameini}}</ion-col>
+      <ion-col class="col" size="4.5">{{item.date}}</ion-col>
+      <ion-col size="3">
+        <ion-button color="success" size="default" (click)="viewNewRequest($event)" id="{{item.app_id}}">View</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+
+<!--<ion-content>
+  <br>
+  <br>
+  <ion-card>
+    <br>
+    <ion-card>
+      <ion-input type="text" placeholder="NIC NO"></ion-input>
+    </ion-card>
+    <ion-button expand="block" (click)="search()">
+      <ion-icon name="search-outline"></ion-icon>
+      Search
+    </ion-button>
+    <br>
+    <br>
+
+    <ion-label>Please enter farmer's NIC number to update payments details.</ion-label>
+    <br>
+  </ion-card>
+</ion-content>-->

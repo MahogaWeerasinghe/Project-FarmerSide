@@ -12,7 +12,7 @@
 <ion-content>
   <br>
   
-  <ion-card>
+  <!--<ion-card>
     <ion-row>
       
         <ion-col size="5">
@@ -43,24 +43,24 @@
 
 
 
-  </ion-card>
+  </ion-card>-->
 
   <br>
   <div class="shbo">
     <ion-row>
       <ion-col size="3">Installment Date</ion-col>
-      <ion-col size="2">Installment</ion-col>
-      <ion-col size="2">Paid amount</ion-col>
-      <ion-col size="2">To be Paid amount</ion-col>
-      <ion-col size="3">next installment date</ion-col>
+      <ion-col size="3">Installment</ion-col>
+      <ion-col size="3">Paid amount</ion-col>
+      <ion-col size="3">To be Paid amount</ion-col>
+      
     </ion-row>
 
     <ion-row *ngFor='let item of items'>
       <ion-col size="3">{{item.Installment_date}}</ion-col>
-      <ion-col size="2">{{item.Installment}}</ion-col>
-      <ion-col size="2">{{item.paid_amount}}</ion-col>
-      <ion-col size="2">{{item.to_be_paid_amount}}</ion-col>
-      <ion-col size="3">{{item.to_be_paid_date}}</ion-col>
+      <ion-col size="3">{{item.Installment}}</ion-col>
+      <ion-col size="3">{{item.paid_amount}}</ion-col>
+      <ion-col size="3">{{item.to_be_paid_amount}}</ion-col>
+     
     </ion-row>
 
    

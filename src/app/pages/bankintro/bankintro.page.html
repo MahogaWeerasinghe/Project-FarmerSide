@@ -1,0 +1,169 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>    
+  </ion-toolbar>
+ -->
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+
+  <!-- <div>
+    <img class="background" src="assets/img/loan.jpeg" alt="bank logo">
+    <div class="btnMore" id="header" class = "login-header">
+      <img src="/assets/img/{{bank_logo}}" alt="logo">
+    </div>
+  </div> -->
+
+  <div class="container">
+	
+    <div class="row-fluid">     
+        <div class="span12">
+            <div id="counter">
+                <img id="over" src="/assets/img2/{{bank_logo}}" alt="1" />
+                <img id="abc" src="assets/img2/back2.jpg" alt="bg" />
+
+                <!-- <ion-slides pager = "true" pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)" speed="3000" color="success">
+                  <ion-slide class="slide-one">
+                    <img src="assets/img/back2.jpg" alt="bg"> 
+                  </ion-slide>
+                  <ion-slide class="slide-two">
+                    <img src="assets/img/back2.jpg" alt="bg">
+
+                  </ion-slide>
+                </ion-slides> -->
+
+            </div>
+        </div>           
+    </div>
+	
+</div>
+
+  
+</ion-header>
+
+
+<ion-menu side="start" content-id="main">
+
+  <ion-header>
+    <ion-toolbar translucent color="primary">
+      <ion-title>{{bank_name}}</ion-title>
+    </ion-toolbar>
+    <ion-toolbar id="header" color="primary">
+      <img class="center" src="/assets/img2/bank_prof.jpg" alt="bank image"/>
+      <br>
+    </ion-toolbar>
+  
+  </ion-header>
+
+  <ion-content>
+
+    <ion-menu-toggle>
+      <ion-item routerLink="/loan-details">
+        <ion-icon name="document-text"></ion-icon>
+        <ion-label>Loan Details</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-item routerLink="/loan-requests">
+        <ion-icon name="chatbubble-ellipses"></ion-icon>
+        <ion-label>Loan Requests</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-item routerLink="/payment">
+        <ion-icon name="cash"></ion-icon>
+        <ion-label>Payments</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-item>
+      <b>Other</b>
+    </ion-item>
+    
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-icon name="alert-circle"></ion-icon>
+        <ion-label>About us</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-icon name="call"></ion-icon>
+        <ion-label>Contact us</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <!-- <ion-menu-toggle>
+      <ion-item>
+        <ion-icon name="bag-check"></ion-icon>
+        <ion-label>Privacy Policy</ion-label>
+      </ion-item>
+    </ion-menu-toggle>  -->
+  
+    <ion-item>
+      <b>Settings</b>
+    </ion-item>
+
+    <!-- <ion-menu-toggle>
+      <ion-item>
+        <ion-icon name="create"></ion-icon>
+        <ion-label>Edit Profile</ion-label>
+      </ion-item>
+    </ion-menu-toggle> -->
+
+  
+
+    <ion-item routerLink="/intro">
+      <ion-icon name="warning"></ion-icon>
+      <ion-label>Sign out</ion-label>
+    </ion-item>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<ion-router-outlet id="main"></ion-router-outlet>
+
+<ion-content>
+  <!-- <div id="header">
+    <img src="/assets/img/{{bank_logo}}"/>
+  </div> -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" shape="round" size="default" color="dark" (click)="changeLoanDetails()">Loan Details</ion-button>
+    </ion-col>
+  </ion-row>
+  
+  <br>
+  <br>
+
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" shape="round" size="default" color="dark" (click)="checkLoanRequests()">Loan Requests</ion-button>
+    </ion-col>
+  </ion-row>
+  
+  <br>
+  <br>
+
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" shape="round" size="default" color="dark" (click)="viewPayments()">Payments</ion-button>
+    </ion-col>
+  </ion-row>
+  
+  
+</ion-content>

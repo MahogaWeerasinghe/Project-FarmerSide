@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="bankintro"></ion-back-button>
+    </ion-buttons>
+    <ion-title>New Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <!--<ion-card>-->
+    <div *ngFor='let item of items'>
+      <ion-row>
+        <ion-col>
+        <!--<img class="logi-img" src="/assets/img/People's.jpg" alt="logo">-->
+          <ion-button color="success" expand="block" size="default" (click)="ViewLoans($event)" id="{{item.loan_id}}">{{item.loan_name}}</ion-button>
+        </ion-col>
+        <br>
+      </ion-row>
+      <ion-row>
+        <br>
+      </ion-row>
+    </div>
+    
+  <!--</ion-card>-->
+  
+  <br>
+  
+</ion-content>
+

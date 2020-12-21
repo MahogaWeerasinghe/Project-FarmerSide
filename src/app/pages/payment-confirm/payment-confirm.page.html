@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="payment"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Loan Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content class="ion-padding"> -->
+<ion-content>
+
+  <br>
+
+  <ion-card class="ion-padding" *ngFor='let item of items'>
+    <!-- <ion-card class="ion-padding"> -->
+
+    <br>
+    
+    <ion-row>
+      <ion-col>
+        <ion-label><b>Amount borrowed:</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>{{item.amount}}</ion-label>
+        <!-- <ion-label>100,000</ion-label> -->
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col>
+        <ion-label><b>Interest rate:</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>{{item.interest_rate}}</ion-label>
+        <!-- <ion-label>4%</ion-label> -->
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col>
+        <ion-label><b>No.of installments (Time period):</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>{{item.no_of_installment}}</ion-label>
+        <!-- <ion-label>{{item.no_of_installment}} ({{item.period_years}} years)</ion-label> -->
+        <!-- <ion-label>24 (2 years)</ion-label> -->
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col>
+        <ion-label><b>Borrowed date:</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>{{item.Issued_date}}</ion-label>
+        <!-- <ion-label>2020-12-20</ion-label> -->
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col>
+        <ion-label><b>Total installment value:</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>{{item.total_amount}}</ion-label>
+        <!-- <ion-label>4500</ion-label> -->
+      </ion-col>
+    </ion-row>
+    
+    <br>
+    <br>
+    <ion-button shape="round" size="default" color="primary" (click)="showMore($event)" id="{{item.obtain_id}}">View payment details</ion-button>
+  
+
+    <br>
+    <br>
+  </ion-card>
+  
+
+  <!-- <br>
+  <br>
+    <ion-card>
+      <ion-label>Name: Sunil</ion-label>
+      <br>
+      <ion-label>Account No: 3436634278899</ion-label>
+      <br>
+      <ion-row>
+        <ion-col>
+          <p>Aswenna</p>
+          <ion-button expand="block">Paid</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p>NCRCS</p><ion-button expand="block">Paid</ion-button>   
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  <ion-card>
+
+    <h1>Rate customer</h1>
+    <ion-row>
+      <ion-col>
+        <p>Aswenna</p>
+        <ion-button expand="block">Rate</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>NCRCS</p><ion-button expand="block">Rate</ion-button>   
+      </ion-col>
+    </ion-row>
+  </ion-card> -->
+
+</ion-content>

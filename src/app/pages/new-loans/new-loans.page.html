@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="bankintro"></ion-back-button>
+    </ion-buttons>
+    <ion-title>New Loans</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list class="ion-padding">
+
+    <ion-item>
+      <ion-label position="floating">Loan id</ion-label>  
+      <ion-textarea rows="1" cols="50" [(ngModel)]="loan_id"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Name of the Scheme</ion-label>  
+      <ion-textarea rows="1" cols="50" [(ngModel)]="loan_name"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">General Information</ion-label>  
+      <ion-textarea rows="8" cols="50" [(ngModel)]="genera_info"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Specific Information</ion-label>  
+      <ion-textarea rows="5" cols="50" [(ngModel)]="specific_info"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Eligible Borrowers</ion-label>  
+      <ion-textarea rows="6" cols="50" [(ngModel)]="eligible_borrowers"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Eligible Crops</ion-label>  
+      <ion-textarea rows="5" cols="50" [(ngModel)]="eligible_crops"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Maximum Loan Amount</ion-label>  
+      <ion-textarea rows="2" cols="50" [(ngModel)]="maximum_loanamount"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Rate of Interest</ion-label>  
+      <ion-textarea rows="4" cols="50" [(ngModel)]="Rateofinterest"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Repayment Period</ion-label>  
+      <ion-textarea rows="3" cols="50" [(ngModel)]="Repaymentperiod"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">More information</ion-label>  
+      <ion-textarea rows="4" cols="50" [(ngModel)]="more_info"></ion-textarea>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label position="floating">Image for loan scheme</ion-label>  
+      <ion-textarea rows="4" cols="50" [(ngModel)]="loan_logo"></ion-textarea>
+    </ion-item> -->
+
+    <ion-button shape="round" color="success" class="ion-padding" (click)="createLoan()">Submit</ion-button>
+
+  </ion-list>
+
+</ion-content>

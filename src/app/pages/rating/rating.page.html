@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="payment-details"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rate the User</ion-title>
+  </ion-toolbar>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</ion-header>
+
+<ion-content>
+  <br>
+  
+  <ion-card class="ion-padding">
+   
+    <div class="rating">
+      <input type="radio" (click)="click1()" name="star" id="star1"><label for="star1"></label>
+      <input type="radio" (click)="click2()" name="star" id="star2"><label for="star2"></label>
+      <input type="radio" (click)="click3()" name="star" id="star3"><label for="star3"></label>
+      <input type="radio" (click)="click4()" name="star" id="star4"><label for="star4"></label>
+      <input type="radio" (click)="click5()" name="star" id="star5"><label for="star5"></label>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br> 
+    <div class="ion-padding">
+      <ion-button shape="round" color="primary" (click)="submit()">Submit</ion-button> 
+    </div>
+
+  </ion-card>
+    
+</ion-content>
+
+

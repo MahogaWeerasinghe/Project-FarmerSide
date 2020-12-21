@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="bankintro"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Payments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <ion-card class="ion-padding">
+    <br>
+    <ion-card>
+      <ion-input type="text" placeholder="NIC NO" [(ngModel)]="nic"></ion-input>
+    </ion-card>
+    <ion-button expand="block" id="{{nic}}" (click)="Search($event)">
+      <ion-icon name="search-outline"></ion-icon>
+      Search
+    </ion-button>
+    <br>
+
+    <ion-label>Enter borrower's NIC number to update payments details.</ion-label>
+    <br>
+  </ion-card>
+</ion-content>

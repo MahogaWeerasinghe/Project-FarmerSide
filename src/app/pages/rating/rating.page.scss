@@ -1,0 +1,48 @@
+body{
+	margin:0;
+	padding: 0;
+	background:#ffffff;
+}
+.rating{
+    position: absolute;
+    bottom: 65%;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotateY(180deg);
+	display: flex;
+}
+.rating input{
+	display: none;
+}
+.rating label{
+	display: block;
+	cursor: pointer;
+	width: 50px;
+	/*background: #ccc;*/
+}
+.rating label:before{
+	content:'\f005';
+	font-family: fontAwesome;
+	position: relative;
+	display: block;
+	font-size: 50px;
+	color: #a59d9d;
+}
+.rating label:after{
+	content:'\f005';
+	font-family: fontAwesome;
+	position: absolute;
+	display: block;
+	font-size: 50px;
+	color: #eeeb41;
+	top:0;
+	opacity: 0;
+	transition: .5s;
+	text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+.rating label:hover:after,
+.rating label:hover ~ label:after,
+.rating input:checked ~ label:after
+{
+	opacity: 1;
+}

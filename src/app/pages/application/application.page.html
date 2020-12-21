@@ -15,7 +15,14 @@
   
 </ion-item>
 
-
+<ion-item>
+  <ion-label>Branch</ion-label>
+  <ion-select interface="popover" placeholder="Select Your Branch" [(ngModel)]="branch">
+    <ion-select-option >Gampaha</ion-select-option>
+    <ion-select-option >Ganemulla</ion-select-option>
+  </ion-select>
+  
+</ion-item>
 
  
 
@@ -70,7 +77,8 @@
     <ion-row>
       <ion-col>
     <ion-item>
-      <ion-label>Facilities What you want </ion-label>
+      <ion-label color="success">Facilities What you want </ion-label>
+     
     </ion-item>
     </ion-col>
     <ion-col>
@@ -134,12 +142,15 @@
 
   <div *ngIf="selectTabs == 'missed'">
     <ion-item>
-      <ion-label>Spouse Details</ion-label>
+     
+      <ion-label color="success">Spouse Details</ion-label>
+
+
     </ion-item>
 
     <ion-item >
  
-      <ion-label>Civil Status</ion-label>
+      <ion-label >Civil Status</ion-label>
       <ion-select interface="popover" [(ngModel)]="civil">
         <ion-select-option >Married</ion-select-option>
         <ion-select-option >Not Married</ion-select-option>
@@ -182,7 +193,7 @@
     
     
               <ion-item>
-                <ion-label>Bank Details</ion-label>
+                <ion-label color="success">Bank Details</ion-label>
               </ion-item>
 
     <ion-grid item-content>
@@ -217,7 +228,8 @@
     
    
     <ion-item>
-      <ion-label><i>Fixed Property</i> </ion-label>
+      <ion-label color="success"><i>Fixed Property</i> </ion-label>
+      
     </ion-item>
 
     <ion-item>
@@ -228,8 +240,8 @@
     
 
     <ion-item>
-      <ion-label>Reg.No of deed,Date and notary name</ion-label>
-      <ion-textarea interface="popover"  placeholder="Reg.No of deed,Date and notary name" [(ngModel)]='fix_deed'></ion-textarea>
+      <ion-label>Registration No</ion-label>
+      <ion-textarea interface="popover"  placeholder="Reg.No of deed" [(ngModel)]='fix_deed'></ion-textarea>
     </ion-item>
 
     <ion-item>
@@ -262,18 +274,18 @@
           </ion-item>
 
           <ion-item>
-            <ion-label>About that Property</ion-label>
+            <ion-label>About that Property :</ion-label>
             <ion-textarea interface="popover"  placeholder="About that Property" [(ngModel)]='mot_about'></ion-textarea>
           </ion-item>
 
           <ion-item>
-            <ion-label>Location</ion-label>
+            <ion-label>Identification No(reg No):</ion-label>
             <ion-input type="text" placeholder="Location" [(ngModel)]='mot_location'></ion-input>
           </ion-item>
 
 
             <ion-item>
-              <ion-label>Current Value</ion-label>
+              <ion-label>Current Value </ion-label>
               <ion-input type="text" placeholder="Rs :" [(ngModel)]='mot_value'></ion-input>
             </ion-item>
 
@@ -294,7 +306,7 @@
   <div *ngIf="selectTabs == 'gua'">
     
     <ion-item>
-      <ion-label><i>Guarantor 01</i> 
+      <ion-label color="success"><i>Guarantor 01</i> 
       </ion-label>
     </ion-item>
 
@@ -326,7 +338,7 @@
         </ion-grid>
 
           <ion-item>
-            <ion-label><i>Guarantor 02</i> </ion-label>
+            <ion-label color="success"><i>Guarantor 02</i> </ion-label>
           </ion-item>
           <ion-item>
             <ion-label>Full Name</ion-label>

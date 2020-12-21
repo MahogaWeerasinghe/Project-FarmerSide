@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Reject Loan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-row>
+    <ion-col size="4">
+      <ion-card-subtitle><b>Rejected Date</b></ion-card-subtitle>
+    </ion-col>
+    <ion-col size="8">
+      <ion-card-subtitle>{{date}}</ion-card-subtitle>
+    </ion-col>
+    
+  </ion-row>
+  <br>
+  <ion-label class="ion-padding">Reason</ion-label>
+  <br>
+  <ion-card>
+    <ion-textarea rows="20" cols="50" placeholder="Enter the reason to pend the loan request here..." [(ngModel)]='rejected_reason'></ion-textarea>
+  </ion-card>
+  <br>
+  <ion-button shape="round" color="success" class="ion-padding" (click)="submitPending()">Submit</ion-button>
+</ion-content>

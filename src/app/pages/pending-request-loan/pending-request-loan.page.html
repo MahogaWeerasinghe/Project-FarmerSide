@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="new-requests"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pending Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br>
+
+  <ion-grid>
+    <ion-row class="bold">
+      <ion-col size="3">NIC</ion-col>
+      <ion-col size="3">Name</ion-col>
+      <ion-col size="3">Date</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor='let item of items'>
+      <ion-col class="col" size="3">{{item.nic}}</ion-col>
+      <ion-col class="col" size="3">{{item.nameini}}</ion-col>
+      <ion-col class="col" size="3">{{item.date}}</ion-col>
+      <ion-col size="3">
+        <ion-button color="success" (click)="viewRejectedRequest($event)" id="{{item.application_id}}">View</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

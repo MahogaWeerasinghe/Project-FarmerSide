@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="payment"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Payment Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br>
+  
+  <ion-card>
+    <ion-row>
+      <ion-col size="3" class="bold" class="col"><b>Last Date of payment</b></ion-col>
+      <ion-col size="3" class="bold" class="col"><b>Previous payment</b></ion-col>
+      <ion-col size="3" class="bold" class="col"><b>Total amount paid</b></ion-col>
+      <ion-col size="3" class="bold" class="col"><b>Amount to be paid</b></ion-col>
+    </ion-row>
+  
+    <ion-row *ngFor='let value of values'>
+      <ion-col size="3" class="col">{{value.Installment_date}}</ion-col>
+      <ion-col size="3" class="col">{{value.Installment}}</ion-col>
+      <ion-col size="3" class="col">{{value.paid_amount}}</ion-col>
+      <ion-col size="3" class="col">{{value.to_be_paid_amount}}</ion-col>
+    </ion-row>
+  </ion-card>
+
+  <br>
+
+<div *ngIf="hide1">
+  <ion-list >
+    <ion-item>
+      <ion-label size="6" color="success"><b>Date of payment:</b></ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="Installment_date"></ion-datetime>
+      <!-- <ion-input size="6" [(ngModel)]="paidDate"></ion-input> -->
+    </ion-item>
+
+    <ion-item>
+      <ion-label size="6" color="success"><b>Current payment:</b></ion-label>
+      <ion-input size="6" [(ngModel)]="Installment"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label size="6" color="success"><b>Total amount paid:</b></ion-label>
+      <ion-label size="6">{{((paid_amount)++(Installment))}}</ion-label>
+      <!-- <ion-label color="medium" size="6">4500</ion-label> -->
+    </ion-item>
+
+    <ion-item>
+      <ion-label size="6" color="success"><b>Amount to be paid:</b></ion-label>
+      <ion-label size="6">{{(to_be_paid_amount)-(Installment)}}</ion-label>
+      <!-- <ion-label color="medium" size="6">103500</ion-label> -->
+    </ion-item>
+
+   <!-- <ion-item>
+      <ion-label size="6" color="success"><b>Next payment date:</b></ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="to_be_paid_date"></ion-datetime>
+    </ion-item>-->
+  </ion-list>
+
+  <ion-button shape="round" size="default" color="primary" (click)="updatePayment2()">Paid</ion-button>
+</div>
+
+
+
+<div *ngIf="hide2">
+  <ion-list>
+    <ion-item>
+      <ion-label size="6" color="success"><b>Date of payment:</b></ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="Installment_date"></ion-datetime>
+      <!-- <ion-input size="6" [(ngModel)]="paidDate"></ion-input> -->
+    </ion-item>
+
+    <ion-item>
+      <ion-label size="6" color="success"><b>Current payment:</b></ion-label>
+      <ion-input size="6" [(ngModel)]="Installment"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label size="6" color="success"><b>Total amount paid:</b></ion-label>
+      <ion-label size="6">{{(Installment)}}</ion-label>
+      <!-- <ion-label color="medium" size="6">4500</ion-label> -->
+    </ion-item>
+
+    <ion-item>
+      <ion-label size="6" color="success"><b>Amount to be paid:</b></ion-label>
+      <ion-label size="6">{{(total_amount)-(Installment)}}</ion-label>
+      <!-- <ion-label color="medium" size="6">103500</ion-label> -->
+    </ion-item>
+
+   <!--<ion-item>
+      <ion-label size="6" color="success"><b>Next payment date:</b></ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="to_be_paid_date"></ion-datetime>
+    </ion-item>-->
+  </ion-list>
+
+  <ion-button shape="round" size="default" color="primary" (click)="updatePayment1()">Paid</ion-button>
+</div>
+
+
+
+
+</ion-content>

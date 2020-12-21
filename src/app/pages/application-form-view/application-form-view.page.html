@@ -1,0 +1,500 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Loan Application</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+    <ion-card (click)="set()">
+      <ion-item>
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-icon name="{{icon}}" slot="end"></ion-icon>
+        <ion-label>Personal Details</ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card *ngIf="hideMe" >
+ <ion-card *ngFor='let item of items'>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>Name with Initial </b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-card-subtitle>{{item.choose}} {{item.nameini}}</ion-card-subtitle>
+            </ion-col>
+            
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>Full Name </b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-card-subtitle>{{item.namefull}}</ion-card-subtitle>
+            </ion-col>
+            
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>Private Address </b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-card-subtitle>{{item.address}}</ion-card-subtitle>
+            </ion-col>
+            
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>Telephone Number</b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-card-subtitle>{{item.TpNo}}</ion-card-subtitle>
+            </ion-col>
+            
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>Date Of Birth</b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-card-subtitle>{{item.dob}}</ion-card-subtitle>
+            </ion-col>
+            
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>NIC No </b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-card-subtitle>{{item.nic}}</ion-card-subtitle>
+            </ion-col>
+            
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-card-subtitle><b>Email Address </b></ion-card-subtitle>
+            </ion-col>
+            <ion-col size="8">
+              <ion-card-subtitle>{{item.email}}</ion-card-subtitle>
+            </ion-col>
+            
+          </ion-row>
+        </ion-grid>
+      </ion-card> 
+    </ion-card>
+    
+
+    <ion-card>
+      <ion-item (click)="setLoanPurposes()">
+        <ion-icon name="reader-outline" slot="start"></ion-icon>
+        <ion-icon name="{{icon2}}" slot="end"></ion-icon>
+        <ion-label>Loan Purposes</ion-label>
+      </ion-item>
+    </ion-card>
+  
+    <ion-card *ngIf="hidePup">
+      <ion-card *ngFor='let item of items'>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Crop Type</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.crop}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Main Purpose</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.whatfor}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Describe in Detail</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.reason}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Amount Required</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.amount}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Repayment Period</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.months}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        
+        
+       
+      </ion-grid>
+      </ion-card>
+  </ion-card>
+
+  <ion-card>
+      <ion-item (click)="setSpouseDetails()">
+        <ion-icon name="woman-outline" slot="start"></ion-icon>
+        <ion-icon name="{{icon3}}" slot="end"></ion-icon>
+        <ion-label>Spouse Details</ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card *ngIf="hideSp">
+    <ion-card *ngFor='let item of items'>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Civil Status</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.civil}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Name of Wife/Husband in Full</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.spousename}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>If Spouse is employed state name and address of employer</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.spo_emplo}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>No of dependants & children :</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.children}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Income Reports</b></ion-card-subtitle>
+          </ion-col>
+        
+        </ion-row>
+        <ion-row>
+       
+          <ion-col col-6 >
+            <img *ngFor="let p of repo" src="{{p.agr_images}}"/>
+
+        </ion-col>
+      </ion-row>
+  
+
+      </ion-grid>
+      
+  </ion-card>
+    </ion-card>
+      
+
+
+    <ion-card>
+      <ion-item (click)="setBankDetails()">
+        <ion-icon name="wallet-outline" slot="start"></ion-icon>
+        <ion-icon name="{{icon4}}" slot="end"></ion-icon>
+        <ion-label>Bank Details</ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card *ngIf="hideBan">
+ 
+    <ion-card *ngFor="let account of acc">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Bank name</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{account.bank_name}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Name of Branch</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{account.branch}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Account No</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{account.accountno}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Type of Account</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{account.type}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+       
+       
+       
+      </ion-grid>
+      
+  </ion-card>
+   
+    </ion-card>
+          
+   
+
+    <ion-card>
+      <ion-item (click)="setPropertyDetails()">
+        <ion-icon name="receipt-outline" slot="start"></ion-icon>
+        <ion-icon name="{{icon5}}" slot="end"></ion-icon>
+        <ion-label>Property Details</ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card *ngIf="hidePro">
+ <ion-card *ngFor="let item of items">
+      <ion-grid>
+        <ion-item>
+          <ion-label><i>Fixed Property</i> </ion-label>
+        </ion-item>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Name and Location</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.fix_name}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Reg.No of deed,Date and notary name</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.fix_deed}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Size</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.fix_size}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Current Value</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.fix_value}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+
+        <ion-row>
+       
+          <ion-col col-6 >
+            <img *ngFor="let p of fix" src="{{p.agr_images}}"/>
+
+        </ion-col>
+      </ion-row>
+
+        
+        <ion-item>
+          <ion-label><i>Motive Property</i> </ion-label>
+        </ion-item>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>About that Property</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.mot_about}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Location</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.mot_location}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Current Value</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.mot_value}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+
+        <ion-row>
+       
+          <ion-col col-6 >
+            <img *ngFor="let p of mot" src="{{p.agr_images}}"/>
+
+        </ion-col>
+      </ion-row>
+       
+       
+       
+      </ion-grid>
+      
+  </ion-card>
+   
+</ion-card>
+
+
+    <ion-card>
+      <ion-item (click)="setWitnessesDetails()">
+        <ion-icon name="people-outline" slot="start"></ion-icon>
+        <ion-icon name="{{icon6}}" slot="end"></ion-icon>
+        <ion-label>Witnesses Details</ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card *ngIf="hideWit">
+      <ion-card *ngFor="let item of items">
+      
+    <ion-item>
+      <ion-label><i>Guarantor 01</i> 
+      </ion-label>
+    </ion-item>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Full Name</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.gua1_name}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Occupation</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.gua1_occ}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Telephone Number</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.gua1_tp}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+
+        <ion-row>
+       
+          <ion-col col-6 >
+            <img *ngFor="let p of gu1" src="{{p.agr_images}}"/>
+
+        </ion-col>
+      </ion-row>
+
+        <ion-item>
+          <ion-label><i>Guarantor 02</i> 
+          </ion-label>
+        </ion-item>
+    
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Full Name</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.gua2_name}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+
+            
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Occupation</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.gua2_occ}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+       
+            
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Telephone Number</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-card-subtitle>{{item.gua2_tp}}</ion-card-subtitle>
+          </ion-col>
+          
+        </ion-row>
+
+        <ion-row>
+       
+          <ion-col col-6 >
+            <img *ngFor="let p of gua2" src="{{p.agr_images}}"/>
+
+        </ion-col>
+      </ion-row>
+       
+       
+       
+       
+      </ion-grid>
+      </ion-card>
+  </ion-card>
+   
+</ion-content>

@@ -98,6 +98,7 @@ export class ApplicationPage implements OnInit {
   i2:any;
   addr:any;
   subse:string="";
+  branch:string;
 
   
   disableButton;
@@ -172,7 +173,7 @@ export class ApplicationPage implements OnInit {
   
   async submitapp(){
    
-      console.log(this.nic);
+   /*   console.log(this.nic);
       console.log(this.B1name);
       console.log(this.B2name);
       console.log(this.B3name);
@@ -182,7 +183,7 @@ export class ApplicationPage implements OnInit {
    
     
    
-   /*   if(this.B1name!=""){
+     if(this.B1name!=""){
       let body ={
         nic :this.nic,
         bank_name : this.B1name,
@@ -242,7 +243,7 @@ if(this.B3name!=""){
     console.log(err);
     
   });
-}*/
+}
   console.log(this.whatfor);
 
     console.log("agrii",this.photos);
@@ -259,6 +260,10 @@ if(this.B3name!=""){
   }else if(this.crop==""){
     this.presentToast("crop is required");
   }else if(this.reason=="")
+  {
+    this.presentToast("reason is required");
+  }
+  else if(this.branch=="")
   {
     this.presentToast("reason is required");
   }
@@ -283,8 +288,8 @@ if(this.B3name!=""){
           spo_emplo:this.spo_emplo,
           children:this.children,
           fix_name:this.fix_name,
-          latitude:12.33,
-          longitude:31.24,
+          latitude:this.i1,
+          longitude:this.i2,
           location:this.addr,
           fix_deed:this.fix_deed,
           fix_size:this.fix_size,
@@ -298,6 +303,7 @@ if(this.B3name!=""){
           gua2_name:this.gua2_name,
           gua2_occ:this.gua2_occ,
           gua2_tp:this.gua2_tp,
+          branch:this.branch,
       
                 
         }
@@ -434,13 +440,13 @@ if(this.B3name!=""){
 
    
 
-
+*/
 
 
 
       this.router.navigate(['/agrirequest']);
                 
-      
+  /*    
         
           });
 
@@ -465,7 +471,7 @@ if(this.B3name!=""){
 
 
 
-
+*/
 
 
 

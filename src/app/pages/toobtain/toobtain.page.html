@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/approved-request-view"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Obatin the loan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-label>Applicant's Want</ion-label>
+  <ion-card *ngFor='let item of items'>
+    <!-- <ion-grid *ngFor='let item of items'> -->
+      <ion-grid>
+        <ion-row >
+          <ion-col><ion-label size="4"><b>Name</b></ion-label></ion-col>
+          <ion-col><ion-label>{{item.choose}} {{item.nameini}}</ion-label></ion-col>
+          <!-- <ion-col size="8">{{item.date_you_come}}</ion-col> -->
+        </ion-row> 
+    <ion-row >
+      <ion-col><ion-label size="4"><b>National ID Number</b></ion-label></ion-col>
+      <ion-col><ion-label>{{item.nic}}</ion-label></ion-col>
+      <!-- <ion-col size="8">{{item.date_you_come}}</ion-col> -->
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-label size="4"><b>Amount</b></ion-label></ion-col>
+      <ion-col><ion-label>{{item.amount}}</ion-label></ion-col>
+      <!-- <ion-col size="8">{{item.special_notices}}</ion-col> -->
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-label size="4"><b>Repayment months</b></ion-label></ion-col>
+      <ion-col><ion-label>{{item.months}}</ion-label></ion-col>
+      <!-- <ion-col size="8">{{item.special_notices}}</ion-col> -->
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+</ion-card>
+<br>
+
+
+<ion-list>
+  <ion-item>
+    <ion-label size="6" color="success"><b>Date of obtained:</b></ion-label>
+    <ion-label size="6" color="success"><b>{{date}}</b></ion-label>
+    <!-- <ion-input size="6" [(ngModel)]="paidDate"></ion-input> -->
+  </ion-item>
+
+  <ion-item>
+    <ion-label size="6" ><b>Amount :</b></ion-label>
+    <ion-input size="6" [(ngModel)]="amount"></ion-input>
+    
+  </ion-item>
+
+  <ion-item>
+    <ion-label size="6" ><b>Interest Rate</b></ion-label>
+    <ion-label size="6" color="success"><b>{{rate}}%</b></ion-label>
+    <!--auto fill -->
+  </ion-item>
+
+  <ion-item>
+    <ion-label size="6" ><b>No of installments</b></ion-label>
+    <ion-input size="6" [(ngModel)]="no_of_installment"></ion-input>
+    
+  </ion-item>
+
+  <ion-item>
+    <ion-label size="6" ><b>Total amount</b></ion-label>
+    <ion-label size="6" color="success"><b>{{((rate)/1200*(amount)+ (amount)/(no_of_installment))*(no_of_installment)}}</b></ion-label>
+    <!--auto fill -->
+  </ion-item>
+
+  <ion-item>
+    <ion-label size="6" ><b>installment</b></ion-label>
+    <ion-label size="6" color="success"><b>{{(rate)/1200*(amount)+ (amount)/(no_of_installment)}}</b></ion-label>
+    <!--auto fill -->
+  </ion-item>
+
+
+
+
+
+</ion-list>
+
+<ion-row>
+ 
+  <ion-col>
+    <ion-button expand="block" color="success" (click)="Submit()">Submit</ion-button>
+  </ion-col>
+</ion-row>
+
+
+
+
+</ion-content>

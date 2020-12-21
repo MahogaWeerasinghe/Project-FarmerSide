@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="approved-requests"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{choose}} {{nameini}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <br>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="success" (click)="viewApprovedPersonalInfo()">Personal Information</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="success" (click)="viewApprovedApplicationForm()">Application Form</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="success" (click)="viewApprovedAgricultureReport()">Agriculture Report</ion-button>
+      </ion-col>
+    </ion-row>
+    
+    <br>
+  </ion-card>
+  <br>
+
+  <ion-card *ngFor='let item of items'>
+    <!-- <ion-grid *ngFor='let item of items'> -->
+      <ion-grid>
+        <ion-row >
+          <ion-col><ion-label size="4"><b>Approved date</b></ion-label></ion-col>
+          <ion-col><ion-label>{{item.approved_date}}</ion-label></ion-col>
+          <!-- <ion-col size="8">{{item.date_you_come}}</ion-col> -->
+        </ion-row> 
+    <ion-row >
+      <ion-col><ion-label size="4"><b>When Come</b></ion-label></ion-col>
+      <ion-col><ion-label>{{item.date_you_come}}</ion-label></ion-col>
+      <!-- <ion-col size="8">{{item.date_you_come}}</ion-col> -->
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-label size="4"><b>Special Notices</b></ion-label></ion-col>
+      <ion-col><ion-label>{{item.special_notices}}</ion-label></ion-col>
+      <!-- <ion-col size="8">{{item.special_notices}}</ion-col> -->
+    </ion-row>
+  </ion-grid>
+  </ion-card>
+  <br>
+  <ion-card>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="success" (click)="obtain()">Approve</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" color="success" (click)="Reject()">Reject</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

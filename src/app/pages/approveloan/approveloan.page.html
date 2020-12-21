@@ -1,0 +1,65 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>approveloan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Approve the Loan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <ion-grid>
+    <br>
+    <ion-row>
+      <ion-col size="4">
+        <ion-card-subtitle><b>Approved Date</b></ion-card-subtitle>
+      </ion-col>
+      <ion-col size="8">
+        <ion-card-subtitle>{{date}}</ion-card-subtitle>
+      </ion-col>
+      
+    </ion-row>
+  
+    <br>
+    <ion-row>
+      <ion-col size="4">
+        <ion-card-subtitle><b>When Come</b></ion-card-subtitle>
+      </ion-col>
+      <ion-col size="8">
+     <ion-datetime  placeholder="Select Date" [(ngModel)]='date_you_come'></ion-datetime>
+      </ion-col>
+      
+    </ion-row>
+ 
+    <br>
+    <ion-row>
+      <ion-col size="4">
+        <ion-card-subtitle><b>Special Notices</b></ion-card-subtitle>
+      </ion-col>
+      <ion-col size="8">
+        <ion-textarea rows="10" cols="50" placeholder="Special Reason here..." [(ngModel)]='special_notices'></ion-textarea>
+      </ion-col>
+      
+    </ion-row>
+
+
+    
+
+
+  </ion-grid>
+</ion-card>
+<br>
+<ion-button class="ion-padding" (click)="submitaprove()">Submit</ion-button>
+
+</ion-content>

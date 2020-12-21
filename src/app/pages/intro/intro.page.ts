@@ -27,7 +27,9 @@ export class IntroPage implements OnInit {
   openagri(){
     this.router.navigate(['/officers']);
   }
-
+  openbank(){
+    this.router.navigate(['/banklogin']);
+  }
   
   slidesDidLoad(slides) {
     slides.startAutoplay();
