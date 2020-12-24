@@ -5,17 +5,26 @@ import { AccessProviders } from '../../pro/access';
 import {Storage} from '@ionic/storage';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
 import { Location } from "@angular/common";
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { Injectable } from '@angular/core';
 @Component({
   selector: 'app-agriofficer',
   templateUrl: './agriofficer.page.html',
   styleUrls: ['./agriofficer.page.scss'],
 })
+
+@Injectable({
+  providedIn: 'root' // just before your class
+})
+
 export class AgriofficerPage implements OnInit {
   nic:string;
   items:any;
   dat:any;
   name:string;
   GN_No:string;
+  unread:number;
+
 
   slider: any;
     slideOptions = {
@@ -33,7 +42,8 @@ export class AgriofficerPage implements OnInit {
     private storage:Storage,
     private navCtrl:NavController,
     public http:HttpClient,
-    private home: Location
+    private home: Location,
+    private localNotifications: LocalNotifications
   ) { }
 
   
@@ -46,8 +56,22 @@ export class AgriofficerPage implements OnInit {
 
   ngOnInit() {
     this.call();
+    
 
   }
+
+  single_notification(unread:number) {
+    // Schedule a single notification
+    this.localNotifications.schedule({
+      id: 1,
+      text: 'You have '+this.unread+' requests',
+      sound: '/assets/sound.mp3',
+      data: { secret: 'key_data' }
+    });
+  }
+
+
+  
 
   slidesDidLoad(slides) {
     slides.startAutoplay();
@@ -66,9 +90,27 @@ export class AgriofficerPage implements OnInit {
       console.log("AO",this.items);
       this.name=this.items[0].name;
       this.GN_No=this.items[0].GN_No;
-    });
 
+
+
+
+  this.http.get(AccessProviders.server+'/viewagri/'+this.GN_No).map(res => res).subscribe((res:any)=>{ 
+    //this.items=res.message;
+    this.unread=res.message.length;
+    console.log(res.message);
+    if(this.unread!=0){
+      this.single_notification(this.unread);
+    }
+    
+    //console.log("AO",this.items);
   });
+
+});
+
+});
+
+
+
 
 
   }

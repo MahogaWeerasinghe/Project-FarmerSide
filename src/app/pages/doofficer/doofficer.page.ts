@@ -4,6 +4,7 @@ import { ToastController,LoadingController,AlertController, NavController } from
 import { AccessProviders } from '../../pro/access';
 import {Storage} from '@ionic/storage';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @Component({
   selector: 'app-doofficer',
@@ -16,7 +17,8 @@ export class DoofficerPage implements OnInit {
   dat:any;
   name:string;
   GN_No:string;
-
+  Agr_service_dev:string;
+  unread:number;
   
   slider: any;
     slideOptions = {
@@ -34,6 +36,7 @@ export class DoofficerPage implements OnInit {
     private storage:Storage,
     private navCtrl:NavController,
     public http:HttpClient,
+    private localNotifications: LocalNotifications
   ) { }
 
   slideData = [
@@ -44,6 +47,16 @@ export class DoofficerPage implements OnInit {
 
   ngOnInit() {
     this.call();
+  }
+
+  single_notification(unread:number) {
+    // Schedule a single notification
+    this.localNotifications.schedule({
+      id: 1,
+      text: 'You have '+this.unread+' Report requests',
+      sound: '/assets/sound.mp3',
+      data: { secret: 'key_data' }
+    });
   }
 
   slidesDidLoad(slides) {
@@ -64,6 +77,19 @@ export class DoofficerPage implements OnInit {
       console.log("AO",this.items);
       this.name=this.items[0].name;
       this.GN_No=this.items[0].GN_No;
+      this.Agr_service_dev=this.items[0].Agr_service_dev;
+
+      this.http.get(AccessProviders.server+'/viewdo/'+this.Agr_service_dev).map(res => res).subscribe((res:any)=>{ 
+        //this.items=res.message;
+        //console.log(this.items);
+        //console.log("AO",this.items);
+        this.unread=res.message.length;
+        console.log(res.message);
+        if(this.unread!=0){
+          this.single_notification(this.unread);
+        }
+      });
+
     });
 
   });

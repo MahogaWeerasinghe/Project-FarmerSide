@@ -149,6 +149,7 @@ export class AgrirequestsenterPage implements OnInit {
 
 
   details(){
+    
     this.http.get(AccessProviders.server+'/dltloans/'+this.rep_id).map(res => res).subscribe((res:any)=>{ 
 
     });

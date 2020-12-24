@@ -77,8 +77,9 @@
     <ion-row>
       <ion-col>
     <ion-item>
-      <ion-label color="success">Facilities What you want </ion-label>
+      <ion-label color="success"><i>Facilities What you want </i></ion-label>
      
+
     </ion-item>
     </ion-col>
     <ion-col>
@@ -143,10 +144,12 @@
   <div *ngIf="selectTabs == 'missed'">
     <ion-item>
      
-      <ion-label color="success">Spouse Details</ion-label>
-
+      <ion-label color="success"><i>Spouse Details</i></ion-label>
+      
 
     </ion-item>
+    <br>
+      <ion-label color="tertiary"><i>(If you haven't fill please type "No")</i></ion-label>
 
     <ion-item >
  
@@ -160,18 +163,18 @@
      </ion-item>
       
     <ion-item>
-      <ion-label>Name of Wife/Husband in Full :</ion-label>
+      <ion-label>Name of Wife/Husband</ion-label>
       <ion-input type="text" placeholder="Name in Full" [(ngModel)]='spousename'></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>If Spouse is employed state name and address of employer</ion-label>
-        <ion-textarea interface="popover"  placeholder="If Spouse is employed state name and address of employer" [(ngModel)]='spo_emplo'></ion-textarea>
+        <ion-label>Spouse's Work Place</ion-label>
+        <ion-textarea interface="popover"  placeholder="Spouse's Work Place" [(ngModel)]='spo_emplo'></ion-textarea>
       </ion-item>
 
       <ion-item>
-        <ion-label>No of dependants & children :</ion-label>
-        <ion-input type="text" placeholder="No of Children" [(ngModel)]='children'></ion-input>
+        <ion-label>No of dependants</ion-label>
+        <ion-input type="text" placeholder="No of dependants" [(ngModel)]='children'></ion-input>
         </ion-item>
 
         <ion-item>
@@ -193,8 +196,9 @@
     
     
               <ion-item>
-                <ion-label color="success">Bank Details</ion-label>
+                <ion-label color="success"><i>Bank Details</i></ion-label>
               </ion-item>
+           
 
     <ion-grid item-content>
       <ion-row>
@@ -231,6 +235,8 @@
       <ion-label color="success"><i>Fixed Property</i> </ion-label>
       
     </ion-item>
+    <br>
+      <ion-label color="tertiary"><i>(If you haven't fill please type "No")</i></ion-label>
 
     <ion-item>
       <ion-label>Name and Location</ion-label>
@@ -270,8 +276,10 @@
   
 
           <ion-item>
-            <ion-label><i>Motive Property</i> </ion-label>
+            <ion-label color="success"><i>Motive Property</i> </ion-label>
           </ion-item>
+          <br>
+      <ion-label color="tertiary"><i>(If you haven't fill please type "No")</i></ion-label>
 
           <ion-item>
             <ion-label>About that Property :</ion-label>
@@ -280,7 +288,7 @@
 
           <ion-item>
             <ion-label>Identification No(reg No):</ion-label>
-            <ion-input type="text" placeholder="Location" [(ngModel)]='mot_location'></ion-input>
+            <ion-input type="text" placeholder="Registration No" [(ngModel)]='mot_location'></ion-input>
           </ion-item>
 
 
@@ -309,6 +317,8 @@
       <ion-label color="success"><i>Guarantor 01</i> 
       </ion-label>
     </ion-item>
+    <br>
+      <ion-label color="tertiary"><i>(If you haven't fill please type "No")</i></ion-label>
 
     <ion-item>
       <ion-label>Full Name</ion-label>
@@ -340,6 +350,8 @@
           <ion-item>
             <ion-label color="success"><i>Guarantor 02</i> </ion-label>
           </ion-item>
+          <br>
+      <ion-label color="tertiary"><i>(If you haven't fill please type "No")</i></ion-label>
           <ion-item>
             <ion-label>Full Name</ion-label>
             <ion-textarea interface="popover"  placeholder="Full Name" [(ngModel)]='gua2_name'></ion-textarea>

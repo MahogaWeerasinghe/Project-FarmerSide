@@ -21,13 +21,15 @@
 
   <ion-grid>
     <ion-row class="bold">
-      <ion-col size="4">Name</ion-col>
-      <ion-col size="4">Apply Date</ion-col>
+      <ion-col size="3">NIC</ion-col>
+      <ion-col size="3">Name</ion-col>
+      <ion-col size="3">Apply Date</ion-col>
     </ion-row>
 
     <ion-row *ngFor='let item of items'>
-      <ion-col class="col" size="4.5">{{item.nameini}}</ion-col>
-      <ion-col class="col" size="4.5">{{item.date}}</ion-col>
+      <ion-col class="col" size="3">{{item.nic}}</ion-col>
+      <ion-col class="col" size="3">{{item.nameini}}</ion-col>
+      <ion-col class="col" size="3">{{item.date}}</ion-col>
       <ion-col size="3">
         <ion-button color="success" size="default" (click)="viewNewRequest($event)" id="{{item.app_id}}">View</ion-button>
       </ion-col>

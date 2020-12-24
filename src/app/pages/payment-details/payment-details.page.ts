@@ -16,9 +16,12 @@ export class PaymentDetailsPage implements OnInit {
 
   hide1=false;
   hide2=false;
+  hide3=false;
   nic:string="";
   bank_id:string="";
   obtain_id:number;
+
+  hid:any;
   //loan_name:string="";
   items:any;
   dat: any;
@@ -44,6 +47,18 @@ export class PaymentDetailsPage implements OnInit {
     private acessPr: AccessProviders,
   ) {
    }
+
+   doRefresh(event:any) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      this.showDetails();
+      this.Installment=0;
+      this.Installment_date=null;
+      //console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
 
   ngOnInit() {
     this.showDetails();
@@ -86,7 +101,7 @@ export class PaymentDetailsPage implements OnInit {
        
     
           this.to_be_paid_amount=this.values2.to_be_paid_amount;
-          this.loan_id=this.values2.loan_id;
+         //this.loan_id=this.values2.loan_id;
 
           this.hide1=true;
           this.hide2=false;
@@ -176,8 +191,8 @@ export class PaymentDetailsPage implements OnInit {
   }
 
   updatePayment2(){
-  /*  console.log(this.total_amount);
-    this.paid_amount=(this.Installment)+(this.paid_amount);
+  console.log(this.total_amount);
+    //this.paid_amount=(this.Installment)+(this.paid_amount);
     console.log(this.paid_amount);
 
     let body={
@@ -185,15 +200,34 @@ export class PaymentDetailsPage implements OnInit {
       loan_id:this.loan_id,
       Installment_date:moment(this.Installment_date).format('YYYY-MM-DD'),
       Installment:this.Installment,
-      paid_amount:(this.Installment)+(this.paid_amount),
-      to_be_paid_amount:this.total_amount-this.Installment,
-      to_be_paid_date:moment(this.to_be_paid_date).format('YYYY-MM-DD'),
+      paid_amount:this.hid,
+      to_be_paid_amount:this.total_amount-this.hid,
+     // to_be_paid_date:moment(this.to_be_paid_date).format('YYYY-MM-DD'),
       rating_no:0
     }
 
     console.log(body);
 
-    */
+  
+    console.log(this.hid);
+    //this.router.navigate(['/rating']);
+
+    this.acessPr.postpaymentdetails(body).subscribe((res:any)=>{
+      if(res.status==true){
+          console.log("correct");
+          
+
+          
+      }else{
+        this.router.navigate(['/rating']);
+       
+      }
+  },(err=>{
+  
+  })); 
+       
+    console.log(body);
+
     this.router.navigate(['/rating']);
 
   }

@@ -8,6 +8,14 @@
 </ion-header>
 
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
 
   <br>
   
@@ -48,17 +56,22 @@
       <!-- <ion-label color="medium" size="6">4500</ion-label> -->
     </ion-item>
 
+
+ 
+  
     <ion-item>
       <ion-label size="6" color="success"><b>Amount to be paid:</b></ion-label>
       <ion-label size="6">{{(to_be_paid_amount)-(Installment)}}</ion-label>
       <!-- <ion-label color="medium" size="6">103500</ion-label> -->
     </ion-item>
-
+    
+    <ion-input type="hidden" [(ngModel)]="hid" value="{{((paid_amount)++(Installment))}}" ></ion-input>
    <!-- <ion-item>
       <ion-label size="6" color="success"><b>Next payment date:</b></ion-label>
       <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="to_be_paid_date"></ion-datetime>
     </ion-item>-->
   </ion-list>
+
 
   <ion-button shape="round" size="default" color="primary" (click)="updatePayment2()">Paid</ion-button>
 </div>
@@ -89,6 +102,8 @@
       <ion-label size="6">{{(total_amount)-(Installment)}}</ion-label>
       <!-- <ion-label color="medium" size="6">103500</ion-label> -->
     </ion-item>
+
+   
 
    <!--<ion-item>
       <ion-label size="6" color="success"><b>Next payment date:</b></ion-label>

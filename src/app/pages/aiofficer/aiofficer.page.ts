@@ -4,7 +4,7 @@ import { ToastController,LoadingController,AlertController, NavController } from
 import { AccessProviders } from '../../pro/access';
 import {Storage} from '@ionic/storage';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
-
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 @Component({
   selector: 'app-aiofficer',
   templateUrl: './aiofficer.page.html',
@@ -16,6 +16,7 @@ export class AiofficerPage implements OnInit {
   name:string="";
   dat:any;
   GN_No:string="";
+  unread:number;
 
   slideData = [
     { image: "/assets/img/i2.jpg" },
@@ -31,6 +32,7 @@ export class AiofficerPage implements OnInit {
     private storage:Storage,
     private navCtrl:NavController,
     public http:HttpClient,
+    private localNotifications: LocalNotifications
   ) { }
 
   ngOnInit() {
@@ -40,6 +42,17 @@ export class AiofficerPage implements OnInit {
   slidesDidLoad(slides) {
     slides.startAutoplay();
   }
+
+  single_notification(unread:number) {
+    // Schedule a single notification
+    this.localNotifications.schedule({
+      id: 1,
+      text: 'You have '+this.unread+' Estimate requests',
+      sound: '/assets/sound.mp3',
+      data: { secret: 'key_data' }
+    });
+  }
+
 
 
   call(){
@@ -55,6 +68,18 @@ export class AiofficerPage implements OnInit {
       console.log("AO",this.items);
       this.name=this.items[0].name;
       this.GN_No=this.items[0].GN_No;
+
+
+      this.http.get(AccessProviders.server+'/viewai/'+this.GN_No).map(res => res).subscribe((res:any)=>{ 
+       // this.items=res.message;
+       // console.log("AO",this.items);
+        this.unread=res.message.length;
+        console.log(res.message);
+        if(this.unread!=0){
+          this.single_notification(this.unread);
+        }
+      });
+  
     });
 
   });

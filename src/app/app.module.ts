@@ -22,7 +22,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { FormsModule } from '@angular/forms' ; 
 import { ReactiveFormsModule} from '@angular/forms';
 import { MatStepperModule } from '@angular/material'; 
-
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
@@ -71,6 +71,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
+    LocalNotifications
     
    
 

@@ -95,7 +95,11 @@
    <ion-grid>
     <ion-row>
       <ion-col size="6">
-        <ion-button color="secondary" id="{{item.Agr_service_dev}}" (click)="requests($event)">Requests</ion-button>
+        <ion-button color="secondary" id="{{item.Agr_service_dev}}" (click)="requests($event)">Requests &nbsp;
+          <ion-icon size="large" name="notifications-circle-outline">
+          </ion-icon>
+                 <ion-badge [class.badge-one]="unread < 10" [class.badge-two]="unread >= 10" color="danger">{{ unread }}</ion-badge>   
+        </ion-button>
       </ion-col>
       <ion-col size="6">
         <ion-button color="secondary" id="{{item.nic}}" (click)="history($event)">History</ion-button>

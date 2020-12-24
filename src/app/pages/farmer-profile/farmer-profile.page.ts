@@ -33,6 +33,11 @@ export class FarmerProfilePage implements OnInit {
  dob:string="";
  nic:string="";
 data2:any;
+val:any;
+rat:number;
+arr:any=[0];
+sum:number=0;
+num:number;
   
   constructor(private router :Router,
     private storage:Storage,
@@ -102,7 +107,51 @@ data2:any;
             console.log(err);
            }
         )
+
+        this.http.get(AccessProviders.server+'/getmyloans/'+this.nic).map(res => res).subscribe((res:any)=>{ 
+          console.log(res.message);
+          this.val=res.message;
+          console.log(this.val);
+          console.log(this.val.length);
+          console.log(this.val[0].obtain_id);
+
+          for(let i=0;i<this.val.length;i++){
+            this.http.get(AccessProviders.server+'/showpaymentdetailslatest/'+this.val[i].obtain_id).map(res => res).subscribe((res:any)=>{ 
+              console.log(this.val[i].obtain_id);
+              console.log(res.message);
+              this.sum=res.message[0].rating_no+this.sum;
+              console.log(this.sum);
+              this.rat=this.sum/this.val.length;
+              console.log(this.rat);
+              this.arr.push(this.rat);
+            
+
+            });
+            
+            console.log(this.sum);
+
+          }
+
+          console.log(this.sum);
+          console.log(this.val.length);
+          this.rat=this.sum/this.val.length;
+          console.log(this.rat);
+          console.log(this.arr[0].length);
+          this.num=this.arr[this.arr.length-1]
+          console.log(this.arr.length)
+          console.log(this.arr[this.arr.length-1]);
+
+          
+        });  
+
+
+
+
       });
+
+    this.num=this.arr[this.arr.length-1]
+    console.log(this.num);
+
   }
   slidesDidLoad(slides) {
     slides.startAutoplay();
