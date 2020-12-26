@@ -26,6 +26,7 @@ export class ApproveloanPage implements OnInit {
   special_notices:string;
   application_id:string;
   loan_id:string;
+  //branch:string;
 
   constructor(
     private router:Router,
@@ -42,6 +43,14 @@ export class ApproveloanPage implements OnInit {
     this.storage.get("storage_appid").then((val)=>{
       console.log(val);
       this.application_id=val;
+
+      
+      this.http.get(AccessProviders.server+'/getApplicantDetails2/'+this.application_id).map(res=>res).subscribe((res:any)=>{
+        console.log(res.message);
+        this.items=res.message;
+        this.branch=res.message[0].branch
+      
+      });
 
     });
 

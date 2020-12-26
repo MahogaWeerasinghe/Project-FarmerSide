@@ -54,14 +54,7 @@ export class PaymentdetailsPage implements OnInit {
       console.log(res.message);
       this.items=res.message;
 
-      this.http.get(AccessProviders.server+'/showpaymentdetailslatest/'+this.obtain_id).map(res => res).subscribe((res:any)=>{ 
-        //this.storage.set('store_nic',res);
-        console.log(res.message);
-        this.latestdate=res.message[0].to_be_paid_date;
-        console.log(this.latestdate);
 
-      
-      });
  
        });
 

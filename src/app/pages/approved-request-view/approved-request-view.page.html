@@ -30,22 +30,27 @@
   </ion-card>
   <br>
 
-  <ion-card *ngFor='let item of items'>
+  <ion-card >
     <!-- <ion-grid *ngFor='let item of items'> -->
       <ion-grid>
         <ion-row >
           <ion-col><ion-label size="4"><b>Approved date</b></ion-label></ion-col>
-          <ion-col><ion-label>{{item.approved_date}}</ion-label></ion-col>
+          <ion-col><ion-label>{{approved_date}}</ion-label></ion-col>
           <!-- <ion-col size="8">{{item.date_you_come}}</ion-col> -->
         </ion-row> 
     <ion-row >
       <ion-col><ion-label size="4"><b>When Come</b></ion-label></ion-col>
-      <ion-col><ion-label>{{item.date_you_come}}</ion-label></ion-col>
+      <ion-col><ion-label>{{date_you_come}}</ion-label></ion-col>
       <!-- <ion-col size="8">{{item.date_you_come}}</ion-col> -->
     </ion-row>
     <ion-row>
       <ion-col><ion-label size="4"><b>Special Notices</b></ion-label></ion-col>
-      <ion-col><ion-label>{{item.special_notices}}</ion-label></ion-col>
+      <ion-col><ion-label>{{special_notices}}</ion-label></ion-col>
+      <!-- <ion-col size="8">{{item.special_notices}}</ion-col> -->
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-label size="4"><b>Branch</b></ion-label></ion-col>
+      <ion-col><ion-label>{{branch}}</ion-label></ion-col>
       <!-- <ion-col size="8">{{item.special_notices}}</ion-col> -->
     </ion-row>
   </ion-grid>

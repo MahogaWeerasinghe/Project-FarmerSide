@@ -78,8 +78,7 @@ export class GmapPage  {
       maxResults: 5
     };
 
-    this.nativeGeocoder.reverseGeocode(lattitude, longitude, options)
-      .then((result: NativeGeocoderResult[]) => {
+    this.nativeGeocoder.reverseGeocode(lattitude, longitude, options).then((result: NativeGeocoderResult[]) => {
         this.address = "";
         let responseAddress = [];
         for (let [key, value] of Object.entries(result[0])) {
@@ -102,7 +101,7 @@ export class GmapPage  {
       })
       
       .catch((error: any) => {
-        this.address = "Address Not Available!";
+        this.address = "Not Available!";
       }
         
       );

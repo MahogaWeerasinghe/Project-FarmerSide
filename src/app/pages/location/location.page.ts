@@ -20,7 +20,7 @@ export class LocationPage {
   latitude :number;
   longitude:number;
   location:string;
-  land:any;
+  addr:any;
   items:any;
 
   constructor(private router:Router,
@@ -31,13 +31,13 @@ export class LocationPage {
     public http:HttpClient,
     private home: Location) { 
       this.storage.get('storage_location').then((res)=>{
-        this.land=res;
-        console.log( res);
-       this.http.get(AccessProviders.server+'/getapplicantdetails/'+ this.land).subscribe((res:any)=>{ 
-          this.location=res.message[0].location; 
-          this.latitude=res.message[0].latitude;
-          this.longitude=res.message[0].longitude;
-          console.log(this.latitude+this.longitude);
+        this.addr=res;
+        console.log(res);
+       this.http.get(AccessProviders.server+'/getapplicantdetails/'+ this.addr).subscribe((res:any)=>{ 
+        this.latitude=res.message[0].latitude;
+        this.longitude=res.message[0].longitude;  
+        this.location=res.message[0].location; 
+      
           this.loadMap();
           console.log(res.message)},
                err=>{
@@ -54,10 +54,9 @@ export class LocationPage {
   }
   
   loadMap(){
-    this.geolocation.getCurrentPosition().then((resp) => {
+    this.geolocation.getCurrentPosition().then((position) => {
 
-      //this.latitude = -34.9290;
-      //this.longitude = 138.6010;
+  
       console.log(this.latitude+this.longitude);
       let latLng = new google.maps.LatLng( this.latitude,this.longitude );
 

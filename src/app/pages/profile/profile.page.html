@@ -10,8 +10,69 @@
 <ion-header no-border>
   
   <div id="header">
-    <h1>My Profile</h1>
-    <img src="https://img.icons8.com/color/100/000000/farmer-male--v1.png"/>
+    
+   
+    <div *ngIf="zero">
+      <ion-row>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+      </ion-row>
+    </div>
+
+    <div *ngIf="one">
+      <ion-row>
+      <span class="fa fa-star checked" style="font-size:36px"></span>
+      <span class="fa fa-star" style="font-size:36px"></span>
+      <span class="fa fa-star" style="font-size:36px"></span>
+      <span class="fa fa-star" style="font-size:36px"></span>
+      <span class="fa fa-star" style="font-size:36px"></span>
+      </ion-row>
+    </div>
+
+      <div *ngIf="two">
+      <ion-row>
+        <span class="fa fa-star checked" style="font-size:36px"></span>
+        <span class="fa fa-star checked" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        </ion-row>
+      </div>
+
+        <div *ngIf="three">
+        <ion-row>
+          <span class="fa fa-star checked" style="font-size:36px"></span>
+          <span class="fa fa-star checked" style="font-size:36px"></span>
+          <span class="fa fa-star checked" style="font-size:36px"></span>
+          <span class="fa fa-star" style="font-size:36px"></span>
+          <span class="fa fa-star" style="font-size:36px"></span>
+          </ion-row>
+        </div>
+
+          <div *ngIf="four">
+          <ion-row>
+            <span class="fa fa-star checked" style="font-size:36px"></span>
+            <span class="fa fa-star checked" style="font-size:36px"></span>
+            <span class="fa fa-star checked" style="font-size:36px"></span>
+            <span class="fa fa-star checked" style="font-size:36px"></span>
+            <span class="fa fa-star" style="font-size:36px"></span>
+            </ion-row>
+          </div>
+
+            <div *ngIf="five">
+            <ion-row>
+              <span class="fa fa-star checked" style="font-size:36px"></span>
+              <span class="fa fa-star checked" style="font-size:36px"></span>
+              <span class="fa fa-star checked" style="font-size:36px"></span>
+              <span class="fa fa-star checked" style="font-size:36px"></span>
+              <span class="fa fa-star checked" style="font-size:36px"></span>
+              </ion-row>
+            </div>
+
+            <img src="https://img.icons8.com/color/100/000000/farmer-male--v1.png"/>
   </div>
 </ion-header>
 

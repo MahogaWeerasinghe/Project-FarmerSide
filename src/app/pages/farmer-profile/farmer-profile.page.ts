@@ -38,6 +38,15 @@ rat:number;
 arr:any=[0];
 sum:number=0;
 num:number;
+ave:number;
+ori:number;
+
+zero=false;
+one=false;
+two=false;
+three=false;
+four=false;
+five=false;
   
   constructor(private router :Router,
     private storage:Storage,
@@ -108,49 +117,62 @@ num:number;
            }
         )
 
-        this.http.get(AccessProviders.server+'/getmyloans/'+this.nic).map(res => res).subscribe((res:any)=>{ 
-          console.log(res.message);
-          this.val=res.message;
-          console.log(this.val);
-          console.log(this.val.length);
-          console.log(this.val[0].obtain_id);
+        this.http.get(AccessProviders.server+'/showpaymentdetailsrat/'+this.nic).map(res => res).subscribe((res:any)=>{ 
+            console.log(res.message.length);
+            this.num=res.message.length;
 
-          for(let i=0;i<this.val.length;i++){
-            this.http.get(AccessProviders.server+'/showpaymentdetailslatest/'+this.val[i].obtain_id).map(res => res).subscribe((res:any)=>{ 
-              console.log(this.val[i].obtain_id);
-              console.log(res.message);
-              this.sum=res.message[0].rating_no+this.sum;
-              console.log(this.sum);
-              this.rat=this.sum/this.val.length;
-              console.log(this.rat);
-              this.arr.push(this.rat);
-            
+        
+            if(this.num==0){
+              this.zero=true;
+            }
 
+            else{
+            this.http.get(AccessProviders.server+'/showpaymentdetailsratsum/'+this.nic).map(res => res).subscribe((res:any)=>{ 
+                this.sum=res.message;
+                console.log(this.num);
+                console.log(this.sum);
+                this.ave=this.sum/this.num;
+                console.log(this.ave);
+
+                this.ori=Math.round(this.ave);
+                console.log(this.ori);
+
+                if(this.ori==1){
+                  this.one=true;
+                }
+
+                else if(this.ori==2){
+                    this.two=true;
+                }
+
+                else if(this.ori==3){
+                    this.three=true;
+                }
+
+                else if(this.ori==4){
+                    this.four=true;
+                }
+
+                else if(this.ori==5){
+                  this.five=true;
+                }
+
+                else{
+                  this.zero=true;
+                }
             });
-            
-            console.log(this.sum);
 
-          }
-
-          console.log(this.sum);
-          console.log(this.val.length);
-          this.rat=this.sum/this.val.length;
-          console.log(this.rat);
-          console.log(this.arr[0].length);
-          this.num=this.arr[this.arr.length-1]
-          console.log(this.arr.length)
-          console.log(this.arr[this.arr.length-1]);
+        }
+          
 
           
-        });  
-
-
+        });
 
 
       });
 
-    this.num=this.arr[this.arr.length-1]
-    console.log(this.num);
+      
+      console.log(this.ori);
 
   }
   slidesDidLoad(slides) {

@@ -27,6 +27,18 @@ export class ProfilePage implements OnInit {
  nic:string="";
  email:string="";
 data2:any;
+
+sum:number=0;
+num:number;
+ave:number;
+ori:number;
+
+zero=false;
+one=false;
+two=false;
+three=false;
+four=false;
+five=false;
   
   constructor(private router :Router,
     private storage:Storage,
@@ -96,6 +108,59 @@ data2:any;
        
        
                })*/
+
+               this.http.get(AccessProviders.server+'/showpaymentdetailsrat/'+this.nic).map(res => res).subscribe((res:any)=>{ 
+                console.log(res.message.length);
+                this.num=res.message.length;
+    
+            
+                if(this.num==0){
+                  this.zero=true;
+                  console.log("zero");
+                }
+    
+                else{
+                this.http.get(AccessProviders.server+'/showpaymentdetailsratsum/'+this.nic).map(res => res).subscribe((res:any)=>{ 
+                    this.sum=res.message;
+                    console.log(this.num);
+                    console.log(this.sum);
+                    this.ave=this.sum/this.num;
+                    console.log(this.ave);
+    
+                    this.ori=Math.round(this.ave);
+                    console.log(this.ori);
+    
+                    if(this.ori==1){
+                      this.one=true;
+                    }
+    
+                    else if(this.ori==2){
+                        this.two=true;
+                    }
+    
+                    else if(this.ori==3){
+                        this.three=true;
+                    }
+    
+                    else if(this.ori==4){
+                        this.four=true;
+                    }
+    
+                    else if(this.ori==5){
+                      this.five=true;
+                    }
+    
+                    else{
+                      this.zero=true;
+                    }
+                });
+    
+            }
+              
+    
+              
+            });
+    
                
                
             

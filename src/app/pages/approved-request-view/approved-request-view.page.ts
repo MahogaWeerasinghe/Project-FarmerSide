@@ -21,6 +21,11 @@ export class ApprovedRequestViewPage implements OnInit {
   dat:string="";
   app_id:string="";
   choose:string;
+  branch:string;
+
+  approved_date:string;
+  date_you_come:string;
+  special_notices:string
 
   data:Number;
  
@@ -43,7 +48,22 @@ export class ApprovedRequestViewPage implements OnInit {
         this.choose=res.message[0].choose;
         this.nameini=res.message[0].nameini;
         console.log('items are ', this.items);
+
+        this.approved_date=res.message[0].approved_date;
+        this.date_you_come=res.message[0].date_you_come;
+        this.special_notices=res.message[0].special_notices;
+
       });
+
+
+        
+      this.http.get(AccessProviders.server+'/getApplicantDetails2/'+this.app_id).map(res=>res).subscribe((res:any)=>{
+        console.log(res.message);
+        this.items=res.message;
+        this.branch=res.message[0].branch
+      
+      });
+
     });
   }
 
