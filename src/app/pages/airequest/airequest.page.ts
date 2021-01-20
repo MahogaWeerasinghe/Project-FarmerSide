@@ -53,15 +53,12 @@ export class AirequestPage implements OnInit {
         this.items=res.message;
         console.log("AO",this.items);
       });
-  
-
     });
 
   }
 
 
   details(event){
-    
     console.log(event.target.id);
     this.dat=event.target.id;
     console.log(this.dat);

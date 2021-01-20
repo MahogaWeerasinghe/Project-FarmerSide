@@ -312,6 +312,18 @@ const routes: Routes = [
     path: 'rating',
     loadChildren: () => import('./pages/rating/rating.module').then( m => m.RatingPageModule)
   },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('./pages/contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
+  },
   /*{
     path: 'myloans',
     loadChildren: () => import('./pages/myloans/myloans.module').then( m => m.MyloansPageModule)

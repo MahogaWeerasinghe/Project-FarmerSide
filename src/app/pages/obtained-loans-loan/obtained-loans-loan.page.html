@@ -52,7 +52,7 @@
     <ion-row *ngFor='let item of items'>
       <ion-col class="col" size="3">{{item.nic}}</ion-col>
       <ion-col class="col" size="3">{{item.nameini}}</ion-col>
-      <ion-col class="col" size="3">{{item.date}}</ion-col>
+      <ion-col class="col" size="3">{{item.issued_date}}</ion-col>
       <ion-col size="3">
         <ion-button color="success" (click)="viewObtainedLoans($event)" id="{{item.application_id}}">View</ion-button>
       </ion-col>

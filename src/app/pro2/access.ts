@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
-//import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/timeout';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
@@ -12,6 +11,7 @@ export class User {
   constructor( bank_id: string) {
    
     this.bank_id = bank_id;
+
   }
 }
 
@@ -22,15 +22,10 @@ export class Borrower {
   constructor( nic: string) {
    
     this.nic = nic;
+
   }
 }
 
-/* export class UpdBorrower {
-  loan_id: string;
-  constructor(loan_id:string){
-    this.loan_id = loan_id;
-  }
-} */
 
 @Injectable({
   providedIn: 'root' // just before your class
@@ -41,13 +36,14 @@ export class AccessProviders{
  //public static server:string='http://192.168.8.183:8080';
  //public static server:string='http://localhost:8000';
  public static server:string='http://192.168.8.183:8080';
+ //public static server:string='http://192.168.43.68:8080';
+ //public static server:string='http://192.168.8.101:8080';
+
 
  currentUser: User;
  nic:Borrower;
  isLogged: Boolean = false;
- //loan_id:UpdBorrower;
- loan_id;
-  
+
    constructor(
        
        public http:HttpClient,
@@ -61,32 +57,28 @@ export class AccessProviders{
     let options={
       headers:headers
     }
-            
-    /* return this.http.post(this.server+'/createLoan',JSON.stringify(body),{
-      headers: new HttpHeaders().set('Content-Type', 'application/json'),
-   }).timeout(59000)
- */
+             
     return this.http.post(AccessProviders.server+'/createLoan2',JSON.stringify(body),{
        headers: new HttpHeaders().set('Content-Type', 'application/json'),
     }).timeout(59000)
     . map(res=>res);                   
   }
 
-        postLogin(body){
-          let headers=new HttpHeaders({
-              'Content-Type':'applicationJson,charset-UTF-8'
-          });
-          let options={
-              headers:headers
-          }
-          this.currentUser = new User(body.bank_id);
-          this.isLogged = true;
-          return this.http.post(AccessProviders.server+'/login2',JSON.stringify(body),{
-              headers: new HttpHeaders().set('Content-Type', 'application/json'),
-            })
-          . map(res=>res);
-                   
+  postLogin(body){
+      let headers=new HttpHeaders({
+          'Content-Type':'applicationJson,charset-UTF-8'
+      });
+      let options={
+          headers:headers
       }
+      this.currentUser = new User(body.bank_id);
+      this.isLogged = true;
+      return this.http.post(AccessProviders.server+'/login2',JSON.stringify(body),{
+          headers: new HttpHeaders().set('Content-Type', 'application/json'),
+        })
+      . map(res=>res);
+              
+  }
 
   postSearch(body){
     let headers = new HttpHeaders({
@@ -96,43 +88,12 @@ export class AccessProviders{
       headers:headers
     }
     this.nic=new Borrower(body.nic);
-    //this.isLogged = true;
+  
     return this.http.post(AccessProviders.server+'/getFarmerLoans2/'+this.nic, JSON.stringify(body),{
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
     }).map(res=>res);
-  }
 
-      /*postDetails(body){
-        let headers=new HttpHeaders({
-            'Content-Type':'applicationJson,charset-UTF-8'
-        });
-        let options={
-             headers:headers
-        }
-        
-        return this.http.post(this.server+'/editDetails',JSON.stringify(body),{
-            headers: new HttpHeaders().set('Content-Type', 'application/json'),
-          }).timeout(59000)
-        . map(res=>res);
-        
-        
-    }*/
-    
-    /*postChangepw(body,id){
-      let headers=new HttpHeaders({
-          'Content-Type':'applicationJson,charset-UTF-8'
-      });
-      let options={
-           headers:headers
-      }
-      
-      return this.http.post(this.server+'/update/'+id,JSON.stringify(body),{
-          headers: new HttpHeaders().set('Content-Type', 'application/json'),
-        }).timeout(59000)
-      . map(res=>res);
-      
-      
-  }*/
+  }
 
   postreasonapp(body){
     let headers=new HttpHeaders({
@@ -179,7 +140,6 @@ postagrirep(body,id){
     }).timeout(59000)
   . map(res=>res);
   
-  
 }
 
 
@@ -192,13 +152,10 @@ postLoanUpdate(body, loan_id){
     headers:headers
   }
           
-  /* return this.http.post(this.server+'/createLoan',JSON.stringify(body),{
-    headers: new HttpHeaders().set('Content-Type', 'application/json'),
- }).timeout(59000)
-*/
+
   return this.http.post(AccessProviders.server+'/updateLoan2/'+loan_id,JSON.stringify(body),{
      headers: new HttpHeaders().set('Content-Type', 'application/json'),
-  })//.timeout(59000)
+  })
   . map(res=>res);
 }     
 

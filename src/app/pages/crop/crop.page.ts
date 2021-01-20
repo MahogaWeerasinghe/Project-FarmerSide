@@ -39,15 +39,10 @@ export class CropPage implements OnInit {
  
     ViewLoans(event:any){
       this.storage.get('storage_XXX').then((val) => {
-        //console.log('Your login tp is',  val.telephone_number);
-        //console.log('Your login name is',  val.username);
-        this.log=val.telephone_number;
+        this.log=val.nic;
         
       });
 
-     
-
-     
       console.log(event.target.id);
       this.dat=event.target.id;
       console.log(this.dat);

@@ -39,8 +39,6 @@ export class DohistoryPage implements OnInit {
         this.items=res.message;
         //console.log("AO",this.items);
       });
-  
-
 
     });
   }

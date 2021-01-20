@@ -71,8 +71,7 @@ export class AirequestenterPage implements OnInit {
       console.log(res);
       this.rep_id=res;
       this.http.get(AccessProviders.server+'/getpers/'+this.rep_id).map(res => res).subscribe((res:any)=>{ 
-        //this.storage.set('store_nic',res);
-        console.log(res);
+          console.log(res);
           this.data=res.message;
           console.log(this.data);
           this.choose=this.data[0].choose;
@@ -101,8 +100,6 @@ export class AirequestenterPage implements OnInit {
       ai_date:moment(this.ai_date).format('YYYY-MM-DD'),
       ai_photos:this.photos[0],
 
-     
-
     }
 
     this.acessPr.postagrirep(body,this.rep_id).subscribe((res:any)=>{
@@ -125,23 +122,14 @@ export class AirequestenterPage implements OnInit {
             if(res.status==true){
                 console.log("correct");
       
-               
-            
-      
-               
-                    
-                
-      
+
             }else{
              
             }
         },(err=>{
         
         }));
-          
-
-         
-      
+  
 
           this.router.navigate(['/airequest']);
               
@@ -158,7 +146,6 @@ export class AirequestenterPage implements OnInit {
 
   location(){
     this.storage.set('storage_location',this.app_id);
-
     this.router.navigate(['/location']);
   }
 

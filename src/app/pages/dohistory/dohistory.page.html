@@ -9,9 +9,8 @@
 <ion-content>
 
   <ion-card *ngFor='let item of items'>
-    <ion-grid>
-      
 
+    <ion-grid>
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>Issued Date</b></ion-card-subtitle>
@@ -19,15 +18,15 @@
       <ion-col size="8">
         <ion-card-subtitle>{{item.do_date}}</ion-card-subtitle>
       </ion-col>
-      
       <ion-col size="4">
         <ion-card-subtitle><b>NIC No </b></ion-card-subtitle>
       </ion-col>
       <ion-col size="8">
         <ion-card-subtitle>{{item.nic}}</ion-card-subtitle>
-      </ion-col>
-      
+      </ion-col>  
     </ion-row>
+
+
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>Name</b></ion-card-subtitle>
@@ -35,8 +34,8 @@
       <ion-col size="8">
         <ion-card-subtitle>{{item.nameini}}</ion-card-subtitle>
       </ion-col>
-      
     </ion-row>
+
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>Membership No</b></ion-card-subtitle>
@@ -44,7 +43,6 @@
       <ion-col size="8">
         <ion-card-subtitle>{{item.mem_id}}</ion-card-subtitle>
       </ion-col>
-      
     </ion-row>
 
     <ion-row>
@@ -53,8 +51,7 @@
       </ion-col>
       <ion-col size="8">
         <ion-card-subtitle>{{item.GN_No}}</ion-card-subtitle>
-      </ion-col>
-      
+      </ion-col>  
     </ion-row>
 
     <ion-row>
@@ -63,21 +60,19 @@
       </ion-col>
       <ion-col size="8">
         <ion-card-subtitle>{{item.GN_Division}}</ion-card-subtitle>
-      </ion-col>
-      
+      </ion-col> 
     </ion-row>
 
 
     <ion-row>
      <ion-col size="4">
-       <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-subtitle></ion-card-subtitle>
      </ion-col>
      <ion-col size="8">
-     <ion-button color="secondary" id="{{item.rep_id}}"  (click)="details($event)">To Report</ion-button>
+        <ion-button color="secondary" id="{{item.rep_id}}"  (click)="details($event)">To Report</ion-button>
      </ion-col>
-     
-     </ion-row>
-    </ion-grid>
+    </ion-row>
+  </ion-grid>
   </ion-card>
 
 

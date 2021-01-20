@@ -1,10 +1,4 @@
 <ion-header>
-  <!-- <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-buttons>    
-  </ion-toolbar>
- -->
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -12,38 +6,18 @@
     <ion-title></ion-title>
   </ion-toolbar>
 
-  <!-- <div>
-    <img class="background" src="assets/img/loan.jpeg" alt="bank logo">
-    <div class="btnMore" id="header" class = "login-header">
-      <img src="/assets/img/{{bank_logo}}" alt="logo">
-    </div>
-  </div> -->
-
+  
   <div class="container">
-	
     <div class="row-fluid">     
         <div class="span12">
             <div id="counter">
                 <img id="over" src="/assets/img2/{{bank_logo}}" alt="1" />
                 <img id="abc" src="assets/img2/back2.jpg" alt="bg" />
-
-                <!-- <ion-slides pager = "true" pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)" speed="3000" color="success">
-                  <ion-slide class="slide-one">
-                    <img src="assets/img/back2.jpg" alt="bg"> 
-                  </ion-slide>
-                  <ion-slide class="slide-two">
-                    <img src="assets/img/back2.jpg" alt="bg">
-
-                  </ion-slide>
-                </ion-slides> -->
-
             </div>
         </div>           
-    </div>
-	
+    </div>	
 </div>
 
-  
 </ion-header>
 
 
@@ -57,7 +31,6 @@
       <img class="center" src="/assets/img2/bank_prof.jpg" alt="bank image"/>
       <br>
     </ion-toolbar>
-  
   </ion-header>
 
   <ion-content>
@@ -88,14 +61,14 @@
     </ion-item>
     
     <ion-menu-toggle>
-      <ion-item>
+      <ion-item routerLink="/about-us">
         <ion-icon name="alert-circle"></ion-icon>
         <ion-label>About us</ion-label>
       </ion-item>
     </ion-menu-toggle>
 
     <ion-menu-toggle>
-      <ion-item>
+      <ion-item routerLink="/contact-us">
         <ion-icon name="call"></ion-icon>
         <ion-label>Contact us</ion-label>
       </ion-item>

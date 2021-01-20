@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Contact-US</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <br>
+  <ion-card class="ion-padding">
+    <ion-icon name="call"></ion-icon>
+    <ion-item> 
+     <ion-button (click)="call1()">+94719213455</ion-button> 
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="call2()">+94766004932</ion-button> 
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="ion-padding">
+    <ion-icon name="mail"></ion-icon>
+    <ion-item>
+      <ion-button size="default" (click)="mail1()">govinavoda@gmail.com</ion-button> 
+    </ion-item>
+    <ion-item>
+      <ion-button size="default" (click)="mail2()">govinavoda@outlook.com</ion-button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

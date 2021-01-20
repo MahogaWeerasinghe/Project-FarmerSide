@@ -38,30 +38,28 @@
             <ion-select-option >Yala</ion-select-option>
             <ion-select-option >Maha</ion-select-option>
           </ion-select>
-        </ion-col>
-        
+        </ion-col>   
       </ion-row>
 
       <div class="ou">
+
         <ion-row>
           <ion-col size="4">
             <ion-card-subtitle><b>Area</b></ion-card-subtitle>
           </ion-col>
           <ion-col size="8">
             <ion-input type="text" placeholder="area" [(ngModel)]="area" ></ion-input>
-          </ion-col>
-          
+          </ion-col> 
         </ion-row>
+
         <ion-row>
           <ion-col size="4">
             <ion-card-subtitle><b>Crop</b></ion-card-subtitle>
           </ion-col>
           <ion-col size="8">
             <ion-input type="text" placeholder="Crop" [(ngModel)]="crop_type" ></ion-input>
-          </ion-col>
-          
+          </ion-col>  
         </ion-row>
-        
         
       </div>
 
@@ -70,19 +68,14 @@
           <ion-card-subtitle><b>Subsedaries</b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
-        
-            
             <ion-select multiple="true" cancelText="NO" okText="Yes" [(ngModel)]="sub">
               <ion-select-option value="Seed">Seed</ion-select-option>
               <ion-select-option value="Fertilizer">Fertilizer</ion-select-option>
               <ion-select-option value="Chemical">Chemical</ion-select-option>
             </ion-select>
-       
         </ion-col>
-        
       </ion-row>
 
-      
     </ion-grid>
 
   </ion-card>

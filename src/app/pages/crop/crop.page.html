@@ -1,8 +1,4 @@
-<!--<ion-header>
-  <ion-toolbar>
-    <ion-title>Crop</ion-title>
-  </ion-toolbar>
-</ion-header>-->
+
 
 <ion-header>
   <ion-toolbar color="secondary">
@@ -14,53 +10,32 @@
 </ion-header>
 
 <ion-content>
- <!--<ion-tabs>
-    <ion-tab-bar slot="bottom">
-    <ion-tab-button tab = "paddy" >
-      <ion-icon name="thumbs-up-outline"></ion-icon>
-      <ion-label>Paddy</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab = "potato">
-      <ion-icon name="enter-outline"></ion-icon>
-      <ion-label>Potato</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab = "onion">
-      <ion-icon name="reload-circle-outline"></ion-icon>
-      <ion-label>Big Onion</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab = "maize">
-      <ion-icon name="thumbs-down-outline"></ion-icon>
-      <ion-label>Maize</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-  
-  </ion-tabs>-->
-  <ion-card class="animate__animated animate__slideInUp animate__fast"  *ngFor='let item of items' >
+  <ion-card class="animate__animated animate__slideInUp animate__fast"  *ngFor='let item of items'>
     
 <ion-grid>
-<ion-row>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-card-header>
+            <ion-card-title> {{item.bank_name}}</ion-card-title>
+        </ion-card-header>
+  
+        <ion-card-content>
+          {{item.bank_des}}
+          <ion-button expand="full" color="secondary" (click)="ViewLoans($event)" id="{{item.bank_id}}">View the Loans</ion-button>
+        </ion-card-content>
+      </div>
+    </ion-col>
+
   <ion-col>
     <div>
-    <ion-card-header>
-
-      <ion-card-title> {{item.bank_name}}</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      {{item.bank_des}}
-
-      <ion-button expand="full" color="secondary" (click)="ViewLoans($event)" id="{{item.bank_id}}">View the Loans</ion-button>
-    </ion-card-content>
-  </div>
-</ion-col>
-<ion-col>
-  <div>
-    <img src="assets/img/{{item.bank_logo}}" />
-  </div>
-</ion-col>
+      <img src="assets/img/{{item.bank_logo}}" />
+    </div>
+  </ion-col>
   </ion-row>
-    </ion-grid>
-  </ion-card>
+</ion-grid>
+
+</ion-card>
 
 </ion-content>
 

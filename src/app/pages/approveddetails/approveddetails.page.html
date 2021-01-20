@@ -8,37 +8,32 @@
 </ion-header>
 
 <ion-content>
-
-
     <ion-card *ngFor='let item of items'>
        
     <ion-card-header>
       <div id="header">
-  
-      
-      <ion-card-title><h1><b>Congratulations !</b></h1></ion-card-title>
-     
-    </div>
+        <ion-card-title><h1><b>Congratulations !</b></h1></ion-card-title>
+      </div>
     </ion-card-header>
+
     <ion-grid>
+
       <ion-row>
         <ion-col size="4">
           <ion-card-subtitle><b>Approved Date </b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
           <ion-card-subtitle>{{item.approved_date}}</ion-card-subtitle>
-        </ion-col>
-        
+        </ion-col>  
       </ion-row>
- 
+
       <ion-row>
         <ion-col size="4">
           <ion-card-subtitle><b>Date You Come </b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
           <ion-card-subtitle>{{item.date_you_come}}</ion-card-subtitle>
-        </ion-col>
-        
+        </ion-col>  
       </ion-row>
     
       <ion-row>
@@ -48,34 +43,32 @@
         <ion-col size="8">
           <ion-card-subtitle>{{item.special_notices}}</ion-card-subtitle>
         </ion-col>
-        
-    
-  </ion-row>
-  <ion-row>
-    <ion-col size="4">
-      <ion-card-subtitle><b>Branch </b></ion-card-subtitle>
-    </ion-col>
-    <ion-col size="8">
-      <ion-card-subtitle>{{item.branch}}</ion-card-subtitle>
-    </ion-col>
-    
+      </ion-row>
 
-</ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Branch </b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+          <ion-card-subtitle>{{item.branch}}</ion-card-subtitle>
+        </ion-col>
+      </ion-row>
 
 </ion-grid>
 </ion-card>
 
 
  <br>
+
  <ion-row>
-   <ion-col>
-    <ion-button color="secondary"  (click)="details()">Contact Us</ion-button>
-   </ion-col>
+    <ion-col>
+    </ion-col>
  
-  <ion-col>
-   <ion-button color="secondary"  (click)="application()">To Application</ion-button>
-  </ion-col>
-</ion-row>
+    <ion-col>
+      <ion-button color="secondary"  (click)="application()">To Application</ion-button>
+    </ion-col>
+    
+  </ion-row>
   
     
 

@@ -1,5 +1,4 @@
 <ion-header>
-
   <ion-toolbar color="secondary"  class="ion-text-center">
     <ion-buttons slot="start">
       <ion-back-button  defaultHref="application"></ion-back-button>
@@ -18,7 +17,6 @@
       <ion-col size="8">
         <ion-card-subtitle>{{choose}} {{nameini}}</ion-card-subtitle>
       </ion-col>
-      
     </ion-row>
  
     <ion-row>
@@ -28,18 +26,19 @@
       <ion-col size="8">
         <ion-card-subtitle>{{nic}}</ion-card-subtitle>
       </ion-col>
-      
     </ion-row>
+
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>Telephone Number</b></ion-card-subtitle>
       </ion-col>
       <ion-col size="8">
         <ion-card-subtitle>{{TpNo}}</ion-card-subtitle>
-      </ion-col>
-      
+      </ion-col> 
     </ion-row>
-<br>
+
+    <br>
+
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>Crop Type</b></ion-card-subtitle>
@@ -47,48 +46,39 @@
       <ion-col size="8">
         <ion-card-subtitle>{{crop}}</ion-card-subtitle>
       </ion-col>
-      
     </ion-row>
-
-  
-
-
 
     <ion-row>
       <ion-col >
         <ion-card-subtitle><b>Veriety of Crop</b></ion-card-subtitle>
       </ion-col>
       <ion-col>
-        <ion-input type="text" placeholder="Purpose in brief" [(ngModel)]="variety" ></ion-input>
-      </ion-col>
-      
+        <ion-input type="text" placeholder="Veriety of Crop" [(ngModel)]="variety" ></ion-input>
+      </ion-col>  
     </ion-row>
 
-    
     <ion-row>
-      <ion-col >
+      <ion-col>
         <ion-card-subtitle><b>Size of the Land</b></ion-card-subtitle>
       </ion-col>
       <ion-col>
         <ion-input type="text" placeholder="Size of the Land" [(ngModel)]="sizeof" ></ion-input>
-      </ion-col>
-      
+      </ion-col> 
     </ion-row>
 
+    <br>
 
-<br>
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>District</b></ion-card-subtitle>
       </ion-col>
       <ion-col size="8">
         <ion-select interface="popover" [(ngModel)]="District">
-          <ion-select-option >Gampaha</ion-select-option>
-         
+          <ion-select-option >Gampaha</ion-select-option>  
         </ion-select>
-      </ion-col>
-      
+      </ion-col> 
     </ion-row>
+
     <ion-row>
      <ion-col size="4">
        <ion-card-subtitle><b>Agrarian Service Division</b></ion-card-subtitle>
@@ -96,11 +86,9 @@
      <ion-col size="8">
       <ion-select interface="popover" [(ngModel)]="Agr_service_dev">
         <ion-select-option >Henarathgoda</ion-select-option>
-     
-      </ion-select>
+        </ion-select>
      </ion-col>
-     
-   </ion-row>
+    </ion-row>
 
     <ion-row>
      <ion-col size="4">
@@ -110,12 +98,10 @@
       <ion-select interface="popover" [(ngModel)]="GN_No">
         <ion-select-option >237-A</ion-select-option>
         <ion-select-option >237-B</ion-select-option>
-     
       </ion-select>
      </ion-col>
-     </ion-row>
-
-     
+    </ion-row>
+ 
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>Grama Division Name</b></ion-card-subtitle>
@@ -124,27 +110,20 @@
         <ion-select interface="popover" [(ngModel)]="GN_Division">
           <ion-select-option >Ganemulla Western</ion-select-option>
           <ion-select-option >Ganemulla Eastern</ion-select-option>
-          
         </ion-select>
       </ion-col>
     </ion-row>
 
-      
     <ion-row>
-      <ion-col size="4">
-        
+      <ion-col size="4">        
       </ion-col>
       <ion-col size="8">
         <ion-button color="secondary" (click)="request()">Request</ion-button>
       </ion-col>
-      </ion-row>
+    </ion-row>
  
 
- 
-    </ion-grid>
-
- 
-
+</ion-grid>
 
 
 </ion-content>

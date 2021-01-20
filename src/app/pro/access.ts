@@ -1,6 +1,7 @@
+// To Farmer side
+
 import {Injectable} from '@angular/core';
 import {HttpClient,HttpHeaders,HttpErrorResponse}  from '@angular/common/http';
-//import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/timeout';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs';
@@ -23,9 +24,12 @@ export class User {
 })
 
 export class AccessProviders{
- //public static server:string='http://localhost:8000';
+//public static server:string='http://localhost:8000';
 //public static server:string='http://192.168.43.128:8080'; 
-public static server:string='http://192.168.8.183:8080';
+public static server:string='http://192.168.8.183:8080'; 
+//public static server:string='http://192.168.8.101:8080';
+//public static server:string='http://192.168.43.68:8080';
+
  currentUser: User;
  isLogged: Boolean = false;
 
@@ -83,7 +87,7 @@ public static server:string='http://192.168.8.183:8080';
         . map(res=>res);
         
         
-    }
+      }
     
     postChangepw(body,id){
       let headers=new HttpHeaders({
@@ -99,7 +103,7 @@ public static server:string='http://192.168.8.183:8080';
       . map(res=>res);
       
       
-  }
+    }
 
   postSubmit(body){
     let headers=new HttpHeaders({

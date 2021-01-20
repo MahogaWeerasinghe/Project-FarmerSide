@@ -16,6 +16,7 @@ export class AgrihistorydetailsPage implements OnInit {
   data:any;
   data2:any;
   app_id:string;
+  
   constructor(
     private router:Router,
     private toastCtrl:ToastController,
@@ -41,34 +42,20 @@ export class AgrihistorydetailsPage implements OnInit {
       console.log(res);
       this.rep_id=res;
       this.http.get(AccessProviders.server+'/getpers/'+this.rep_id).map(res => res).subscribe((res:any)=>{ 
-        //this.storage.set('store_nic',res);
-        console.log(res);
+          console.log(res);
           this.data=res.message;
-          this.app_id=res.message[0].app_id;
-          
+          this.app_id=res.message[0].app_id;   
        });
 
        this.http.get(AccessProviders.server+'/showARloans/'+this.rep_id).map(res => res).subscribe((res:any)=>{ 
-        //this.storage.set('store_nic',res);
         console.log(res);
-        this.data2=res.message;
-         
-         
+        this.data2=res.message;   
        });
-
-    
-
-
-
-
     });
-
-
   }
 
   location(){
     this.storage.set('storage_location',this.app_id);
-
     this.router.navigate(['/location']);
   }
 

@@ -5,20 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor='let item of items'>
 
-    
+  <ion-card *ngFor='let item of items'>
     <ion-card-header>
       <div id="header">
         <ion-card-title><h1><b>Your Loan is Approved</b></h1></ion-card-title>
-      <img class="circle-pic"  src="/assets/img/tick.png" alt="ion">
-      
-      <ion-card-title><h1><b>Congratulations</b></h1></ion-card-title>
-     
-    </div>
+        <img class="circle-pic"  src="/assets/img/tick.png" alt="ion">
+        <ion-card-title><h1><b>Congratulations</b></h1></ion-card-title>
+      </div>
     </ion-card-header>
+
     <ion-card-content>
-      
       <ion-grid>
         <ion-row>
           <ion-col size="4">
@@ -47,8 +44,6 @@
 
 
   <ion-card>
-
-    
   </ion-card>
 
   <ion-card *ngIf="hide2">
@@ -56,8 +51,7 @@
       <div class="f">
       <strong>No Loans</strong>
       </div>
-  </ion-label>
-
+    </ion-label>
   </ion-card>
 
 

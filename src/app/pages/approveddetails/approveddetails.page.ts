@@ -36,6 +36,7 @@ export class ApproveddetailsPage implements OnInit {
     //this.storage.set('store_nic',res);
     console.log(res);
     this.items=res.message;
+    this.storage.set('storage_loanid', this.items.loan_id);
 
     
  
@@ -51,6 +52,11 @@ export class ApproveddetailsPage implements OnInit {
 
   application(){
     this.navCtrl.navigateRoot('/loanviews');
+
+  }
+
+  details(){
+    this.navCtrl.navigateRoot('/contact');
 
   }
 

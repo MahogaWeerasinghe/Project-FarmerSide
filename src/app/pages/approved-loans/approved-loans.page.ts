@@ -44,31 +44,26 @@ export class ApprovedLoansPage implements OnInit {
      this.nic=val.nic;
 
 
-          this.http.get(AccessProviders.server+'/showapproveloan/'+this.nic).map(res => res).subscribe((res:any)=>{ 
-            //this.storage.set('store_nic',res);
-            console.log(res);
-            this.items=res.message;
+    this.http.get(AccessProviders.server+'/showapproveloan/'+this.nic).map(res => res).subscribe((res:any)=>{ 
+    //this.storage.set('store_nic',res);
+      console.log(res);
+      this.items=res.message;
 
-            if(res.message.length==0){
-              this.hide2=true;
-              console.log("hii");
-            }
-            this.loan_name=res.message[0].loan_name;
-        
-            this.approved_date=res.message[0].approved_date;
-            this.application_id=res.message[0].application_id;
-            this.approve_id=res.message[0].approve_id;
-            
-             
-       
-             });
-     
-     });
+      if(res.message.length==0){
+        this.hide2=true;
+        console.log("hii");
+      }
 
+      this.loan_name=res.message[0].loan_name;
+      this.approved_date=res.message[0].approved_date;
+      this.application_id=res.message[0].application_id;
+      this.approve_id=res.message[0].approve_id;
 
+      });
 
+  });
   
-  }
+}
 
   
   
@@ -77,19 +72,13 @@ export class ApprovedLoansPage implements OnInit {
     this.dat=event.target.id;
     console.log(this.dat);
 
-  
+    this.storage.set('storage_appid',	this.dat);
 
-  this.storage.set('storage_appid',	this.dat);
-  //this.storage.set('storage_approveappid',this.approve_id);
-
-  this.storage.get("storage_appid").then((res)=>{
-    console.log(res);
-
-    
-   
-  });
-  this.navCtrl.navigateRoot('/approveddetails');
+    this.storage.get("storage_appid").then((res)=>{
+      console.log(res);
+    });
+    this.navCtrl.navigateRoot('/approveddetails');
  
-}
+  }
 
 }

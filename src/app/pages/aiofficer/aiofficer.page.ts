@@ -23,6 +23,7 @@ export class AiofficerPage implements OnInit {
     { image: "/assets/img/i1.jpg" },
     { image: "/assets/img/i3.jpg" }
   ]
+  
   constructor(
     private router:Router,
     private toastCtrl:ToastController,
@@ -88,8 +89,6 @@ export class AiofficerPage implements OnInit {
   }
 
   requests(event:any){
-  
-
     console.log(event.target.id);
     this.dat=event.target.id;
     console.log(this.dat);
@@ -101,6 +100,7 @@ export class AiofficerPage implements OnInit {
 
     this.navCtrl.navigateRoot('/airequest');
   }
+
 
   history(event:any){
     console.log(event.target.id);

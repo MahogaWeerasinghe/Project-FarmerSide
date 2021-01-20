@@ -45,7 +45,6 @@ export class AgrirequestsenterPage implements OnInit {
   ao_date:string;
 
 
-  
 
   public addresses: any[] = [{
     id: 1,
@@ -54,6 +53,7 @@ export class AgrirequestsenterPage implements OnInit {
    
     
   }];
+
   constructor( private router :Router,
     private storage:Storage,
     private navCtrl:NavController,
@@ -65,7 +65,6 @@ export class AgrirequestsenterPage implements OnInit {
     private camera: Camera,
     public actionSheetController: ActionSheetController,
     private home: Location) {
-
     }
 
 
@@ -73,19 +72,14 @@ export class AgrirequestsenterPage implements OnInit {
     goTo(){
       console.log('this.anArray',this.anArray);
       this.data=true;
-      }
-     Add(){
+    }
+
+    Add(){
       this.data=true;
       this.anArray.push(this.item);
-      //this.item=this.bname+','+this.amount;
       console.log(this.item);
       console.log(this.bname);
-      //console.log(this.amount);
-     
-
-      }
-   
-
+    }
 
   ngOnInit() {
     this.get();
@@ -195,12 +189,7 @@ export class AgrirequestsenterPage implements OnInit {
               
             this.acessPr.postagribank(body).subscribe((res:any)=>{
               if(res.status==true){
-                  console.log("correct");
-        
-                  
-                 
-                      
-                      
+                  console.log("correct");        
         
               }else{
                

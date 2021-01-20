@@ -1,49 +1,3 @@
-<!--<ion-header no-border>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="intro"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-
-</ion-header>
-
-
-
-<ion-content>
- <br>
-  <br>
-  <div id="header">
-    
-    <img src="/assets/img2/login1.jpg"/>
-  </div>
-  <br>
-  <br>
-
-
-  <ion-list>
-   
-    <ion-item transparent >
-      
-      <ion-icon slot="start" name="person-circle-sharp"></ion-icon>
-       <ion-input type="text" placeholder="Username" [(ngModel)]="bank_id" ></ion-input>
-    </ion-item>
-    <ion-item transparent>
-      <ion-icon slot="start" name="lock-closed"></ion-icon>
-      <ion-input type="password" placeholder="Password"[(ngModel)]="password" ></ion-input>
-   </ion-item>
-   
-  </ion-list>
-   <ion-button  expand="block" shape="round" class="ion-padding" color="success" (click)="tryLogin()">Login</ion-button>
-
-
--->
-
-<!--<ion-header no-border>
-  <ion-toolbar color="success">
-    <ion-title>login To App</ion-title>
-  </ion-toolbar>
-</ion-header>-->
 
 <ion-header class="ion-no-border">
   <ion-toolbar>
@@ -55,29 +9,6 @@
   </ion-toolbar>
 </ion-header>
 
-<!--<ion-content>
-  <ion-list>
-   
-    <ion-item transparent>
-      
-      <ion-icon slot="start" name="person-outline"></ion-icon>
-        <ion-input type="text" placeholder="Bank ID" [(ngModel)]="bank_id" ></ion-input>
-    </ion-item>
-    <ion-item transparent>
-      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-input type="password" placeholder="Password"[(ngModel)]="password" ></ion-input>
-   </ion-item>
-   
-
-   <ion-button expand="full" class="ion-padding" color="success" (click)="tryLogin()">Login</ion-button>
-  
-  </ion-list>
-  <p class="ion-padding info-1">
-    <br/>
-    If you do not have an account, Click <span (click)="openRegister()"><b> register now </b> </span>
-  </p>
-</ion-content>-->
-
 <ion-content>
   <div id="header">
     <h1>Login As A Bank</h1>
@@ -87,8 +18,7 @@
 
   <ion-list>
    
-    <ion-item transparent >
-      
+    <ion-item transparent >  
       <ion-icon slot="start" name="person-outline"></ion-icon>
       <ion-input type="text" placeholder="Bank ID" [(ngModel)]="bank_id" ></ion-input>
     </ion-item>
@@ -98,6 +28,7 @@
    </ion-item>
    
   </ion-list>
+  
   <p>
     <ion-button  expand="block" shape="round" class="ion-padding" color="success" (click)="tryLogin()">Login</ion-button>
   

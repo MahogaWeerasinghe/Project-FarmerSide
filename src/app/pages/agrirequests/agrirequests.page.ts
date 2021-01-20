@@ -12,12 +12,14 @@ import { Location } from "@angular/common";
   templateUrl: './agrirequests.page.html',
   styleUrls: ['./agrirequests.page.scss'],
 })
+
 export class AgrirequestsPage implements OnInit {
   GN_No:string="";
   items:any;
   name:string;
   nic:string;
   dat:any;
+
   constructor(
     private router:Router,
     private toastCtrl:ToastController,
@@ -30,15 +32,15 @@ export class AgrirequestsPage implements OnInit {
     private home: Location
   ) { }
 
-      doRefresh(event:any) {
+  doRefresh(event:any) {
       console.log('Begin async operation');
   
       setTimeout(() => {
         this.call();
         //console.log('Async operation has ended');
         event.target.complete();
-      }, 2000);
-    }
+        }, 2000);
+  }
 
   ngOnInit() {
     this.call();
@@ -53,19 +55,15 @@ export class AgrirequestsPage implements OnInit {
     this.storage.get("storage_gn").then((res)=>{
       console.log(res);
       this.GN_No=res;
-
       this.http.get(AccessProviders.server+'/viewagri/'+this.GN_No).map(res => res).subscribe((res:any)=>{ 
         this.items=res.message;
         //console.log("AO",this.items);
       });
-  
-
     });
-
   }
 
-  details(event){
-    
+  
+  details(event){  
       console.log(event.target.id);
       this.dat=event.target.id;
       console.log(this.dat);
@@ -76,10 +74,7 @@ export class AgrirequestsPage implements OnInit {
       });
   
       this.router.navigate(['/agrirequestsenter']);
-    }
+  }
     
-  
-
-
-  
+   
 }

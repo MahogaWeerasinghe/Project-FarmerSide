@@ -172,7 +172,7 @@ export class ApplicationPage implements OnInit {
   }
   
   async submitapp(){
-  console.log(this.nic);
+console.log(this.nic);
       console.log(this.B1name);
       console.log(this.B2name);
       console.log(this.B3name);
@@ -447,7 +447,7 @@ if(this.B3name!=""){
                 
   
         
-          });
+       });
 
             }else{
               loader.dismiss();
@@ -463,10 +463,10 @@ if(this.B3name!=""){
 
       
 
-    
  }
 
 
+    
 
 
 

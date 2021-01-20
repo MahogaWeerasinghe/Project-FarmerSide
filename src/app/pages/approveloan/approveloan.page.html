@@ -21,28 +21,29 @@
   <ion-card>
   <ion-grid>
     <br>
+
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>Approved Date</b></ion-card-subtitle>
       </ion-col>
       <ion-col size="8">
         <ion-card-subtitle>{{date}}</ion-card-subtitle>
-      </ion-col>
-      
+      </ion-col>  
     </ion-row>
   
     <br>
+
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>When Come</b></ion-card-subtitle>
       </ion-col>
       <ion-col size="8">
-     <ion-datetime min="2018-12-31" max="2099-10-31"  placeholder="Select Date" [(ngModel)]='date_you_come'></ion-datetime>
+        <ion-datetime min="2018-12-31" max="2099-10-31"  placeholder="Select Date" [(ngModel)]='date_you_come'></ion-datetime>
       </ion-col>
-
     </ion-row>
 
     <br>
+
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>Branch</b></ion-card-subtitle>
@@ -50,28 +51,24 @@
       <ion-col size="8">
         <ion-card-subtitle>{{branch}}</ion-card-subtitle>
       </ion-col>
-
     </ion-row>
 
  
     <br>
+
     <ion-row>
       <ion-col size="4">
         <ion-card-subtitle><b>Special Notices</b></ion-card-subtitle>
       </ion-col>
       <ion-col size="8">
         <ion-textarea rows="10" cols="50" placeholder="Special Reason here..." [(ngModel)]='special_notices'></ion-textarea>
-      </ion-col>
-      
+      </ion-col>  
     </ion-row>
-
-
-    
-
-
+  
   </ion-grid>
 </ion-card>
+
 <br>
-<ion-button class="ion-padding" (click)="submitaprove()">Submit</ion-button>
+    <ion-button class="ion-padding" (click)="submitaprove()">Submit</ion-button>
 
 </ion-content>

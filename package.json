@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~10.0.0",
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
+    "@ionic-native/call-number": "^5.30.0",
     "@ionic-native/camera": "^5.29.0",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/document-viewer": "^5.29.0",
@@ -56,6 +57,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "call-number": "^1.0.1",
     "codelyzer": "^6.0.0",
     "cordova-android": "9.0.0",
     "cordova-plugin-add-swift-support": "^2.0.2",
@@ -106,7 +108,8 @@
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
       "cordova-plugin-nativestorage": {},
-      "cordova-plugin-local-notification": {}
+      "cordova-plugin-local-notification": {},
+      "mx.ferreyra.callnumber": {}
     },
     "platforms": [
       "android"

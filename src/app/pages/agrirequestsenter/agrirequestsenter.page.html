@@ -5,24 +5,22 @@
         <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-
     <ion-title>Agriculture Officer Report</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
- 
   <ion-card>
-  <ion-row>
-    <ion-col size="4">
-      <ion-card-subtitle><b>Date</b></ion-card-subtitle>
-    </ion-col>
-    <ion-col size="8">
-      <ion-datetime value="1990-02-19" placeholder="Select Date" [(ngModel)]='ao_date'></ion-datetime>
-    </ion-col>
-  </ion-row>
-</ion-card>
+    <ion-row>
+      <ion-col size="4">
+        <ion-card-subtitle><b>Date</b></ion-card-subtitle>
+      </ion-col>
+      <ion-col size="8">
+        <ion-datetime value="1990-02-19" placeholder="Select Date" [(ngModel)]='ao_date'></ion-datetime>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 
   <ion-card>
     <ion-label color="primary"><strong>Personal Information</strong></ion-label>
@@ -34,41 +32,40 @@
         <ion-col size="8">
           <ion-card-subtitle>{{choose}} {{nameini}}</ion-card-subtitle>
         </ion-col>
-        
       </ion-row>
+
       <ion-row>
         <ion-col size="4">
           <ion-card-subtitle><b>Nic No</b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
           <ion-card-subtitle>{{nic}}</ion-card-subtitle>
-        </ion-col>
-        
+        </ion-col>  
       </ion-row>
+
       <ion-row>
         <ion-col size="4">
           <ion-card-subtitle><b>membership no</b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
           <ion-input type="text" placeholder="memebershp no" [(ngModel)]="mem_id" ></ion-input>
-        </ion-col>
-        
+        </ion-col>  
       </ion-row>
+
       <ion-row>
         <ion-col size="4">
           <ion-card-subtitle><b>fertilizer sub No</b></ion-card-subtitle>
         </ion-col>
         <ion-col size="8">
           <ion-input type="text" placeholder="fertilizer sub No" [(ngModel)]="fert_id" ></ion-input>
-        </ion-col>
-        
+        </ion-col>  
       </ion-row>
+
     </ion-grid>
+  </ion-card>
 
-    </ion-card>
-
-    <ion-card>
-      <ion-label color="primary"><strong>Past Performance</strong></ion-label>
+  <ion-card>
+    <ion-label color="primary"><strong>Past Performance</strong></ion-label>
       <ion-grid>
         <ion-row>
           <ion-col size="4">
@@ -89,8 +86,9 @@
               <ion-select-option value="2010">2010</ion-select-option>
             </ion-select>
           </ion-col>
-          
         </ion-row>
+
+
         <ion-row>
           <ion-col size="4">
             <ion-card-subtitle><b>Season</b></ion-card-subtitle>
@@ -100,53 +98,44 @@
               <ion-select-option >Yala</ion-select-option>
               <ion-select-option >Maha</ion-select-option>
             </ion-select>
-          </ion-col>
-          
+          </ion-col>  
         </ion-row>
  
-        <div class="ou">
-          <ion-row>
-            <ion-col size="4">
-              <ion-card-subtitle><b>Area</b></ion-card-subtitle>
-            </ion-col>
-            <ion-col size="8">
-              <ion-input type="text" placeholder="area" [(ngModel)]="area" ></ion-input>
-            </ion-col>
-            
-          </ion-row>
-          <ion-row>
-            <ion-col size="4">
-              <ion-card-subtitle><b>Crop</b></ion-card-subtitle>
-            </ion-col>
-            <ion-col size="8">
-              <ion-input type="text" placeholder="Crop" [(ngModel)]="crop_type" ></ion-input>
-            </ion-col>
-            
-          </ion-row>
-          
-          
-        </div>
+    <div class="ou">
 
         <ion-row>
           <ion-col size="4">
-            <ion-card-subtitle><b>Subsedaries</b></ion-card-subtitle>
+              <ion-card-subtitle><b>Area</b></ion-card-subtitle>
           </ion-col>
           <ion-col size="8">
-          
-              
-              <ion-select multiple="true" cancelText="NO" okText="Yes" [(ngModel)]="sub">
+              <ion-input type="text" placeholder="area" [(ngModel)]="area" ></ion-input>
+          </ion-col>  
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-card-subtitle><b>Crop</b></ion-card-subtitle>
+          </ion-col>
+          <ion-col size="8">
+            <ion-input type="text" placeholder="Crop" [(ngModel)]="crop_type" ></ion-input>
+          </ion-col>   
+        </ion-row>
+
+    </div>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-card-subtitle><b>Subsedaries</b></ion-card-subtitle>
+        </ion-col>
+        <ion-col size="8">
+            <ion-select multiple="true" cancelText="NO" okText="Yes" [(ngModel)]="sub">
                 <ion-select-option value="Seed">Seed</ion-select-option>
                 <ion-select-option value="Fertilizer">Fertilizer</ion-select-option>
                 <ion-select-option value="Chemical">Chemical</ion-select-option>
-              </ion-select>
-         
-          </ion-col>
-          
+            </ion-select>
+        </ion-col>  
         </ion-row>
-
-        
       </ion-grid>
-  
     </ion-card>
 
        
@@ -213,25 +202,15 @@
     </ion-col>
     <ion-col size="8">
       <ion-input type="text" placeholder="income" [(ngModel)]="income" ></ion-input>
-    </ion-col>
-    
+    </ion-col> 
   </ion-row>
   </ion-grid>
-
-
- 
-
-
-
-
-
 </ion-card>
 
 <ion-card>
   <ion-label color="primary"><strong>Attach Documents</strong></ion-label>
-  <ion-item>
-            
-    <ion-button size="small" color="secondary" (click)="agriofficerActionSheet()">Click here</ion-button>
+    <ion-item>        
+      <ion-button size="small" color="secondary" (click)="agriofficerActionSheet()">Click here</ion-button>
     </ion-item>
     <ion-grid>
       <ion-row>
@@ -240,32 +219,15 @@
         </ion-col>
       </ion-row>
   </ion-grid>
-
 </ion-card>
 
 
-
-
-
-
-
-
-
-
-      <ion-row>
-       <ion-col size="4">
-         <ion-card-subtitle></ion-card-subtitle>
-       </ion-col>
-       <ion-col size="8">
-       <ion-button color="secondary"  (click)="details()">Submit Report</ion-button>
-       </ion-col>
-       
-       </ion-row>
-
-    
-    
-   
-
-
-
+<ion-row>
+  <ion-col size="4">
+    <ion-card-subtitle></ion-card-subtitle>
+  </ion-col>
+  <ion-col size="8">
+    <ion-button color="secondary"  (click)="details()">Submit Report</ion-button>
+  </ion-col>
+</ion-row>
 </ion-content>

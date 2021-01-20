@@ -20,6 +20,7 @@
   </ion-card>
   
   <ion-card>
+
     <ion-label color="secondary">Personal Information</ion-label>
     <ion-grid>
       <ion-row>
@@ -30,6 +31,7 @@
          {{choose}} {{nameini}}
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col size="4">
           <ion-label>Nic No</ion-label>
@@ -38,6 +40,7 @@
           {{nic}}
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col size="4">
           <ion-label>membership No</ion-label>
@@ -52,7 +55,9 @@
 
   <ion-card *ngFor='let item of data'>
     <ion-label color="secondary">Apply Loan Details</ion-label>
+
     <ion-grid>
+
       <ion-row>
         <ion-col size="5">
           <ion-label>Crop Type</ion-label>
@@ -61,6 +66,7 @@
          {{item.crop}}
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col size="5">
           <ion-label>Veriety of crop</ion-label>
@@ -69,6 +75,7 @@
           {{item.variety}}
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col size="5">
           <ion-label>Reason</ion-label>
@@ -77,6 +84,7 @@
           {{item.reason}}
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col size="5">
           <ion-label>Location</ion-label>
@@ -95,7 +103,7 @@
         </ion-col>
       </ion-row>
 
-      <ion-row>
+     <ion-row>
       <ion-col size="5">
         <ion-label>Amount Required</ion-label>
       </ion-col>
@@ -103,19 +111,16 @@
         {{item.amount}}
       </ion-col>
     </ion-row>
-
-
-    </ion-grid>
-
-  </ion-card>
+  
+  </ion-grid>
+</ion-card>
 
   <ion-card>
-
     <ion-label color="secondary">Agriculture Estimate</ion-label>
-    
-    
+
     <br>
     <div class="ou">
+
       <ion-row>
         <ion-col size="6">
           <ion-card-subtitle><strong>Requirement</strong></ion-card-subtitle>
@@ -123,88 +128,71 @@
         <ion-col size="6">
           <ion-card-subtitle><strong>Estimated Value</strong></ion-card-subtitle>
         </ion-col>
-        
       </ion-row>
       
       <ion-row>
         <ion-col size="6">
           <ion-card-subtitle><b>Clean the Land</b></ion-card-subtitle>
-          
         </ion-col>
         <ion-col size="6">
           <ion-input type="Number" placeholder="ex: 10000" [(ngModel)]="forclean" ></ion-input>
         </ion-col>
-        
       </ion-row>
 
       <ion-row>
         <ion-col size="6">
           <ion-card-subtitle><b>Land Preparation</b></ion-card-subtitle>
-          
         </ion-col>
         <ion-col size="6">
           <ion-input type="Number" placeholder="ex : 2000" [(ngModel)]="forland" ></ion-input>
         </ion-col>
-        
       </ion-row>
       
       <ion-row>
         <ion-col size="6">
           <ion-card-subtitle><b>For Seed</b></ion-card-subtitle>
-          
         </ion-col>
         <ion-col size="6">
           <ion-input type="Number" placeholder="ex :3000" [(ngModel)]="forseed" ></ion-input>
-        </ion-col>
-        
+        </ion-col> 
       </ion-row>
 
       <ion-row>
         <ion-col size="6">
           <ion-card-subtitle><b>For Fertilizer</b></ion-card-subtitle>
-          
         </ion-col>
         <ion-col size="6">
           <ion-input type="Number" placeholder="ex :3000" [(ngModel)]="forfertilizer" ></ion-input>
         </ion-col>
-        
       </ion-row>
 
       <ion-row>
         <ion-col size="6">
           <ion-card-subtitle><b>For Chemicals</b></ion-card-subtitle>
-          
         </ion-col>
         <ion-col size="6">
           <ion-input type="Number" placeholder="ex :3000" [(ngModel)]="forchemicals" ></ion-input>
         </ion-col>
-        
       </ion-row>
 
       <ion-row>
         <ion-col size="6">
           <ion-card-subtitle><b>For get harvest</b></ion-card-subtitle>
-          
         </ion-col>
         <ion-col size="6">
           <ion-input type="Number" placeholder="ex :3000" [(ngModel)]="forharvest" ></ion-input>
         </ion-col>
-        
       </ion-row>
       
       <ion-row>
         <ion-col size="6">
           <ion-card-subtitle><b>Others</b></ion-card-subtitle>
-          
         </ion-col>
         <ion-col size="6">
           <ion-input type="Number" placeholder="ex :3000" [(ngModel)]="others" ></ion-input>
-        </ion-col>
-        
+        </ion-col>  
       </ion-row>
-      
     
-
     </div>
 
     <div class="ou">
@@ -215,18 +203,14 @@
         <ion-col size="6">
           <ion-card-subtitle><strong>{{ (forclean) + (forland) + (forseed) + (forfertilizer) + (forchemicals) + (forharvest) + (others)}}</strong></ion-card-subtitle>
         </ion-col>
-        
       </ion-row>
-      </div>
+    </div>
 
-
-  
   </ion-card>
 
   <ion-card>
     <ion-label color="secondary"><strong>Attach Documents</strong></ion-label>
     <ion-item>
-              
       <ion-button size="small" color="secondary" (click)="agriinstructorActionSheet()">Click here</ion-button>
       </ion-item>
       <ion-grid>
@@ -235,8 +219,7 @@
             <img [src]="p"/>
           </ion-col>
         </ion-row>
-    </ion-grid>
-  
+      </ion-grid>
   </ion-card>
 
   <ion-row>
@@ -244,10 +227,9 @@
       <ion-card-subtitle></ion-card-subtitle>
     </ion-col>
     <ion-col size="8">
-    <ion-button color="secondary"  (click)="details()">Submit Report</ion-button>
+      <ion-button color="secondary"  (click)="details()">Submit Report</ion-button>
     </ion-col>
-    
-    </ion-row>
+  </ion-row>
 
 
 </ion-content>

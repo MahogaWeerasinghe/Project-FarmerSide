@@ -24,6 +24,8 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { MatStepperModule } from '@angular/material'; 
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { CallNumber } from '@ionic-native/call-number';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 import {
   MatButtonModule,
@@ -71,7 +73,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    LocalNotifications
+    LocalNotifications,
+    CallNumber, 
     
    
 
