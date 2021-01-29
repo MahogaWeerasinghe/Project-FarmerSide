@@ -37,22 +37,17 @@ export class ObtainedLoansPage implements OnInit {
       console.log(res.nic);
       this.nic=res.nic;
    
-
     this.http.get(AccessProviders.server+'/getobtain/'+this.nic).map(res => res).subscribe((res:any)=>{ 
       //this.storage.set('store_nic',res);
       console.log(res);
-      this.data=res.message;
-
-    
-       
+      this.data=res.message;  
      });
 
     });
   }
 
   more(event){
-  
-    
+
     console.log(event.target.id);
     this.dat=event.target.id;
     console.log(this.dat);
@@ -61,9 +56,9 @@ export class ObtainedLoansPage implements OnInit {
     this.storage.get("storage_obid").then((res)=>{
       console.log(res);
 
-  });
+    });
 
-  this.navCtrl.navigateRoot('/obtain-loans-view');
+    this.navCtrl.navigateRoot('/obtain-loans-view');
 }
 
   

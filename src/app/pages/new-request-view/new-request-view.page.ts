@@ -38,15 +38,15 @@ export class NewRequestViewPage implements OnInit {
 
       console.log('appid is ', this.appid);
       this.http.get(AccessProviders.server+'/getFarmerDetails2/'+this.appid).map(res=>res).subscribe((res:any)=>{
-      console.log(res);
-      this.items=res.message;
-      console.log(this.items);
+        console.log(res);
+        this.items=res.message;
+        console.log(this.items);
 
-      this.choose=this.items[0].choose;
-      this.nameini=this.items[0].nameini;
+        this.choose=this.items[0].choose;
+        this.nameini=this.items[0].nameini;
 
-      console.log(this.choose);
-    });
+        console.log(this.choose);
+      });
 
     });
 

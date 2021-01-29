@@ -13,16 +13,16 @@ import { ToastController,LoadingController,AlertController,NavController } from 
   styleUrls: ['./pending-request-view.page.scss'],
 })
 export class PendingRequestViewPage implements OnInit {
-data:any;
-app_id:number;
+  data:any;
+  app_id:number;
 
-choose:string;
-nameini:string;
+  choose:string;
+  nameini:string;
 
-rejected_date:string;
-rejected_reason:string;
-From_where:string;
-where:string;
+  rejected_date:string;
+  rejected_reason:string;
+  From_where:string;
+  where:string;
 
   constructor(private router: Router,
     public storage:Storage,

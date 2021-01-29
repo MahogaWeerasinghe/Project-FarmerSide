@@ -10,28 +10,26 @@ import {User, AccessProviders } from '../../pro/access';
   templateUrl: './farmer-profile.page.html',
   styleUrls: ['./farmer-profile.page.scss'],
 })
+
 export class FarmerProfilePage implements OnInit {
   public segment: string = "list1";
-
-
 
   segmentChanged(ev: any) {
     this.segment = ev.detail.value;
   }
 
-  username:string="User";
-  datastore:any;
-  //server:string='http://localhost:8000';
-  telephone_number:string="";
- data:any;
+username:string="User";
+datastore:any;
+telephone_number:string="";
+data:any;
 
- choose:string="";
- nameini:string="";
- namefull:string="";
- address :string="";
- TpNo :string="";
- dob:string="";
- nic:string="";
+choose:string="";
+nameini:string="";
+namefull:string="";
+address :string="";
+TpNo :string="";
+dob:string="";
+nic:string="";
 data2:any;
 val:any;
 rat:number;
@@ -67,6 +65,7 @@ five=false;
       event.target.complete();
     }, 2000);
   }
+  
   ngOnInit() {
     this.get();
     
@@ -74,25 +73,17 @@ five=false;
 
   get(){
     this.storage.get('storage_XXX').then((res)=>{
-
-      this.username=res.username;
-      
+        this.username=res.username;
         this.nic=res.nic;
-        
         console.log("in farmer profile",this.nic);
-       
-        
-      this.http.get(AccessProviders.server+'/getdetails/'+this.nic).map(res => res).subscribe(res=>{ 
+
+        this.http.get(AccessProviders.server+'/getdetails/'+this.nic).map(res => res).subscribe(res=>{ 
         this.data2=res;  
-        //this.namefull=this.data2.namefull;
         console.log("in farmer profile ",this.data2.nic);
-    
-      this.storage.set('storage2',res);
-          
+        this.storage.set('storage2',res);  
             console.log(res);
             this.storage.get('storage2').then((res)=>{
-              //console.log(res.nameini);
-    
+       
      
               this.choose=res.choose;
               this.nameini=res.nameini;
@@ -102,14 +93,13 @@ five=false;
               this.dob=res.dob;
               this.nic=res.nic;
     
-              //console.log("in farmer profile ",this.nic);
+          
     
     
             })
             
             
-         
-          
+       
           
         },
         err=>{
@@ -166,39 +156,19 @@ five=false;
           
 
           
-        });
-
-
       });
 
+
+    });
+
       
-      console.log(this.ori);
+    console.log(this.ori);
 
   }
   slidesDidLoad(slides) {
     slides.startAutoplay();
   }
  
-  
-
-   // val.telephone_number
-    
-  //var getBackMyJSON = $('storage_XXX').data('telephone_number').key;
-  //console.log('Your age is', getBackMyJSON);
-  //this.navCtrl.push(farmerprofile,body);
-  //});
-  
-/*  Show(){
-    this.router.navigate(['/tabs']);
-  }
-
-  ApplyaLoan(){
-   this.router.navigate(['/crop']);
-  }
-
- Edit(){
-    this.router.navigate(['/edit']);
-  }*/
 
   where(){
     if(this.dob==""){

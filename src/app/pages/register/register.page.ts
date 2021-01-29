@@ -31,17 +31,11 @@ export class RegisterPage implements OnInit {
     const isNumeric = (val: string) : boolean => {
       return isNaN(Number(val));
    }
-   
-      
-   
-  
     if(this.username==""){
         this.presentToast("User name is required");
     }else if(this.nic==""){
       this.presentToast("nic is required");
-    }
-
-   
+    }   
     else if(this.password=="")
     {
       this.presentToast("Password is required");
@@ -116,8 +110,6 @@ export class RegisterPage implements OnInit {
   }
 }
 
- /* tryRegister(){
-    this.router.navigate(['/login']);
-  }*/
+
 
 

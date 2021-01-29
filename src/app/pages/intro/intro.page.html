@@ -1,26 +1,24 @@
-<!--<ion-header>
-  <ion-toolbar>
-    <ion-title>intro</ion-title>
-  </ion-toolbar>
-</ion-header>-->
 
 <ion-content>
+
   <ion-slides pager = "true" pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)" speed="3000" color="success">
     <ion-slide class="slide-one">
       <img src="/assets/img/S5.jpg">
-      <b><h1>Govi - Navoda Loan App</h1></b> 
-      <p class = "labelintro" color="primary">
-        FOR YOUR AGRICULTURE LOAN PURPOSES
-        
-      </p>
+        <b><h1>Govi - Navoda Loan App</h1></b> 
+        <p class = "labelintro" color="primary">
+          FOR YOUR AGRICULTURE LOAN PURPOSES 
+        </p>
     </ion-slide>
+
     <ion-slide class="slide-two">
       <img src="/assets/icon/grass.png">
       <b><h1>Do You Want Apply a Loan ?</h1></b>
+
       <p class = "labelintro">
-          That's the Way
+         That's the Way
       </p>
-        <ion-button color="success" (click)="openLogin()">Login as Farmer</ion-button>
+
+      <ion-button color="success" (click)="openLogin()">Login as Farmer</ion-button>
       <br>
 
       <br>
@@ -28,8 +26,9 @@
 
       <br>
       <ion-button color="success" (click)="openagri()">Login as an Officer</ion-button>
-     <br>
-     <ion-button color="success" (click)="openbank()">Login as Bank</ion-button>
+      <br>
+      <ion-button color="success" (click)="openbank()">Login as Bank</ion-button>
+      
     </ion-slide>
   </ion-slides>
 

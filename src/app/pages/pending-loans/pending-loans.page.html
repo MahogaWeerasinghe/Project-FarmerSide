@@ -6,21 +6,18 @@
 
 
 <ion-content>
-
   <ion-card *ngFor='let item of items'>
     <ion-item>
       <ion-icon name="pin" slot="start"></ion-icon>
       <ion-label> {{item.loan_name}}</ion-label>
-     
-
     </ion-item>
   
     <ion-card-content>
-    
       Application No : {{item.app_id}}
       <br>
       <ion-button fill="outline" slot="end" (click)="ViewLoanviews($event)" id="{{item.app_id}}">Click to More Details</ion-button>
     </ion-card-content>
+
   </ion-card>
   
   <ion-card *ngIf="hide2">
@@ -28,8 +25,7 @@
       <div class="f">
       <strong>No Loans</strong>
       </div>
-  </ion-label>
-
+    </ion-label>
   </ion-card>
   
 </ion-content>

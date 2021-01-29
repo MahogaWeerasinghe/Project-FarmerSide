@@ -30,6 +30,7 @@ export class ViewstatusdetailsPage implements OnInit {
   hide6=false;
 
   dat:any;
+
   constructor(
     private router :Router,
     private storage:Storage,
@@ -49,14 +50,9 @@ export class ViewstatusdetailsPage implements OnInit {
 
   get(){
     this.storage.get('storage_repid').then((res)=>{
-
       console.log(res);
-      
       this.rep_id=res;
-      
       console.log("rep_id",this.rep_id);
-
-
       this.http.get(AccessProviders.server+'/showAO/'+this.rep_id).map(res => res).subscribe((res:any)=>{ 
           console.log(res);
           this.aodetails=res.message;
@@ -79,6 +75,7 @@ export class ViewstatusdetailsPage implements OnInit {
           this.hide3=false
           this.hide4=true;
       }
+
     });
 
     
@@ -103,8 +100,6 @@ export class ViewstatusdetailsPage implements OnInit {
   }
 
   showao(event){
-  
-    
     console.log(event.target.id);
     this.dat=event.target.id;
     console.log(this.dat);
@@ -118,9 +113,7 @@ export class ViewstatusdetailsPage implements OnInit {
   this.navCtrl.navigateRoot('/agrihistorydetails');
 }
 
-showai(event){
-  
-    
+showai(event){  
   console.log(event.target.id);
   this.dat=event.target.id;
   console.log(this.dat);
@@ -131,12 +124,10 @@ showai(event){
 
 });
 
-this.navCtrl.navigateRoot('/aihistorydetails');
+  this.navCtrl.navigateRoot('/aihistorydetails');
 }
 
 showdo(event){
-  
-    
   console.log(event.target.id);
   this.dat=event.target.id;
   console.log(this.dat);
@@ -145,9 +136,9 @@ showdo(event){
   this.storage.get("storage_id").then((res)=>{
     console.log(res);
 
-});
+  });
 
-this.navCtrl.navigateRoot('/dohistorydetails');
+  this.navCtrl.navigateRoot('/dohistorydetails');
 }
   
 

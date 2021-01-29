@@ -56,15 +56,15 @@ export class PendingReasonPage implements OnInit {
 
     
 
-    this.http.get(AccessProviders.server+'/getapproveDetailsbyappid2/'+this.application_id).map(res=>res).subscribe((res:any)=>{
-      //this.items=res.message;
-      this.approve_id=res.message[0].approve_id;
-     // this.loan_id=res.message[0].loan_id;
+      this.http.get(AccessProviders.server+'/getapproveDetailsbyappid2/'+this.application_id).map(res=>res).subscribe((res:any)=>{
+        //this.items=res.message;
+        this.approve_id=res.message[0].approve_id;
+      // this.loan_id=res.message[0].loan_id;
 
-      
-  });
+        
+      });
 
-});
+    });
 
     this.storage.get("storage_reject").then((val)=>{
       console.log(val);
@@ -114,9 +114,7 @@ export class PendingReasonPage implements OnInit {
       //size:this.size,
       
       bank_status:"true",
-      
-
-     
+    
 
     }
 
@@ -128,13 +126,9 @@ export class PendingReasonPage implements OnInit {
           }
           else{
             let body={
-              //size:this.size,
-              
+
               approve_status:"true",
-              
-        
-             
-        
+            
             }
         
             this.acessPr.postapprove(body,this.approve_id).subscribe((res:any)=>{

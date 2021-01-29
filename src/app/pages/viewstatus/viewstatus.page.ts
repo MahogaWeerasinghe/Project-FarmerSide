@@ -50,6 +50,7 @@ export class ViewstatusPage implements OnInit {
             if(res.message.length==0){
               this.hide2=true;
             }
+
         });
 
         
@@ -62,8 +63,6 @@ export class ViewstatusPage implements OnInit {
 
 
   showstatus(event){
-  
-    
     console.log(event.target.id);
     this.dat=event.target.id;
     console.log(this.dat);

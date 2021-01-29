@@ -55,10 +55,6 @@ export class ReportPage implements OnInit {
         this.rep_id=res.message[0].rep_id;
 
 
-      
-
-
-
        this.http.get(AccessProviders.server+'/showARloans/'+this.rep_id).map(res => res).subscribe((res:any)=>{ 
         //this.storage.set('store_nic',res);
         console.log(res);
@@ -85,7 +81,6 @@ export class ReportPage implements OnInit {
 
 where(){
   this.storage.set('storage_location',this.app_id);
-  
   this.router.navigate(['/location']);
 }
 

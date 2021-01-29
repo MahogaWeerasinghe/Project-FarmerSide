@@ -29,7 +29,7 @@ export class LoansPage implements OnInit {
 
       this.storage.get('storage_XXX').then((val) => {
         console.log('Your age is',  val.nic);
-       this.nic=val.nic;
+        this.nic=val.nic;
       });
       this.storage.get("storage_co").then((res)=>{
         console.log(res);
@@ -69,7 +69,6 @@ export class LoansPage implements OnInit {
 
   
   ViewLoandetails(event:any){
-
     console.log(event.target.id);
     this.dat=event.target.id;
     console.log(this.dat);
@@ -83,8 +82,9 @@ export class LoansPage implements OnInit {
   }
 
 
-  applyloan(event:any){
 
+
+  applyloan(event:any){
     console.log(event.target.id);
     this.dat=event.target.id;
     console.log(this.dat);
@@ -92,9 +92,7 @@ export class LoansPage implements OnInit {
 
     this.http.get(AccessProviders.server+'/getdetails/'+this.nic).map(res => res).subscribe(res=>{ 
       //this.storage.set('storage2',res);
-        
           console.log(res);
-
           if(res==null){
             this.navCtrl.navigateRoot('/edit');
 
@@ -103,22 +101,7 @@ export class LoansPage implements OnInit {
           else{
             this.navCtrl.navigateRoot('/application');
           }
-          
-          
-          
-       
-        
-        
-      
-     
-  
 
     });
-
-
   }
-
-
-  
-
 }

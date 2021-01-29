@@ -1,234 +1,175 @@
-<!--<ion-header>
-<ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-menu-button></ion-menu-button>
-  </ion-buttons>
-  <ion-title>
-    Ionic
-  </ion-title>
-</ion-toolbar>
-</ion-header>
-<ion-content>
-</ion-content>-->
 
-
-  
   <ion-menu side="start" content-id="main-content">
-    <ion-header>
-      <ion-toolbar color="secondary">
-      
+  <ion-header>
+    <ion-toolbar color="secondary">
         <ion-title>Farmer Profile</ion-title>
-      </ion-toolbar>
+    </ion-toolbar>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </ion-header>
-    <ion-content>
+  </ion-header>
+  
+  <ion-content>
      
   
-  
-       
-         <!-- <div class="img-wrapper">
-            <img src="assets/img/user.png" />
-            <ion-button color="light">
-              <ion-icon slot="icon-only" name="camera-outline" color="medium">
-              </ion-icon>
-            </ion-button>
-          </div>-->
-          <!--<ion-card-content class="ion-text-center">
-            <h2> {{choose}} {{nameini}}</h2>
-            <ion-text color="medium">
-              <div style="display: flex;" class="ion-justify-content-center">
-                <ion-icon name="location-outline" color="medium">
-                </ion-icon>
-                <p>{{address}}</p>
-              </div>
-            </ion-text>
-          </ion-card-content>-->
+    <div class="header">
+      <img src="https://img.icons8.com/color/100/000000/farmer-male--v1.png"/>
+      
+    <div *ngIf="zero">
+      <ion-row>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+      </ion-row>
+    </div>
 
-          <div class="header">
-            <img src="https://img.icons8.com/color/100/000000/farmer-male--v1.png"/>
-            
-            <div *ngIf="zero">
-            <ion-row>
-              <span class="fa fa-star" style="font-size:36px"></span>
-              <span class="fa fa-star" style="font-size:36px"></span>
-              <span class="fa fa-star" style="font-size:36px"></span>
-              <span class="fa fa-star" style="font-size:36px"></span>
-              <span class="fa fa-star" style="font-size:36px"></span>
-            </ion-row>
-          </div>
+    <div *ngIf="one">
+      <ion-row>
+      <span class="fa fa-star checked" style="font-size:36px"></span>
+      <span class="fa fa-star" style="font-size:36px"></span>
+      <span class="fa fa-star" style="font-size:36px"></span>
+      <span class="fa fa-star" style="font-size:36px"></span>
+      <span class="fa fa-star" style="font-size:36px"></span>
+      </ion-row>
+    </div>
 
-          <div *ngIf="one">
-            <ion-row>
+      <div *ngIf="two">
+      <ion-row>
+        <span class="fa fa-star checked" style="font-size:36px"></span>
+        <span class="fa fa-star checked" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        <span class="fa fa-star" style="font-size:36px"></span>
+        </ion-row>
+      </div>
+
+        <div *ngIf="three">
+        <ion-row>
+          <span class="fa fa-star checked" style="font-size:36px"></span>
+          <span class="fa fa-star checked" style="font-size:36px"></span>
+          <span class="fa fa-star checked" style="font-size:36px"></span>
+          <span class="fa fa-star" style="font-size:36px"></span>
+          <span class="fa fa-star" style="font-size:36px"></span>
+          </ion-row>
+        </div>
+
+          <div *ngIf="four">
+          <ion-row>
+            <span class="fa fa-star checked" style="font-size:36px"></span>
+            <span class="fa fa-star checked" style="font-size:36px"></span>
+            <span class="fa fa-star checked" style="font-size:36px"></span>
             <span class="fa fa-star checked" style="font-size:36px"></span>
             <span class="fa fa-star" style="font-size:36px"></span>
-            <span class="fa fa-star" style="font-size:36px"></span>
-            <span class="fa fa-star" style="font-size:36px"></span>
-            <span class="fa fa-star" style="font-size:36px"></span>
             </ion-row>
           </div>
 
-            <div *ngIf="two">
+            <div *ngIf="five">
             <ion-row>
               <span class="fa fa-star checked" style="font-size:36px"></span>
               <span class="fa fa-star checked" style="font-size:36px"></span>
-              <span class="fa fa-star" style="font-size:36px"></span>
-              <span class="fa fa-star" style="font-size:36px"></span>
-              <span class="fa fa-star" style="font-size:36px"></span>
+              <span class="fa fa-star checked" style="font-size:36px"></span>
+              <span class="fa fa-star checked" style="font-size:36px"></span>
+              <span class="fa fa-star checked" style="font-size:36px"></span>
               </ion-row>
             </div>
+      </div>
 
-              <div *ngIf="three">
-              <ion-row>
-                <span class="fa fa-star checked" style="font-size:36px"></span>
-                <span class="fa fa-star checked" style="font-size:36px"></span>
-                <span class="fa fa-star checked" style="font-size:36px"></span>
-                <span class="fa fa-star" style="font-size:36px"></span>
-                <span class="fa fa-star" style="font-size:36px"></span>
-                </ion-row>
-              </div>
+        <ion-list>
 
-                <div *ngIf="four">
-                <ion-row>
-                  <span class="fa fa-star checked" style="font-size:36px"></span>
-                  <span class="fa fa-star checked" style="font-size:36px"></span>
-                  <span class="fa fa-star checked" style="font-size:36px"></span>
-                  <span class="fa fa-star checked" style="font-size:36px"></span>
-                  <span class="fa fa-star" style="font-size:36px"></span>
-                  </ion-row>
-                </div>
-
-                  <div *ngIf="five">
-                  <ion-row>
-                    <span class="fa fa-star checked" style="font-size:36px"></span>
-                    <span class="fa fa-star checked" style="font-size:36px"></span>
-                    <span class="fa fa-star checked" style="font-size:36px"></span>
-                    <span class="fa fa-star checked" style="font-size:36px"></span>
-                    <span class="fa fa-star checked" style="font-size:36px"></span>
-                    </ion-row>
-                  </div>
-            </div>
-      
-            <ion-list>
-        <ion-item (click)="where()">
-          <ion-icon name="person-outline" slot="start"></ion-icon>
-          <ion-label>Edit Profile</ion-label>
-          
-        </ion-item>
+          <ion-item (click)="where()">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-label>Edit Profile</ion-label>
+          </ion-item>
   
-        <ion-item >
-          
-          <ion-label>Loan Info</ion-label>
-        </ion-item>
+          <ion-item >
+            <ion-label>Loan Info</ion-label>
+          </ion-item>
         
-        <ion-item routerLink="/crop">
-          <ion-icon name="create-outline" slot="start"></ion-icon>
-          <ion-label>Apply Loan</ion-label>
-        </ion-item>
+          <ion-item routerLink="/crop">
+            <ion-icon name="create-outline" slot="start"></ion-icon>
+            <ion-label>Apply Loan</ion-label>
+          </ion-item>
 
-        <ion-item routerLink="/viewstatus">
-          <ion-icon name="search-outline" slot="start"></ion-icon>
-          <ion-label>Agriculture Report Status</ion-label>
-   
-        </ion-item>
+          <ion-item routerLink="/viewstatus">
+            <ion-icon name="search-outline" slot="start"></ion-icon>
+            <ion-label>Agriculture Report Status</ion-label>
+          </ion-item>
 
-        <ion-item routerLink="/tabs">
-          <ion-icon name="documents-outline" slot="start"></ion-icon>
-          <ion-label>My Loans</ion-label>
-   
-        </ion-item>
+          <ion-item routerLink="/tabs">
+            <ion-icon name="documents-outline" slot="start"></ion-icon>
+            <ion-label>My Loans</ion-label>  
+          </ion-item>
      
-        <ion-item routerLink="/payments">
-          <ion-icon name="cash-outline" slot="start"></ion-icon>
-          <ion-label>Payments</ion-label>
-   
-        </ion-item>
-      
+          <ion-item routerLink="/payments">
+            <ion-icon name="cash-outline" slot="start"></ion-icon>
+            <ion-label>Payments</ion-label>
+          </ion-item>
         
-        <ion-item >
-          
-          <ion-label>Other</ion-label>
-        </ion-item>
+          <ion-item>
+            <ion-label>Other</ion-label>
+          </ion-item>
     
-     <ion-item routerLink="/about-us">
-          <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
-          <ion-label>About Us</ion-label>
-        </ion-item>
+          <ion-item routerLink="/about-us">
+            <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+            <ion-label>About Us</ion-label>
+          </ion-item>
 
         
-        <ion-item routerLink="/contact-us">
-          <ion-icon name="call" slot="start"></ion-icon>
-          <ion-label>Contact Us</ion-label>
-        </ion-item>
+          <ion-item routerLink="/contact-us">
+           <ion-icon name="call" slot="start"></ion-icon>
+            <ion-label>Contact Us</ion-label>
+          </ion-item>
         
       
-        <ion-item routerLink="/intro">
-          <ion-icon name="log-out-outline" slot="start"></ion-icon>
-          <ion-label>Sign Out</ion-label>
-          
-        </ion-item>
+          <ion-item routerLink="/intro">
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            <ion-label>Sign Out</ion-label> 
+          </ion-item>
         
       </ion-list>
     </ion-content>
   </ion-menu>
 
   <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar color="secondary">
-  
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        
-          <ion-title>Welcome {{username}}</ion-title>
-      
-        
-        
-         
-
-     
-    </ion-toolbar>
-    </ion-header>
-
-    
+      <ion-header>
+        <ion-toolbar color="secondary">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+            <ion-title>Welcome {{username}}</ion-title>
+        </ion-toolbar>
+      </ion-header>
 
 
-    <ion-content class="ion-padding">
+<ion-content class="ion-padding">
 
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
         <ion-refresher-content
           pullingIcon="chevron-down-circle-outline"
           pullingText="Pull to refresh"
           refreshingSpinner="circles"
           refreshingText="Refreshing...">
         </ion-refresher-content>
-      </ion-refresher>
-      <ion-grid>
+    </ion-refresher>
+
+  
+<ion-grid>
     
-<ion-row>
-  <ion-col>
-    <ion-segment (ionChange)="segmentChanged($event)" value="list1">
-      <ion-segment-button value="list1">
-        <ion-label>
-          Apply Loans
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="list2">
-        <ion-label>
-          My Loans
-        </ion-label>
-      </ion-segment-button>
-    </ion-segment>
-    
-       <!-- <ion-card class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'list1'" routerLink="/crop">
-          <img src="assets/img/logo2.jpg" />
-          <ion-card-header>
-            <ion-card-subtitle>For Your Apply Loan Purposes</ion-card-subtitle>
-            <ion-card-title>Paddy , Potato , Maize , Onion </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-           
-          </ion-card-content>
-        </ion-card>-->
+  <ion-row>
+    <ion-col>
+      <ion-segment (ionChange)="segmentChanged($event)" value="list1">
+        <ion-segment-button value="list1">
+          <ion-label>
+            Apply Loans
+          </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="list2">
+          <ion-label>
+            My Loans
+          </ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
  
       <ion-slides *ngIf="segment === 'list1'"  pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
 
@@ -252,137 +193,62 @@
           <p>We have Goverment & Non-Goverment bank For your Purposes</p>
         </ion-slide>
 
-    <ion-slide>
+        <ion-slide>
           <img src="/assets/img/S4.jpg">
           <h2>Ready to get a loan ?</h2>
           <ion-button fill="clear" (click)="tobanks()">Show banks</ion-button>
         </ion-slide>
-
 
       </ion-slides>
  
       
     
     
-    <ion-list class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'list2'">
-    <!--  <ion-item>
-        <ion-label>No Loan Obtained</ion-label>
-      </ion-item>-->
-  <div class="card-background-page">
-
-     
+<ion-list class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'list2'">
+    <div class="card-background-page">
     <ion-grid>
-   <!--   <ion-row>
-      <ion-card>
-        <ion-row>
-          <ion-col>
-            <ion-col size="4">
-                  <ion-label color="primary"><i>Loan Scheme</i> </ion-label>
-          </ion-col> 
-          <ion-col size="8">
-              regytghsjnhrgsng dg
-          
-            </ion-col>
-          </ion-col>
-          <ion-col>
-            <ion-col size="4">
-
-              <ion-label color="primary"><i>Previous payment Status</i> </ion-label>
-          
-          </ion-col> 
-          <ion-col size="8">
-              regytghsjnhrgsng dg
-          
-            </ion-col>
-
-
-          </ion-col>
-
-        </ion-row>
-        <ion-row>
-          <ion-col>        
-            <ion-col size="4">
-              <ion-label color="primary"><i>Next Payment</i> </ion-label>
-          </ion-col> 
-          <ion-col size="8">
-            NCRCS
-          </ion-col>
-          </ion-col>
-
-
-          <ion-col>
-            <ion-row>        
-              <ion-col size="4">
-                <ion-label color="primary"><i>Previous Payment Status</i> </ion-label>
-              </ion-col> 
-              <ion-col size="8">
-                  Valid
-              </ion-col>
-          </ion-row>
-            <ion-row>        
-              <ion-col size="4">
-                <ion-label color="primary"><i>Next Payment</i> </ion-label>
-              </ion-col> 
-            <ion-col size="8">
-              SEPtember 5
-            </ion-col>
-          </ion-row>
-          </ion-col>
-
-        </ion-row>
-
-
-
-      </ion-card>
-    </ion-row>-->
       <ion-row>
         <ion-col>
-        <ion-card routerLink="/payments">
-          <img src="/assets/img/S5.jpg"/>
-          <div class="card-title">Payments</div>
-          <div class="card-subtitle">Click to view loan history</div>
-        </ion-card>
-      </ion-col>
-     
-    <ion-col>
-        <ion-card routerLink="/tabs">
-          <img src="/assets/img/S5.jpg"/>
-          <div class="card-title">My Loan History</div>
-          <div class="card-subtitle">Click to view loan history</div>
-        </ion-card>
-      </ion-col>
+          <ion-card routerLink="/payments">
+            <img src="/assets/img/S5.jpg"/>
+            <div class="card-title">Payments</div>
+            <div class="card-subtitle">Click to view loan history</div>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card routerLink="/tabs">
+            <img src="/assets/img/S5.jpg"/>
+            <div class="card-title">My Loan History</div>
+            <div class="card-subtitle">Click to view loan history</div>
+          </ion-card>
+        </ion-col>
       </ion-row> 
 
       <ion-row>
         <ion-col>
-        <ion-card routerLink="/crop">
-          <img src="/assets/img/P2.jpg"/>
-          <div class="card-title">New Loan</div>
-          <div class="card-subtitle">Click to apply a new loan</div>
-        </ion-card>
-      </ion-col>
-    <ion-col>
-        <ion-card routerLink="/profile">
-          <img src="assets/img/farmedit.png" />
-          <div class="card-title">My Profile</div>
-          <div class="card-subtitle">Click to view your Profile</div>
-        </ion-card>
-      </ion-col>
+          <ion-card routerLink="/crop">
+            <img src="/assets/img/P2.jpg"/>
+            <div class="card-title">New Loan</div>
+            <div class="card-subtitle">Click to apply a new loan</div>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card routerLink="/profile">
+            <img src="assets/img/farmedit.png" />
+            <div class="card-title">My Profile</div>
+            <div class="card-subtitle">Click to view your Profile</div>
+          </ion-card>
+        </ion-col>
       </ion-row>
     </ion-grid>
-      </div>
-   
-        
-        
-      
-   </ion-list>
-  </ion-col>
+    </div>
+  </ion-list>
+</ion-col>
 
 
 </ion-row>
 </ion-grid>
-    </ion-content>
- 
-  </div>
+</ion-content>
+</div>
 
 

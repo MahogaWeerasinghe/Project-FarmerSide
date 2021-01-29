@@ -45,14 +45,6 @@ export class PaymentPage implements OnInit {
   }
 
 
-  /* search(){
-    this.router.navigate(['/payment-confirm']);
-  } */
-
-  search(event:any){
-
-  }
-
   async Search(event:any){
     
     console.log('myyy id taken is', event.target.id);

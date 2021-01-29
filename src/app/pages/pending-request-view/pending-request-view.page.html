@@ -10,44 +10,44 @@
 <ion-content>
   <ion-card>
     <br>
+
     <ion-row>
       <ion-col>
         <ion-button size="default" expand="block" color="success" (click)="viewPendingPersonalInfo()">Personal Information</ion-button>
       </ion-col>
     </ion-row>
+
     <ion-row>
       <ion-col>
         <ion-button size="default" expand="block" color="success" (click)="viewPendingApplicationForm()">Application Form</ion-button>
       </ion-col>
     </ion-row>
+
     <ion-row>
       <ion-col>
         <ion-button size="default" expand="block" color="success" (click)="viewAgriForm()">Agriculture Report</ion-button>
       </ion-col>
     </ion-row>
     <br>
+    
   </ion-card>
   <br>
 
   <ion-card>
-
-      <ion-grid>
-        <ion-row >
+    <ion-grid> 
+      <ion-row>
           <ion-col><ion-label size="4"><b>Rejected date</b></ion-label></ion-col>
           <ion-col><ion-label>{{rejected_date}}</ion-label></ion-col>
-        
-        </ion-row> 
-    <ion-row >
-      <ion-col><ion-label size="4"><b>Reason</b></ion-label></ion-col>
-      <ion-col><ion-label>{{rejected_reason}}</ion-label></ion-col>
-
-    </ion-row>
-    <ion-row>
-      <ion-col><ion-label size="4"><b>Reject From Where</b></ion-label></ion-col>
-      <ion-col><ion-label>{{where}}</ion-label></ion-col>
-
-    </ion-row>
-  </ion-grid>
+      </ion-row> 
+      <ion-row >
+        <ion-col><ion-label size="4"><b>Reason</b></ion-label></ion-col>
+        <ion-col><ion-label>{{rejected_reason}}</ion-label></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-label size="4"><b>Reject From Where</b></ion-label></ion-col>
+        <ion-col><ion-label>{{where}}</ion-label></ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 
 </ion-content>

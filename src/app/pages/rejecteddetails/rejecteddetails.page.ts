@@ -41,21 +41,17 @@ export class RejecteddetailsPage implements OnInit {
   
     this.http.get(AccessProviders.server+'/showrejectloandata/'+res).map(res => res).subscribe((res:any)=>{ 
       //this.storage.set('store_nic',res);
-      console.log(res);
-      this.items=res.message;
-  
+        console.log(res);
+        this.items=res.message;
+    
       
-   
-  
-      });
+        });
     });
-
 
   }
 
   application(){
     this.navCtrl.navigateRoot('/loanviews');
-
   }
 
 }

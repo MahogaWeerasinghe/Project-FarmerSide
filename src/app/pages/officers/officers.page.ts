@@ -86,17 +86,7 @@ export class OfficersPage implements OnInit {
                   this.router.navigate(['/doofficer']);
                   console.log("my data",res.data);
                 }
-                //this.router.navigate(['/intro']);
-                
-                
-                /*this.storage.get('storage_XXX').then((val) => {
-                  console.log('Your age is',  val.username);
-                 // val.telephone_number
-                  
-                //var getBackMyJSON = $('storage_XXX').data('telephone_number').key;
-                //console.log('Your age is', getBackMyJSON);
-                //this.navCtrl.push(farmerprofile,body);
-                });*/
+   
               }else{
                 loader.dismiss();
                 this.disableButton=false;
@@ -113,7 +103,6 @@ export class OfficersPage implements OnInit {
     }
 
 
-    //this.router.navigate(['/intro']);
   }
 
   async presentToast(a) {

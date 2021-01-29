@@ -28,6 +28,7 @@ export class LoandetailsPage implements OnInit {
   more_info:string="";
   arr:any[]=[];
   arr2:any[]=[];
+  
   constructor(private router :Router,
     private storage:Storage,
     private navCtrl:NavController,

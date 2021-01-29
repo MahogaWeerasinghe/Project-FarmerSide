@@ -49,16 +49,16 @@ export class PaymentdetailsPage implements OnInit {
  
 
 
-    this.http.get(AccessProviders.server+'/showpaymentdetails/'+this.obtain_id).map(res => res).subscribe((res:any)=>{ 
-      //this.storage.set('store_nic',res);
-      console.log(res.message);
-      this.items=res.message;
+      this.http.get(AccessProviders.server+'/showpaymentdetails/'+this.obtain_id).map(res => res).subscribe((res:any)=>{ 
+        //this.storage.set('store_nic',res);
+        console.log(res.message);
+        this.items=res.message;
 
 
- 
-       });
-
+  
       });
+
+  });
      
     
 

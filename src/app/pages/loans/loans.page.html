@@ -9,29 +9,18 @@
 
 
 <ion-content>
-
-  <ion-card *ngFor='let item of items' >
-    <img src='../../../assets/img/{{item.loan_logo}}'/>
-    <ion-card-header>
-     
-      <ion-card-title> {{item.loan_name}}</ion-card-title>
-    </ion-card-header>
-   
+    <ion-card *ngFor='let item of items' >
+      <img src='../../../assets/img/{{item.loan_logo}}'/>
+      <ion-card-header>
+        <ion-card-title> {{item.loan_name}}</ion-card-title>
+      </ion-card-header>
       <ion-row>
-      <ion-col>
-    
-        <ion-button expand="full" color="secondary"(click)="ViewLoandetails($event)" id="{{item.loan_id}}">View loan details</ion-button>
-      </ion-col>
-      <ion-col>
-      
-        <ion-button size="full" color="secondary" (click)="applyloan($event)" id="{{item.loan_id}}">Apply Loan</ion-button>
-      </ion-col>
-    </ion-row>
-
-   
-  </ion-card>
-
- 
-
- 
+        <ion-col>
+          <ion-button expand="full" color="secondary"(click)="ViewLoandetails($event)" id="{{item.loan_id}}">View loan details</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="full" color="secondary" (click)="applyloan($event)" id="{{item.loan_id}}">Apply Loan</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
 </ion-content>

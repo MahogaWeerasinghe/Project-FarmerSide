@@ -10,7 +10,6 @@
 
 <ion-content>
   <ion-card *ngFor='let item of items'>
-   
     <ion-row>
       <ion-col size="5">
         <ion-label>Loan Name</ion-label>
@@ -28,6 +27,7 @@
         {{item.amount}}
       </ion-col>
     </ion-row>
+
     <ion-row>
       <ion-col size="5">
         <ion-label>Interest Rate</ion-label>
@@ -36,6 +36,7 @@
         {{item.interest_rate}}
       </ion-col>
     </ion-row>
+
     <ion-row>
       <ion-col size="5">
         <ion-label>Total Amount</ion-label>
@@ -44,9 +45,9 @@
         {{item.total_amount}}
       </ion-col>
     </ion-row>
+
     <ion-row>
       <ion-col size="5">
-       
       </ion-col>
       <ion-col size="7">
         <ion-button color="secondary"  (click)="showpayments($event)"id="{{item.obtain_id}}">View Paments</ion-button>
